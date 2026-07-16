@@ -1402,47 +1402,89 @@
     </section>
 
     <!-- ========================================================== -->
-    <!-- CAREERS – Updated mailto links                             -->
+    <!-- CAREERS – FIXED: Proper form with FormSubmit               -->
     <!-- ========================================================== -->
     <section id="careers" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="Careers">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Join Our Team</h2>
             <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Help us build the future of automation. We're looking for curious, driven people.</p>
 
-            <div class="space-y-3 sm:space-y-4 stagger" id="careersList">
+            <div class="space-y-6" id="careersList">
                 <!-- Robot Programmer -->
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5 md:p-6 lg:p-7 bg-white border border-gray-200 rounded-xl gap-3 sm:gap-4">
-                    <div>
-                        <h3 class="text-base sm:text-lg md:text-xl font-bold">Robot Programmer</h3>
-                        <p class="text-gray-500 text-xs sm:text-sm">Bengaluru · 0-2 Years</p>
-                        <p class="text-gray-600 text-xs sm:text-sm mt-1">ABB, FANUC, KUKA programming, PLC integration.</p>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 sm:p-6">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-bold">Robot Programmer</h3>
+                        <p class="text-gray-500 text-sm">Bengaluru · 0-2 Years</p>
+                        <p class="text-gray-600 text-sm mt-1">ABB, FANUC, KUKA programming, PLC integration.</p>
                     </div>
-                    <a href="mailto:hiring.garsrobotics@gmail.com?subject=Application%20for%20Robot%20Programmer&body=Dear%20Hiring%20Team%2C%0A%0AI%20would%20like%20to%20apply%20for%20the%20position%20of%20Robot%20Programmer.%0A%0APlease%20find%20my%20resume%20attached.%0A%0AName%3A%0APhone%3A%0AEmail%3A%0ACurrent%20Location%3A%0AExperience%3A%0A%0ARegards%2C" class="btn-primary w-full sm:w-auto text-sm inline-flex items-center justify-center">Apply now</a>
+                    <form action="https://formsubmit.co/hiring.garsrobotics@gmail.com" method="POST" class="space-y-3">
+                        <input type="hidden" name="_subject" value="Application for Robot Programmer">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <input type="text" name="Full Name" placeholder="Full Name" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
+                            <input type="email" name="Email" placeholder="Email Address" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
+                            <input type="tel" name="Phone" placeholder="Phone Number" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm">
+                            <input type="text" name="Current Location" placeholder="Current Location" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm">
+                            <input type="text" name="Experience" placeholder="Years of Experience" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm">
+                            <input type="url" name="Resume Link" placeholder="Resume Link (Google Drive/LinkedIn)" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm">
+                        </div>
+                        <textarea name="Cover Note" rows="3" placeholder="Tell us why you're a great fit..." class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm"></textarea>
+                        <button type="submit" class="btn-primary w-full sm:w-auto">Submit Application</button>
+                    </form>
                 </div>
 
                 <!-- Senior Robotics Engineer -->
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5 md:p-6 lg:p-7 bg-white border border-gray-200 rounded-xl opacity-50 gap-3 sm:gap-4">
-                    <div>
-                        <h3 class="text-base sm:text-lg md:text-xl font-bold">Senior Robotics Engineer</h3>
-                        <p class="text-gray-500 text-xs sm:text-sm">Stuttgart, Germany · Full-time</p>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 sm:p-6 opacity-60">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-bold">Senior Robotics Engineer</h3>
+                        <p class="text-gray-500 text-sm">Stuttgart, Germany · Full-time</p>
                     </div>
-                    <a href="mailto:hiring.garsrobotics@gmail.com?subject=Application%20for%20Senior%20Robotics%20Engineer&body=Dear%20Hiring%20Team%2C%0A%0AI%20would%20like%20to%20apply%20for%20the%20position%20of%20Senior%20Robotics%20Engineer.%0A%0APlease%20find%20my%20resume%20attached.%0A%0AName%3A%0APhone%3A%0AEmail%3A%0ACurrent%20Location%3A%0AExperience%3A%0A%0ARegards%2C" class="btn-primary w-full sm:w-auto text-sm inline-flex items-center justify-center">Apply now</a>
+                    <form action="https://formsubmit.co/hiring.garsrobotics@gmail.com" method="POST" class="space-y-3">
+                        <input type="hidden" name="_subject" value="Application for Senior Robotics Engineer">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <input type="text" name="Full Name" placeholder="Full Name" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
+                            <input type="email" name="Email" placeholder="Email Address" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
+                            <input type="tel" name="Phone" placeholder="Phone Number" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm">
+                            <input type="text" name="Current Location" placeholder="Current Location" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm">
+                            <input type="text" name="Experience" placeholder="Years of Experience" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm">
+                            <input type="url" name="Resume Link" placeholder="Resume Link" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm">
+                        </div>
+                        <textarea name="Cover Note" rows="3" placeholder="Tell us why you're a great fit..." class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm"></textarea>
+                        <button type="submit" class="btn-primary w-full sm:w-auto">Submit Application</button>
+                    </form>
                 </div>
 
                 <!-- AI Vision Specialist -->
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5 md:p-6 lg:p-7 bg-white border border-gray-200 rounded-xl opacity-50 gap-3 sm:gap-4">
-                    <div>
-                        <h3 class="text-base sm:text-lg md:text-xl font-bold">AI Vision Specialist</h3>
-                        <p class="text-gray-500 text-xs sm:text-sm">Bangalore · Full-time</p>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 sm:p-6 opacity-60">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-bold">AI Vision Specialist</h3>
+                        <p class="text-gray-500 text-sm">Bangalore · Full-time</p>
                     </div>
-                    <a href="mailto:hiring.garsrobotics@gmail.com?subject=Application%20for%20AI%20Vision%20Specialist&body=Dear%20Hiring%20Team%2C%0A%0AI%20would%20like%20to%20apply%20for%20the%20position%20of%20AI%20Vision%20Specialist.%0A%0APlease%20find%20my%20resume%20attached.%0A%0AName%3A%0APhone%3A%0AEmail%3A%0ACurrent%20Location%3A%0AExperience%3A%0A%0ARegards%2C" class="btn-primary w-full sm:w-auto text-sm inline-flex items-center justify-center">Apply now</a>
+                    <form action="https://formsubmit.co/hiring.garsrobotics@gmail.com" method="POST" class="space-y-3">
+                        <input type="hidden" name="_subject" value="Application for AI Vision Specialist">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <input type="text" name="Full Name" placeholder="Full Name" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
+                            <input type="email" name="Email" placeholder="Email Address" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
+                            <input type="tel" name="Phone" placeholder="Phone Number" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm">
+                            <input type="text" name="Current Location" placeholder="Current Location" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm">
+                            <input type="text" name="Experience" placeholder="Years of Experience" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm">
+                            <input type="url" name="Resume Link" placeholder="Resume Link" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm">
+                        </div>
+                        <textarea name="Cover Note" rows="3" placeholder="Tell us why you're a great fit..." class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm"></textarea>
+                        <button type="submit" class="btn-primary w-full sm:w-auto">Submit Application</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========================================================== -->
-    <!-- CONTACT – Unchanged (business enquiries remain)            -->
+    <!-- CONTACT – FIXED: Proper form with FormSubmit               -->
     <!-- ========================================================== -->
     <section id="contact" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="Contact us">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -1451,18 +1493,21 @@
 
             <div class="grid lg:grid-cols-2 gap-6 md:gap-8 reveal">
                 <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 sm:p-6 md:p-7">
-                    <form class="space-y-3 sm:space-y-4" action="mailto:garsrobotics@gmail.com" method="POST" enctype="text/plain">
+                    <form action="https://formsubmit.co/garsrobotics@gmail.com" method="POST" class="space-y-3 sm:space-y-4">
+                        <input type="hidden" name="_subject" value="New Enquiry from GARS Robotics Website">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
                         <div>
                             <label class="block text-sm font-medium mb-1" for="contact-name">Name</label>
-                            <input type="text" id="contact-name" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="Enter your name" />
+                            <input type="text" id="contact-name" name="Name" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="Enter your name" required>
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-1" for="contact-email">Email</label>
-                            <input type="email" id="contact-email" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="your@email.com" />
+                            <input type="email" id="contact-email" name="Email" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="your@email.com" required>
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-1" for="contact-message">Message</label>
-                            <textarea id="contact-message" rows="4" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="Write your message here..."></textarea>
+                            <textarea id="contact-message" name="Message" rows="4" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="Write your message here..." required></textarea>
                         </div>
                         <button type="submit" class="btn-primary w-full">Send message</button>
                     </form>
@@ -1843,8 +1888,6 @@
                 `;
             document.getElementById('universalModal').classList.remove('hidden');
         }
-
-        // showApplicationModal is no longer used; replaced by direct mailto links.
 
         // =============================================================
         // KEYBOARD SHORTCUTS
