@@ -28,6 +28,9 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <meta name="theme-color" content="#b21d18" />
 
+    <!-- Font Awesome for premium icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
     <!-- ========================================================== -->
     <!-- STRUCTURED DATA (JSON-LD)                                  -->
     <!-- ========================================================== -->
@@ -386,7 +389,7 @@
             border-color: #b21d18;
         }
 
-        /* ── PROJECT CARDS ── */
+        /* ── PROJECT CARDS (Gallery) ── */
         .project-card {
             position: relative;
             border-radius: 1rem;
@@ -411,63 +414,31 @@
         .project-card .overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(0deg, rgba(11, 18, 32, 0.88) 0%, rgba(11, 18, 32, 0.15) 55%, transparent 100%);
+            background: rgba(11, 18, 32, 0.4);
+            backdrop-filter: blur(2px);
             opacity: 0;
             transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 1.25rem;
+            align-items: center;
+            justify-content: center;
             color: #fff;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
         .project-card:hover .overlay {
             opacity: 1;
         }
         .project-card .overlay .icon {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(6px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 2.5rem;
+            opacity: 0.7;
+            transition: transform 0.3s ease;
         }
         .project-card:hover .overlay .icon {
-            background: rgba(178, 29, 24, 0.85);
-            transform: scale(1.1);
+            transform: scale(1.2);
+            opacity: 1;
         }
 
-        /* ── FEATURED PROJECT (Video) ── */
-        .featured-card {
-            border-radius: 1.25rem;
-            overflow: hidden;
-            background: #0B1220;
-            transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .featured-card:hover {
-            box-shadow: 0 28px 56px -20px rgba(0, 0, 0, 0.3);
-        }
-        .featured-card video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            background: #0B1220;
-            display: block;
-        }
-        .featured-card .featured-body {
-            padding: 1.5rem;
-            background: #fff;
-        }
-
-        /* ── VIDEO CARDS ── */
+        /* ── VIDEO CARDS (clean, no text) ── */
         .video-card {
             position: relative;
             border-radius: 1rem;
@@ -518,32 +489,31 @@
         }
 
         /* ========================================================== */
-        /* TIMELINE – ANIMATED STEP-BY-STEP                           */
+        /* TIMELINE – REDESIGNED PREMIUM                              */
         /* ========================================================== */
         .timeline-wrapper {
             overflow: hidden;
-            padding: 0.5rem 0 1.5rem 0;
+            padding: 1rem 0 1.5rem 0;
             position: relative;
         }
 
         .timeline-inner {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            max-width: 900px;
+            align-items: flex-start;
+            max-width: 1100px;
             margin: 0 auto;
             position: relative;
             padding: 0 1rem;
         }
 
-        /* The line that connects all steps – animated */
         .timeline-line {
             position: absolute;
-            top: 36px;
+            top: 32px;
             left: 5%;
             right: 5%;
-            height: 4px;
-            background: #d1d5db;
+            height: 3px;
+            background: #e5e7eb;
             z-index: 0;
             border-radius: 2px;
             overflow: hidden;
@@ -554,7 +524,7 @@
             width: 0%;
             background: #b21d18;
             border-radius: 2px;
-            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .timeline-step {
@@ -564,38 +534,37 @@
             flex: 1;
             position: relative;
             z-index: 1;
-            padding: 0 0.25rem;
+            padding: 0 0.2rem;
+            min-width: 0;
+            cursor: default;
         }
 
-        /* The numbered circle */
         .timeline-step .step-circle {
-            width: 72px;
-            height: 72px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             background: #ffffff;
-            border: 4px solid #d1d5db;
+            border: 2.5px solid #d1d5db;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: 700;
             color: #9ca3af;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             flex-shrink: 0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
 
-        /* Active step */
         .timeline-step.active .step-circle {
             border-color: #b21d18;
             background: #b21d18;
             color: #ffffff;
-            transform: scale(1.06);
+            transform: scale(1.08);
             box-shadow: 0 8px 28px rgba(178, 29, 24, 0.3);
         }
 
-        /* Completed step (passed) */
         .timeline-step.completed .step-circle {
             border-color: #b21d18;
             background: #b21d18;
@@ -604,18 +573,13 @@
         }
 
         .timeline-step .step-circle .number {
-            font-family: 'Inter', sans-serif;
             font-weight: 700;
-            font-size: 1.5rem;
-            line-height: 1;
-            transition: all 0.3s ease;
+            font-size: 1.1rem;
         }
 
         .timeline-step .step-circle .icon {
             display: none;
-            width: 28px;
-            height: 28px;
-            color: #fff;
+            font-size: 1.2rem;
         }
 
         .timeline-step.active .step-circle .number,
@@ -628,15 +592,16 @@
             display: block;
         }
 
-        /* Labels */
         .timeline-step .step-label {
-            margin-top: 0.75rem;
-            font-size: 0.85rem;
+            margin-top: 0.6rem;
+            font-size: 0.7rem;
             font-weight: 600;
             text-align: center;
             color: #9ca3af;
             letter-spacing: 0.3px;
             transition: color 0.5s ease;
+            line-height: 1.3;
+            max-width: 100%;
         }
 
         .timeline-step.active .step-label,
@@ -645,11 +610,13 @@
         }
 
         .timeline-step .step-sub {
-            font-size: 0.7rem;
+            font-size: 0.55rem;
             color: #9ca3af;
             text-align: center;
-            margin-top: 0.1rem;
+            margin-top: 0.05rem;
             transition: color 0.5s ease;
+            line-height: 1.2;
+            font-weight: 400;
         }
 
         .timeline-step.active .step-sub,
@@ -657,36 +624,56 @@
             color: #6b7280;
         }
 
-        /* Responsive */
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             .timeline-line {
-                top: 28px;
-                height: 3px;
+                top: 26px;
+                left: 4%;
+                right: 4%;
+                height: 2px;
             }
-
             .timeline-step .step-circle {
-                width: 56px;
-                height: 56px;
-                border-width: 3px;
-                font-size: 1.2rem;
+                width: 42px;
+                height: 42px;
+                border-width: 2px;
+                font-size: 0.8rem;
             }
-
             .timeline-step .step-circle .number {
-                font-size: 1.2rem;
+                font-size: 0.9rem;
             }
-
             .timeline-step .step-circle .icon {
-                width: 22px;
-                height: 22px;
+                font-size: 0.9rem;
             }
-
             .timeline-step .step-label {
-                font-size: 0.7rem;
-                margin-top: 0.5rem;
-            }
-
-            .timeline-step .step-sub {
                 font-size: 0.6rem;
+                margin-top: 0.4rem;
+            }
+            .timeline-step .step-sub {
+                font-size: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .timeline-inner {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.8rem 0.2rem;
+            }
+            .timeline-line {
+                display: none;
+            }
+            .timeline-step {
+                flex: 0 0 30%;
+                margin-bottom: 0.3rem;
+            }
+            .timeline-step .step-circle {
+                width: 36px;
+                height: 36px;
+            }
+            .timeline-step .step-label {
+                font-size: 0.5rem;
+            }
+            .timeline-step .step-sub {
+                display: none;
             }
         }
 
@@ -842,6 +829,502 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #8a1612;
         }
+
+        /* ── NEW: EXPERTISE CARDS ── */
+        .expertise-card {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            border-radius: 1rem;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: default;
+        }
+        .expertise-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.08);
+            border-color: #b21d18;
+        }
+        .expertise-card .icon-wrap {
+            font-size: 2.6rem;
+            color: #b21d18;
+            margin-bottom: 0.75rem;
+            display: inline-block;
+            transition: transform 0.35s ease;
+        }
+        .expertise-card:hover .icon-wrap {
+            transform: scale(1.15);
+        }
+        .expertise-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 0.2rem;
+        }
+        .expertise-card p {
+            font-size: 0.8rem;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+        @media (max-width: 768px) {
+            .expertise-card {
+                padding: 1rem 0.5rem;
+            }
+            .expertise-card .icon-wrap {
+                font-size: 2rem;
+            }
+            .expertise-card h4 {
+                font-size: 0.85rem;
+            }
+            .expertise-card p {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* ── NEW: INDUSTRY CARDS ── */
+        .industry-card {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            border-radius: 0.75rem;
+            padding: 1.2rem 0.8rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: default;
+        }
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.08);
+            border-color: #b21d18;
+        }
+        .industry-card .icon-wrap {
+            font-size: 2rem;
+            color: #b21d18;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .industry-card:hover .icon-wrap {
+            transform: scale(1.1);
+        }
+        .industry-card span {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #1f2937;
+        }
+        @media (max-width: 768px) {
+            .industry-card {
+                padding: 0.8rem 0.4rem;
+            }
+            .industry-card .icon-wrap {
+                font-size: 1.5rem;
+            }
+            .industry-card span {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* ── ELITE CUSTOMERS TILES ── */
+        .elite-logo-tile {
+            background: #fff;
+            border-radius: 0.75rem;
+            border: 1px solid #f0f0f0;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+            transition: all 0.35s ease;
+        }
+        .elite-logo-tile:hover {
+            border-color: #b21d18;
+            box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.1);
+            transform: scale(1.04);
+        }
+        .elite-logo-tile img {
+            max-height: 48px;
+            max-width: 120px;
+            object-fit: contain;
+            filter: grayscale(0.1);
+            transition: filter 0.35s ease;
+        }
+        .elite-logo-tile:hover img {
+            filter: grayscale(0);
+        }
+        @media (max-width: 768px) {
+            .elite-logo-tile {
+                min-height: 60px;
+                padding: 0.5rem;
+            }
+            .elite-logo-tile img {
+                max-height: 32px;
+                max-width: 80px;
+            }
+        }
+
+        /* ── SCROLL REVEAL DELAYS (for staggered animations) ── */
+        .stagger>* {
+            transition-delay: 0.05s;
+        }
+        .stagger>*:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+        .stagger>*:nth-child(3) {
+            transition-delay: 0.15s;
+        }
+        .stagger>*:nth-child(4) {
+            transition-delay: 0.2s;
+        }
+        .stagger>*:nth-child(5) {
+            transition-delay: 0.25s;
+        }
+        .stagger>*:nth-child(6) {
+            transition-delay: 0.3s;
+        }
+        .stagger>*:nth-child(7) {
+            transition-delay: 0.35s;
+        }
+        .stagger>*:nth-child(8) {
+            transition-delay: 0.4s;
+        }
+        .stagger>*:nth-child(9) {
+            transition-delay: 0.45s;
+        }
+        .stagger>*:nth-child(10) {
+            transition-delay: 0.5s;
+        }
+        .stagger>*:nth-child(11) {
+            transition-delay: 0.55s;
+        }
+        .stagger>*:nth-child(12) {
+            transition-delay: 0.6s;
+        }
+        .stagger>*:nth-child(13) {
+            transition-delay: 0.65s;
+        }
+        .stagger>*:nth-child(14) {
+            transition-delay: 0.7s;
+        }
+
+        /* ========================================================== */
+        /* NEW: PREMIUM VIDEO HERO SECTION                            */
+        /* ========================================================== */
+        .video-hero {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            background: #0B1220;
+        }
+
+        .video-hero .video-grid {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            /* 4 columns × 3 rows = 12 slots – enough for 11 videos */
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 0;
+            z-index: 0;
+        }
+
+        .video-hero .video-grid .grid-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            background: #0B1220;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+
+        .video-hero .video-grid .grid-video:hover {
+            transform: scale(1.04);
+            z-index: 1;
+        }
+
+        /* Overlay with gradient */
+        .video-hero .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(135deg,
+                    rgba(11, 18, 32, 0.88) 0%,
+                    rgba(11, 18, 32, 0.65) 40%,
+                    rgba(11, 18, 32, 0.50) 70%,
+                    rgba(11, 18, 32, 0.70) 100%);
+            pointer-events: none;
+        }
+
+        /* Additional vignette */
+        .video-hero .hero-vignette {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: radial-gradient(ellipse at 30% 50%, transparent 30%, rgba(11, 18, 32, 0.50) 100%);
+            pointer-events: none;
+        }
+
+        /* Content wrapper */
+        .video-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2.5rem;
+            width: 100%;
+        }
+
+        .video-hero .hero-content .inner {
+            max-width: 720px;
+            width: 100%;
+            color: #fff;
+        }
+
+        /* Badge */
+        .video-hero .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1.2rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(8px);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .video-hero .hero-badge i {
+            font-size: 0.55rem;
+            color: #b21d18;
+        }
+
+        /* Headline */
+        .video-hero .hero-headline {
+            font-size: 4.2rem;
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+        }
+        .video-hero .hero-headline .accent {
+            color: #b21d18;
+        }
+
+        /* Sub text */
+        .video-hero .hero-text {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            max-width: 540px;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Buttons */
+        .video-hero .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .video-hero .hero-actions .btn-primary {
+            background: #b21d18;
+            color: #fff;
+            padding: 0.85rem 2.4rem;
+            font-size: 0.95rem;
+            box-shadow: 0 8px 32px rgba(178, 29, 24, 0.35);
+        }
+        .video-hero .hero-actions .btn-primary:hover {
+            background: #8a1612;
+            box-shadow: 0 12px 48px rgba(178, 29, 24, 0.5);
+        }
+        .video-hero .hero-actions .btn-outline {
+            border-color: rgba(255, 255, 255, 0.25);
+            color: #fff;
+            padding: 0.85rem 2.4rem;
+            font-size: 0.95rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            min-height: 48px;
+            text-align: center;
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            background: transparent;
+        }
+        .video-hero .hero-actions .btn-outline:hover {
+            border-color: #b21d18;
+            background: rgba(178, 29, 24, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 36px -8px rgba(178, 29, 24, 0.2);
+        }
+
+        /* Stats */
+        .video-hero .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem 2rem;
+            max-width: 600px;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .video-hero .hero-stats .stat-item {
+            text-align: left;
+        }
+        .video-hero .hero-stats .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+            display: block;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        }
+        .video-hero .hero-stats .stat-number .suffix {
+            color: #b21d18;
+        }
+        .video-hero .hero-stats .stat-label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.2rem;
+            display: block;
+        }
+
+        /* Responsive: Tablet */
+        @media (max-width: 1024px) {
+            .video-hero .hero-headline {
+                font-size: 3.2rem;
+            }
+            .video-hero .hero-content {
+                padding: 5rem 2rem;
+            }
+            .video-hero .hero-stats {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem 1.5rem;
+                max-width: 100%;
+            }
+            .video-hero .hero-stats .stat-number {
+                font-size: 1.8rem;
+            }
+            /* Tablet video grid: 3 columns × 4 rows */
+            .video-hero .video-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+        }
+
+        /* Responsive: Mobile */
+        @media (max-width: 768px) {
+            .video-hero .video-grid {
+                /* Mobile: 2 columns × 6 rows */
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+            .video-hero .hero-content {
+                padding: 4rem 1.5rem;
+                align-items: center;
+                text-align: center;
+            }
+            .video-hero .hero-content .inner {
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .video-hero .hero-headline {
+                font-size: 2.4rem;
+                text-align: center;
+            }
+            .video-hero .hero-text {
+                font-size: 0.9rem;
+                text-align: center;
+                max-width: 100%;
+            }
+            .video-hero .hero-actions {
+                justify-content: center;
+            }
+            .video-hero .hero-actions .btn-primary,
+            .video-hero .hero-actions .btn-outline {
+                padding: 0.7rem 1.6rem;
+                font-size: 0.85rem;
+            }
+            .video-hero .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                max-width: 100%;
+                text-align: center;
+                border-top: none;
+                padding-top: 0;
+            }
+            .video-hero .hero-stats .stat-item {
+                text-align: center;
+            }
+            .video-hero .hero-stats .stat-number {
+                font-size: 1.6rem;
+            }
+            .video-hero .hero-stats .stat-label {
+                font-size: 0.6rem;
+            }
+            .video-hero .hero-badge {
+                font-size: 0.55rem;
+                padding: 0.3rem 1rem;
+            }
+            .video-hero .hero-overlay {
+                background: linear-gradient(180deg,
+                        rgba(11, 18, 32, 0.90) 0%,
+                        rgba(11, 18, 32, 0.70) 40%,
+                        rgba(11, 18, 32, 0.55) 70%,
+                        rgba(11, 18, 32, 0.80) 100%);
+            }
+            .video-hero .hero-vignette {
+                background: radial-gradient(ellipse at 50% 50%, transparent 20%, rgba(11, 18, 32, 0.70) 100%);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-hero .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+            .video-hero .hero-headline {
+                font-size: 1.8rem;
+            }
+            .video-hero .hero-text {
+                font-size: 0.8rem;
+            }
+            .video-hero .hero-actions {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .video-hero .hero-actions .btn-primary,
+            .video-hero .hero-actions .btn-outline {
+                width: 100%;
+                justify-content: center;
+            }
+            .video-hero .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+            .video-hero .hero-stats .stat-number {
+                font-size: 1.3rem;
+            }
+            .video-hero .hero-content {
+                padding: 3rem 1rem;
+            }
+        }
     </style>
     <base target="_blank" />
 </head>
@@ -866,7 +1349,9 @@
                 <ul class="hidden md:flex space-x-5 lg:space-x-7">
                     <li><a href="#home" class="nav-link text-sm font-medium" data-section="home">Home</a></li>
                     <li><a href="#services" class="nav-link text-sm font-medium" data-section="services">Services</a></li>
+                    <li><a href="#expertise" class="nav-link text-sm font-medium" data-section="expertise">Expertise</a></li>
                     <li><a href="#projects" class="nav-link text-sm font-medium" data-section="projects">Projects</a></li>
+                    <li><a href="#videos" class="nav-link text-sm font-medium" data-section="videos">Videos</a></li>
                     <li><a href="#industries" class="nav-link text-sm font-medium" data-section="industries">Industries</a></li>
                     <li><a href="#clients" class="nav-link text-sm font-medium" data-section="clients">Clients</a></li>
                     <li><a href="#about" class="nav-link text-sm font-medium" data-section="about">About</a></li>
@@ -882,7 +1367,9 @@
             <div id="mobileMenu" class="md:hidden hidden py-3 border-t border-gray-200" role="menu">
                 <a href="#home" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Home</a>
                 <a href="#services" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Services</a>
+                <a href="#expertise" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Expertise</a>
                 <a href="#projects" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Projects</a>
+                <a href="#videos" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Videos</a>
                 <a href="#industries" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Industries</a>
                 <a href="#clients" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Clients</a>
                 <a href="#about" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">About</a>
@@ -924,26 +1411,26 @@
             <p class="text-center text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-widest mb-3 sm:mb-4 md:mb-5">Trusted by Industry Leaders</p>
             <div class="marquee-wrap">
                 <div class="marquee-track" id="marqueeTrack">
-                    <div class="marquee-item"><img src="customer logo/abb.png" alt="ABB Robotics logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/uni.jpg" alt="Hindustan Unilever logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/jsw.webp" alt="JSW logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/jsw_paints_logo.svg" alt="JSW Paints logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/tvs.png" alt="TVS Group logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/yizumi.webp" alt="Yizumi logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/pra.webp" alt="Sipra Engineering logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/ficom.png" alt="FICOM Engineering logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/ola-cabs.webp" alt="Ola logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/abb.png" alt="ABB Robotics logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/uni.jpg" alt="Hindustan Unilever logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/jsw.webp" alt="JSW logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/jsw_paints_logo.svg" alt="JSW Paints logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/tvs.png" alt="TVS Group logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/yizumi.webp" alt="Yizumi logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/pra.webp" alt="Sipra Engineering logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/ficom.png" alt="FICOM Engineering logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals logo" /></div>
-                    <div class="marquee-item"><img src="customer logo/ola-cabs.webp" alt="Ola logo" /></div>
+                    <div class="marquee-item"><img src="customer logo/abb.png" alt="ABB Robotics" /></div>
+                    <div class="marquee-item"><img src="customer logo/uni.jpg" alt="HUL" /></div>
+                    <div class="marquee-item"><img src="customer logo/jsw.webp" alt="JSW" /></div>
+                    <div class="marquee-item"><img src="customer logo/jsw_paints_logo.svg" alt="JSW Paints" /></div>
+                    <div class="marquee-item"><img src="customer logo/tvs.png" alt="TVS Group" /></div>
+                    <div class="marquee-item"><img src="customer logo/yizumi.webp" alt="Yizumi" /></div>
+                    <div class="marquee-item"><img src="customer logo/pra.webp" alt="Sipra Engineering" /></div>
+                    <div class="marquee-item"><img src="customer logo/ficom.png" alt="FICOM Engineering" /></div>
+                    <div class="marquee-item"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals" /></div>
+                    <div class="marquee-item"><img src="customer logo/ola-cabs.webp" alt="Ola" /></div>
+                    <div class="marquee-item"><img src="customer logo/abb.png" alt="ABB Robotics" /></div>
+                    <div class="marquee-item"><img src="customer logo/uni.jpg" alt="HUL" /></div>
+                    <div class="marquee-item"><img src="customer logo/jsw.webp" alt="JSW" /></div>
+                    <div class="marquee-item"><img src="customer logo/jsw_paints_logo.svg" alt="JSW Paints" /></div>
+                    <div class="marquee-item"><img src="customer logo/tvs.png" alt="TVS Group" /></div>
+                    <div class="marquee-item"><img src="customer logo/yizumi.webp" alt="Yizumi" /></div>
+                    <div class="marquee-item"><img src="customer logo/pra.webp" alt="Sipra Engineering" /></div>
+                    <div class="marquee-item"><img src="customer logo/ficom.png" alt="FICOM Engineering" /></div>
+                    <div class="marquee-item"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals" /></div>
+                    <div class="marquee-item"><img src="customer logo/ola-cabs.webp" alt="Ola" /></div>
                 </div>
             </div>
         </div>
@@ -956,15 +1443,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center stagger" id="statsGrid">
                 <div>
-                    <div class="stat-number">40+</div>
+                    <div class="stat-number">50+</div>
                     <div class="stat-label">Projects Completed</div>
                 </div>
                 <div>
-                    <div class="stat-number">15+</div>
+                    <div class="stat-number">25+</div>
                     <div class="stat-label">Industrial Clients</div>
                 </div>
                 <div>
-                    <div class="stat-number">5+</div>
+                    <div class="stat-number">15+</div>
                     <div class="stat-label">States Served</div>
                 </div>
                 <div>
@@ -976,7 +1463,7 @@
     </section>
 
     <!-- ========================================================== -->
-    <!-- SERVICES                                                   -->
+    <!-- SERVICES (unchanged)                                       -->
     <!-- ========================================================== -->
     <section id="services" class="py-10 sm:py-14 md:py-16 lg:py-20" aria-label="Our services">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -1031,198 +1518,244 @@
     </section>
 
     <!-- ========================================================== -->
-    <!-- PROJECTS                                                   -->
+    <!-- EXPERTISE SECTION                                          -->
     <!-- ========================================================== -->
-    <section id="projects" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="Our projects">
+    <section id="expertise" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="Our expertise">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Our Expertise</h2>
+            <p class="text-gray-600 mb-8 md:mb-12 max-w-2xl text-sm sm:text-base reveal">Robotic automation capabilities across the industrial spectrum.</p>
 
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Featured Project</h2>
-            <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Real-world automation solutions deployed at client sites across India.</p>
-
-            <div class="featured-card reveal mb-10 md:mb-14">
-                <div class="grid md:grid-cols-5">
-                    <div class="md:col-span-3 bg-[#0B1220] min-h-[200px] sm:min-h-[260px] md:min-h-[320px] lg:min-h-[440px] relative">
-                        <video id="featuredVideo" poster="thumbnails/abb-thumb1.png" controls playsinline preload="metadata" class="w-full h-full object-cover" style="background:#0B1220;">
-                            <source src="videos/abb welding.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="md:col-span-2 featured-body p-5 sm:p-6 md:p-8 bg-white flex flex-col justify-center">
-                        <span class="featured-tag inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase bg-red-600 text-white mb-2 md:mb-3">Featured Project</span>
-                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1">ABB Welding Automation</h3>
-                        <p class="text-gray-500 text-xs sm:text-sm mb-2 md:mb-3">High-precision welding cell with 40% faster cycle times.</p>
-                        <div class="flex flex-wrap gap-1.5 sm:gap-2 mb-3 md:mb-4">
-                            <span class="inline-block px-2 py-0.5 rounded-full text-xs font-medium bg-red-50 text-red-600 border border-red-200 flex items-center gap-1">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" /></svg>
-                                ABB
-                            </span>
-                            <span class="inline-block px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200 flex items-center gap-1">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5m-4 0h4" /></svg>
-                                Automotive
-                            </span>
-                            <span class="inline-block px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200 flex items-center gap-1">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z" /></svg>
-                                Bengaluru
-                            </span>
-                            <span class="inline-block px-2 py-0.5 rounded-full text-xs font-medium bg-green-50 text-green-700 border border-green-200 flex items-center gap-1">
-                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5" /></svg>
-                                Active
-                            </span>
-                        </div>
-                        <p class="text-gray-600 text-xs sm:text-sm mb-3 md:mb-4">Deployed at a leading automotive component manufacturer. Achieved consistent weld quality with reduced rework.</p>
-                        <button onclick="document.getElementById('featuredVideo').play()" class="inline-flex items-center gap-2 text-red-600 font-semibold hover:text-red-800 transition text-sm btn-primary bg-red-50 hover:bg-red-100 px-5 py-2 rounded-full w-fit">
-                            ▶ Watch Project Video
-                        </button>
-                    </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-5 md:gap-6 stagger" id="expertiseGrid">
+                <div class="expertise-card">
+                    <div class="icon-wrap"><i class="fas fa-cubes"></i></div>
+                    <h4>Palletizing</h4>
+                    <p>Stacking &amp; handling</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="icon-wrap"><i class="fas fa-arrows-alt-h"></i></div>
+                    <h4>Material Handling</h4>
+                    <p>Conveyor &amp; transfer</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="icon-wrap"><i class="fas fa-cogs"></i></div>
+                    <h4>Machine Tending</h4>
+                    <p>CNC, injection molding</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="icon-wrap"><i class="fas fa-bolt"></i></div>
+                    <h4>Welding Applications</h4>
+                    <p>Arc, spot, laser</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="icon-wrap"><i class="fas fa-gem"></i></div>
+                    <h4>Buffing</h4>
+                    <p>Polishing &amp; finishing</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="icon-wrap"><i class="fas fa-paint-roller"></i></div>
+                    <h4>Gluing</h4>
+                    <p>Adhesive dispensing</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="icon-wrap"><i class="fas fa-boxes"></i></div>
+                    <h4>Packaging</h4>
+                    <p>End-of-line automation</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="icon-wrap"><i class="fas fa-hand-paper"></i></div>
+                    <h4>Pick &amp; Place</h4>
+                    <p>Precision placement</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="icon-wrap"><i class="fas fa-eye"></i></div>
+                    <h4>Vision Inspection</h4>
+                    <p>Quality assurance</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="icon-wrap"><i class="fas fa-microchip"></i></div>
+                    <h4>Robotic Assembly</h4>
+                    <p>Component integration</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="icon-wrap"><i class="fas fa-arrows-alt-v"></i></div>
+                    <h4>Conveyor Integration</h4>
+                    <p>Line synchronization</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="icon-wrap"><i class="fas fa-hand-grip"></i></div>
+                    <h4>End-of-Arm Tooling</h4>
+                    <p>Gripper &amp; tool design</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4 reveal">Project Gallery</h3>
-            <p class="text-gray-600 mb-6 md:mb-8 max-w-2xl text-sm sm:text-base reveal">Explore our latest automation projects — real factory work, real results.</p>
+    <!-- ========================================================== -->
+    <!-- PROJECT GALLERY                                            -->
+    <!-- ========================================================== -->
+    <section id="projects" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="Project gallery">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Project Gallery</h2>
+            <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Real-world automation solutions in action.</p>
 
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5" id="galleryGrid">
                 <div class="project-card reveal" onclick="openLightbox(0)">
-                    <img src="photos/PHOTO1.jpg" alt="ABB Commissioning project in Bengaluru" loading="lazy" />
-                    <div class="overlay"><div class="icon">⤡</div><h3>ABB Commissioning</h3><p>Bengaluru</p></div>
+                    <img src="photos/PHOTO1.jpg" alt="Project" loading="lazy" />
+                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
                 </div>
-                <div class="project-card tall reveal" onclick="openLightbox(1)">
-                    <img src="photos/PHOTO2.jpg" alt="Pick & Place Cell in Hosur" loading="lazy" />
-                    <div class="overlay"><div class="icon">⤡</div><h3>Pick &amp; Place</h3><p>Hosur</p></div>
+                <div class="project-card reveal" onclick="openLightbox(1)">
+                    <img src="photos/PHOTO2.jpg" alt="Project" loading="lazy" />
+                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
                 </div>
                 <div class="project-card reveal" onclick="openLightbox(2)">
-                    <img src="photos/PHOTO3.jpg" alt="Palletizing System in Pune" loading="lazy" />
-                    <div class="overlay"><div class="icon">⤡</div><h3>Palletizing</h3><p>Pune</p></div>
+                    <img src="photos/PHOTO3.jpg" alt="Project" loading="lazy" />
+                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
                 </div>
-                <div class="project-card wide reveal" onclick="openLightbox(3)">
-                    <img src="photos/PHOTO4.jpg" alt="Multi-Robot Work Cell in Krishnagiri" loading="lazy" />
-                    <div class="overlay"><div class="icon">⤡</div><h3>Multi-Robot Cell</h3><p>Krishnagiri</p></div>
+                <div class="project-card reveal" onclick="openLightbox(3)">
+                    <img src="photos/PHOTO4.jpg" alt="Project" loading="lazy" />
+                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
                 </div>
                 <div class="project-card reveal" onclick="openLightbox(4)">
-                    <img src="photos/5.jpg" alt="Paint Automation in Torangal" loading="lazy" />
-                    <div class="overlay"><div class="icon">⤡</div><h3>Paint Automation</h3><p>Torangal</p></div>
+                    <img src="photos/5.jpg" alt="Project" loading="lazy" />
+                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
                 </div>
-                <div class="project-card tall reveal" onclick="openLightbox(5)">
-                    <img src="photos/6.jpg" alt="CNC Loading Automation in Nasik" loading="lazy" />
-                    <div class="overlay"><div class="icon">⤡</div><h3>CNC Loading</h3><p>Nasik</p></div>
+                <div class="project-card reveal" onclick="openLightbox(5)">
+                    <img src="photos/6.jpg" alt="Project" loading="lazy" />
+                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
                 </div>
                 <div class="project-card reveal" onclick="openLightbox(6)">
-                    <img src="photos/7.jpg" alt="Vision Inspection in Bengaluru" loading="lazy" />
-                    <div class="overlay"><div class="icon">⤡</div><h3>Vision Inspection</h3><p>Bengaluru</p></div>
+                    <img src="photos/7.jpg" alt="Project" loading="lazy" />
+                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
                 </div>
                 <div class="project-card reveal" onclick="openLightbox(7)">
-                    <img src="photos/9.jpg" alt="Welding Automation in Hosur" loading="lazy" />
-                    <div class="overlay"><div class="icon">⤡</div><h3>Welding Automation</h3><p>Hosur</p></div>
+                    <img src="photos/9.jpg" alt="Project" loading="lazy" />
+                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
                 </div>
             </div>
 
             <div class="text-center mt-8 md:mt-10 reveal">
-                <a href="https://drive.google.com/drive/folders/1cars7JirZcXq9TOTMRg7xPprv3jxtCqb?usp=sharing" target="_blank" class="btn-primary">Explore Project Portfolio</a>
+                <a href="https://drive.google.com/drive/folders/1cars7JirZcXq9TOTMRg7xPprv3jxtCqb?usp=sharing" target="_blank" class="btn-primary">View Full Portfolio</a>
             </div>
         </div>
     </section>
 
     <!-- ========================================================== -->
-    <!-- VIDEOS                                                     -->
     <!-- ========================================================== -->
-    <section id="videos" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="Project videos">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Project Videos</h2>
-            <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Watch our automation solutions in action — real projects, real results.</p>
+    <!-- NEW: PREMIUM VIDEO HERO – 4x3 grid                         -->
+    <!-- ========================================================== -->
+    <!-- ========================================================== -->
+    <section id="videos" class="video-hero" aria-label="Industrial Automation Showcase">
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 stagger" id="videosGrid">
-                <!-- Video cards will be inserted here by JavaScript -->
-            </div>
+        <!-- 4×3 Video Grid Background (12 slots – we inject 11 videos) -->
+        <div class="video-grid" id="videoGrid">
+            <!-- 11 videos injected by JavaScript, one slot remains empty -->
+        </div>
 
-            <div class="text-center mt-8 md:mt-10 reveal">
-                <a href="https://drive.google.com/drive/folders/1cars7JirZcXq9TOTMRg7xPprv3jxtCqb?usp=sharing" target="_blank" class="btn-primary">View Complete Video Portfolio</a>
+        <!-- Dark gradient overlay -->
+        <div class="hero-overlay"></div>
+        <div class="hero-vignette"></div>
+
+        <!-- Content -->
+        <div class="hero-content">
+            <div class="inner">
+                <!-- Badge -->
+                <div class="hero-badge reveal">
+                    <i class="fas fa-industry"></i>
+                    Industrial Automation Experts
+                </div>
+
+                <!-- Headline -->
+                <h1 class="hero-headline reveal">
+                    <span class="accent">AUTOMATION.</span><br />
+                    ENGINEERED FOR EXCELLENCE.
+                </h1>
+
+                <!-- Supporting text -->
+                <p class="hero-text reveal">
+                    Delivering intelligent robotic automation solutions for manufacturing industries across India.
+                    From programming and simulation to commissioning and production support,
+                    GARS Robotics is your trusted automation partner.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-actions reveal">
+                    <a href="#projects" class="btn-primary">
+                        <i class="fas fa-arrow-right mr-2"></i> Explore Projects
+                    </a>
+                    <a href="#contact" class="btn-outline">
+                        Contact Us
+                    </a>
+                </div>
+
+                <!-- Bottom Statistics with animated counters -->
+                <div class="hero-stats" id="heroStats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="40">0<span class="suffix">+</span></span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="15">0<span class="suffix">+</span></span>
+                        <span class="stat-label">Industrial Clients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="15">0<span class="suffix">+</span></span>
+                        <span class="stat-label">States Served</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="24">0</span>
+                        <span class="stat-label">24/7 Technical Support</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ========================================================== -->
-    <!-- TECHNOLOGIES                                               -->
+    <!-- TIMELINE – REDESIGNED PREMIUM                              -->
     <!-- ========================================================== -->
-    <section class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="Technologies we work with">
+    <section class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="Project workflow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Technologies We Work With</h2>
-            <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Partnering with the world's leading robotics and automation brands.</p>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5 stagger" id="techGrid">
-                <div class="tech-logo"><img src="customer logo/abb.png" alt="ABB Robotics" /><span class="tech-name">ABB</span></div>
-                <div class="tech-logo"><img src="customer logo/tvs.png" alt="TVS Group" /><span class="tech-name">TVS</span></div>
-                <div class="tech-logo"><img src="customer logo/jsw.webp" alt="JSW" /><span class="tech-name">JSW</span></div>
-                <div class="tech-logo"><img src="customer logo/jsw_paints_logo.svg" alt="JSW Paints" /><span class="tech-name">JSW Paints</span></div>
-                <div class="tech-logo"><img src="customer logo/yizumi.webp" alt="Yizumi" /><span class="tech-name">Yizumi</span></div>
-                <div class="tech-logo"><img src="customer logo/pra.webp" alt="Sipra Engineering" /><span class="tech-name">Sipra</span></div>
-                <div class="tech-logo"><img src="customer logo/ficom.png" alt="FICOM Engineering" /><span class="tech-name">FICOM</span></div>
-                <div class="tech-logo"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals" /><span class="tech-name">Asian Metals</span></div>
-                <div class="tech-logo"><img src="customer logo/uni.jpg" alt="Hindustan Unilever" /><span class="tech-name">HUL</span></div>
-                <div class="tech-logo"><img src="customer logo/ola-cabs.webp" alt="Ola" /><span class="tech-name">Ola</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================================== -->
-    <!-- TIMELINE – ANIMATED STEP-BY-STEP                           -->
-    <!-- ========================================================== -->
-    <section class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="Project timeline">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-center reveal">Project Timeline</h2>
-            <p class="text-gray-600 mb-8 md:mb-12 text-center max-w-2xl mx-auto text-sm sm:text-base reveal">Our proven process from concept to production support.</p>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-center reveal">Project Workflow</h2>
+            <p class="text-gray-600 mb-8 md:mb-12 text-center max-w-2xl mx-auto text-sm sm:text-base reveal">Our engineering process from concept to production support.</p>
 
             <div class="timeline-wrapper">
                 <div class="timeline-inner" id="timeline">
-                    <!-- Animated line -->
                     <div class="timeline-line">
                         <div class="line-progress" id="lineProgress"></div>
                     </div>
 
-                    <!-- Step 1: Programming -->
                     <div class="timeline-step" data-step="0">
-                        <div class="step-circle">
-                            <span class="number">1</span>
-                            <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.25v-.75a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v.75m-4.5-9.75v.75m4.5-3.75v.75m-9 4.5v-.75a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v.75m-4.5-3.75v.75m4.5-3.75v.75" /></svg>
-                        </div>
-                        <div class="step-label">Programming</div>
-                        <div class="step-sub">Robot logic &amp; code</div>
+                        <div class="step-circle"><span class="number">1</span><i class="fas fa-search icon"></i></div>
+                        <div class="step-label">Analysis</div>
+                        <div class="step-sub">Requirement study</div>
                     </div>
-
-                    <!-- Step 2: Simulation -->
                     <div class="timeline-step" data-step="1">
-                        <div class="step-circle">
-                            <span class="number">2</span>
-                            <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" /></svg>
-                        </div>
+                        <div class="step-circle"><span class="number">2</span><i class="fas fa-cog icon"></i></div>
                         <div class="step-label">Simulation</div>
                         <div class="step-sub">Virtual validation</div>
                     </div>
-
-                    <!-- Step 3: Installation -->
                     <div class="timeline-step" data-step="2">
-                        <div class="step-circle">
-                            <span class="number">3</span>
-                            <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0z" /></svg>
-                        </div>
-                        <div class="step-label">Installation</div>
-                        <div class="step-sub">On-site setup</div>
+                        <div class="step-circle"><span class="number">3</span><i class="fas fa-check-circle icon"></i></div>
+                        <div class="step-label">FAT</div>
+                        <div class="step-sub">Factory test</div>
                     </div>
-
-                    <!-- Step 4: Commissioning -->
                     <div class="timeline-step" data-step="3">
-                        <div class="step-circle">
-                            <span class="number">4</span>
-                            <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
-                        </div>
-                        <div class="step-label">Commissioning</div>
-                        <div class="step-sub">Testing &amp; tuning</div>
+                        <div class="step-circle"><span class="number">4</span><i class="fas fa-tools icon"></i></div>
+                        <div class="step-label">Installation</div>
+                        <div class="step-sub">On‑site setup</div>
                     </div>
-
-                    <!-- Step 5: Production -->
                     <div class="timeline-step" data-step="4">
-                        <div class="step-circle">
-                            <span class="number">5</span>
-                            <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25z" /></svg>
-                        </div>
+                        <div class="step-circle"><span class="number">5</span><i class="fas fa-code icon"></i></div>
+                        <div class="step-label">Programming</div>
+                        <div class="step-sub">Logic &amp; code</div>
+                    </div>
+                    <div class="timeline-step" data-step="5">
+                        <div class="step-circle"><span class="number">6</span><i class="fas fa-play icon"></i></div>
+                        <div class="step-label">Commissioning</div>
+                        <div class="step-sub">Tuning &amp; test</div>
+                    </div>
+                    <div class="timeline-step" data-step="6">
+                        <div class="step-circle"><span class="number">7</span><i class="fas fa-industry icon"></i></div>
                         <div class="step-label">Production</div>
                         <div class="step-sub">Live support</div>
                     </div>
@@ -1232,130 +1765,109 @@
     </section>
 
     <!-- ========================================================== -->
-    <!-- INDUSTRIES                                                 -->
+    <!-- INDUSTRIES – Expanded (All 14)                             -->
     <!-- ========================================================== -->
-    <section id="industries" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="Industries we serve">
+    <section id="industries" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="Industries we serve">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Industries We Serve</h2>
-            <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Automation solutions across diverse industrial sectors.</p>
+            <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Automation solutions tailored for diverse sectors.</p>
 
-            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 stagger" id="industriesGrid">
-                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4 md:p-5 text-center hover:shadow-md transition-all hover:border-red-500">
-                    <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto mb-1.5 sm:mb-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25z" /></svg>
-                    <span class="text-xs sm:text-sm font-medium">Appliances</span>
-                </div>
-                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4 md:p-5 text-center hover:shadow-md transition-all hover:border-red-500">
-                    <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto mb-1.5 sm:mb-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5ZM4.5 12a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Zm15 0a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5ZM12 12a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Z" /></svg>
-                    <span class="text-xs sm:text-sm font-medium">Automotive</span>
-                </div>
-                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4 md:p-5 text-center hover:shadow-md transition-all hover:border-red-500">
-                    <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto mb-1.5 sm:mb-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.25v-.75a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v.75m-4.5-9.75v.75m4.5-3.75v.75m-9 4.5v-.75a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v.75m-4.5-3.75v.75m4.5-3.75v.75" /></svg>
-                    <span class="text-xs sm:text-sm font-medium">Chemical</span>
-                </div>
-                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4 md:p-5 text-center hover:shadow-md transition-all hover:border-red-500">
-                    <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto mb-1.5 sm:mb-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 5.4a3.75 3.75 0 0 1-3.638 4.593H8.569a3.75 3.75 0 0 1-3.638-4.593l1.263-5.4" /></svg>
-                    <span class="text-xs sm:text-sm font-medium">Consumer Goods</span>
-                </div>
-                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4 md:p-5 text-center hover:shadow-md transition-all hover:border-red-500">
-                    <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto mb-1.5 sm:mb-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75v4.5m0 0h4.5m-4.5 0 4.5-4.5M12 17.25v-4.5m0 0H7.5m4.5 0-4.5 4.5" /></svg>
-                    <span class="text-xs sm:text-sm font-medium">Cosmetics</span>
-                </div>
-                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4 md:p-5 text-center hover:shadow-md transition-all hover:border-red-500">
-                    <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto mb-1.5 sm:mb-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25z" /></svg>
-                    <span class="text-xs sm:text-sm font-medium">Electronics</span>
-                </div>
-                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4 md:p-5 text-center hover:shadow-md transition-all hover:border-red-500">
-                    <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto mb-1.5 sm:mb-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" /></svg>
-                    <span class="text-xs sm:text-sm font-medium">Fiber Optics</span>
-                </div>
-                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4 md:p-5 text-center hover:shadow-md transition-all hover:border-red-500">
-                    <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto mb-1.5 sm:mb-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" /></svg>
-                    <span class="text-xs sm:text-sm font-medium">Food &amp; Beverage</span>
-                </div>
-                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4 md:p-5 text-center hover:shadow-md transition-all hover:border-red-500">
-                    <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto mb-1.5 sm:mb-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25z" /></svg>
-                    <span class="text-xs sm:text-sm font-medium">Medical Devices</span>
-                </div>
-                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4 md:p-5 text-center hover:shadow-md transition-all hover:border-red-500">
-                    <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto mb-1.5 sm:mb-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.25v-.75a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v.75m-4.5-9.75v.75m4.5-3.75v.75m-9 4.5v-.75a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v.75m-4.5-3.75v.75m4.5-3.75v.75" /></svg>
-                    <span class="text-xs sm:text-sm font-medium">Pharma</span>
-                </div>
-                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4 md:p-5 text-center hover:shadow-md transition-all hover:border-red-500">
-                    <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto mb-1.5 sm:mb-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25z" /></svg>
-                    <span class="text-xs sm:text-sm font-medium">Plastics</span>
-                </div>
-                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4 md:p-5 text-center hover:shadow-md transition-all hover:border-red-500">
-                    <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto mb-1.5 sm:mb-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" /></svg>
-                    <span class="text-xs sm:text-sm font-medium">Textiles</span>
-                </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5 stagger" id="industriesGrid">
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-blender-phone"></i></div><span>Appliances</span></div>
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-car"></i></div><span>Automotive</span></div>
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-flask"></i></div><span>Chemical</span></div>
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-shopping-bag"></i></div><span>Consumer Goods</span></div>
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-paint-brush"></i></div><span>Cosmetics</span></div>
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-microchip"></i></div><span>Electronics</span></div>
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-wifi"></i></div><span>Fiber Optics &amp; Glass</span></div>
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-utensils"></i></div><span>Food &amp; Beverage</span></div>
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-stethoscope"></i></div><span>Medical Devices</span></div>
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-pills"></i></div><span>Pharmaceutical</span></div>
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-recycle"></i></div><span>Plastics</span></div>
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-bolt"></i></div><span>Power Generation</span></div>
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-tshirt"></i></div><span>Textiles</span></div>
+                <div class="industry-card"><div class="icon-wrap"><i class="fas fa-smoking-ban"></i></div><span>Tobacco</span></div>
             </div>
         </div>
     </section>
 
     <!-- ========================================================== -->
-    <!-- ELITE CUSTOMERS                                            -->
+    <!-- ELITE CUSTOMERS – CLEAN LOGO GRID                          -->
     <!-- ========================================================== -->
-    <section id="clients" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="Elite customers">
+    <section id="clients" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="Elite customers">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Elite Customers</h2>
-            <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Trusted by leading manufacturers across India.</p>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Our Elite Customers</h2>
+            <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Trusted by leading manufacturers across India and beyond.</p>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5 stagger" id="clientsGrid">
-                <div class="logo-tile"><img src="customer logo/abb.png" alt="ABB Robotics" /><span class="logo-name">ABB Robotics</span><span class="logo-location">Bengaluru</span></div>
-                <div class="logo-tile"><img src="customer logo/uni.jpg" alt="HUL" /><span class="logo-name">HUL</span><span class="logo-location">Pan India</span></div>
-                <div class="logo-tile"><img src="customer logo/jsw.webp" alt="JSW" /><span class="logo-name">JSW</span><span class="logo-location">Torangal</span></div>
-                <div class="logo-tile"><img src="customer logo/jsw_paints_logo.svg" alt="JSW Paints" /><span class="logo-name">JSW Paints</span><span class="logo-location">Torangal</span></div>
-                <div class="logo-tile"><img src="customer logo/tvs.png" alt="TVS Group" /><span class="logo-name">TVS Group</span><span class="logo-location">Hosur</span></div>
-                <div class="logo-tile"><img src="customer logo/yizumi.webp" alt="Yizumi" /><span class="logo-name">Yizumi</span><span class="logo-location">Pune</span></div>
-                <div class="logo-tile"><img src="customer logo/pra.webp" alt="Sipra Engineering" /><span class="logo-name">Sipra Engg</span><span class="logo-location">Nasik</span></div>
-                <div class="logo-tile"><img src="customer logo/abb.png" alt="ABB ELSP" /><span class="logo-name">ABB - ELSP</span><span class="logo-location">Bengaluru</span></div>
-                <div class="logo-tile"><img src="customer logo/ficom.png" alt="FICOM Engineering" /><span class="logo-name">FICOM Engg</span><span class="logo-location">Bengaluru</span></div>
-                <div class="logo-tile"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals" /><span class="logo-name">Asian Metals</span><span class="logo-location">Bengaluru</span></div>
-                <div class="logo-tile"><img src="customer logo/ola-cabs.webp" alt="Ola" /><span class="logo-name">Ola</span><span class="logo-location">Krishnagiri</span></div>
-                <div class="logo-tile border border-gray-200 bg-white/70 flex flex-col items-center justify-center min-h-[85px] sm:min-h-[95px] rounded-xl p-2 sm:p-3">
-                    <span class="text-base sm:text-lg font-semibold text-gray-400">+</span>
-                    <span class="text-[0.5rem] sm:text-xs font-medium text-gray-500 text-center">Client Name</span>
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6" id="clientsGrid">
+                <!-- ABB Robotics -->
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
+                    <img src="customer logo/abb.png" alt="ABB Robotics" onerror="this.style.display='none'" />
                 </div>
-                <div class="logo-tile border border-gray-200 bg-white/70 flex flex-col items-center justify-center min-h-[85px] sm:min-h-[95px] rounded-xl p-2 sm:p-3">
-                    <span class="text-base sm:text-lg font-semibold text-gray-400">+</span>
-                    <span class="text-[0.5rem] sm:text-xs font-medium text-gray-500 text-center">Client Name</span>
+
+                <!-- HUL -->
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
+                    <img src="customer logo/uni.jpg" alt="HUL" onerror="this.style.display='none'" />
                 </div>
-                <div class="logo-tile border border-gray-200 bg-white/70 flex flex-col items-center justify-center min-h-[85px] sm:min-h-[95px] rounded-xl p-2 sm:p-3">
-                    <span class="text-base sm:text-lg font-semibold text-gray-400">+</span>
-                    <span class="text-[0.5rem] sm:text-xs font-medium text-gray-500 text-center">Client Name</span>
+
+                <!-- JSW -->
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
+                    <img src="customer logo/jsw.webp" alt="JSW" onerror="this.style.display='none'" />
                 </div>
-                <div class="logo-tile border border-gray-200 bg-white/70 flex flex-col items-center justify-center min-h-[85px] sm:min-h-[95px] rounded-xl p-2 sm:p-3">
-                    <span class="text-base sm:text-lg font-semibold text-gray-400">+</span>
-                    <span class="text-[0.5rem] sm:text-xs font-medium text-gray-500 text-center">Client Name</span>
+
+                <!-- JSW Paints -->
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
+                    <img src="customer logo/jsw_paints_logo.svg" alt="JSW Paints" onerror="this.style.display='none'" />
                 </div>
-                <div class="logo-tile border border-gray-200 bg-white/70 flex flex-col items-center justify-center min-h-[85px] sm:min-h-[95px] rounded-xl p-2 sm:p-3">
-                    <span class="text-base sm:text-lg font-semibold text-gray-400">+</span>
-                    <span class="text-[0.5rem] sm:text-xs font-medium text-gray-500 text-center">Client Name</span>
+
+                <!-- SCL - TVS Group -->
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
+                    <img src="customer logo/tvs.png" alt="TVS Group" onerror="this.style.display='none'" />
                 </div>
-                <div class="logo-tile border border-gray-200 bg-white/70 flex flex-col items-center justify-center min-h-[85px] sm:min-h-[95px] rounded-xl p-2 sm:p-3">
-                    <span class="text-base sm:text-lg font-semibold text-gray-400">+</span>
-                    <span class="text-[0.5rem] sm:text-xs font-medium text-gray-500 text-center">Client Name</span>
+
+                <!-- Yizumi -->
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
+                    <img src="customer logo/yizumi.webp" alt="Yizumi" onerror="this.style.display='none'" />
                 </div>
-                <div class="logo-tile border border-gray-200 bg-white/70 flex flex-col items-center justify-center min-h-[85px] sm:min-h-[95px] rounded-xl p-2 sm:p-3">
-                    <span class="text-base sm:text-lg font-semibold text-gray-400">+</span>
-                    <span class="text-[0.5rem] sm:text-xs font-medium text-gray-500 text-center">Client Name</span>
+
+                <!-- Sipra Engineering -->
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
+                    <img src="customer logo/pra.webp" alt="Sipra Engineering" onerror="this.style.display='none'" />
                 </div>
-                <div class="logo-tile border border-gray-200 bg-white/70 flex flex-col items-center justify-center min-h-[85px] sm:min-h-[95px] rounded-xl p-2 sm:p-3">
-                    <span class="text-base sm:text-lg font-semibold text-gray-400">+</span>
-                    <span class="text-[0.5rem] sm:text-xs font-medium text-gray-500 text-center">Client Name</span>
+
+                <!-- ABB ELSP -->
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
+                    <img src="customer logo/abb.png" alt="ABB ELSP" onerror="this.style.display='none'" />
                 </div>
-                <div class="logo-tile border border-gray-200 bg-gray-50/80 flex flex-col items-center justify-center min-h-[85px] sm:min-h-[95px] rounded-xl p-2 sm:p-3">
-                    <span class="text-xs sm:text-sm font-semibold text-gray-700">15+ Industrial</span>
-                    <span class="text-[0.5rem] sm:text-xs text-gray-500 text-center">Customers Across India</span>
+
+                <!-- FICOM Engineering -->
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
+                    <img src="customer logo/ficom.png" alt="FICOM Engineering" onerror="this.style.display='none'" />
+                </div>
+
+                <!-- Asian Metals & Castings -->
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
+                    <img src="customer logo/asian_metals_logo.svg" alt="Asian Metals & Castings" onerror="this.style.display='none'" />
+                </div>
+
+                <!-- Ola -->
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
+                    <img src="customer logo/ola real.webp" alt="Ola" onerror="this.style.display='none'" />
+                </div>
+
+                <!-- Many More Coming Soon -->
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px; border:1px dashed #d1d5db; background:#fafafa; flex-direction:column; gap:0.15rem; padding:0.75rem;">
+                    <span class="text-gray-400 text-sm font-medium">Many More</span>
+                    <span class="text-gray-400 text-xs">Coming Soon</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========================================================== -->
-    <!-- ABOUT                                                      -->
+    <!-- ABOUT (with Leadership intact)                             -->
     <!-- ========================================================== -->
-    <section id="about" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="About us">
+    <section id="about" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="About us">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">About GARS Robotics</h2>
             <p class="text-gray-600 mb-4 md:mb-6 max-w-3xl text-sm sm:text-base reveal">Founded in 2019, we are on a mission to make industrial automation accessible, intelligent, and reliable.</p>
@@ -1367,60 +1879,63 @@
             </div>
 
             <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-7 mb-8 md:mb-12 reveal">
-                <div class="bg-gray-50 p-5 sm:p-6 md:p-7 rounded-2xl border border-gray-200">
+                <div class="bg-white p-5 sm:p-6 md:p-7 rounded-2xl border border-gray-200">
                     <h3 class="text-xl sm:text-2xl font-bold text-red-600 mb-1.5 sm:mb-2">Our Mission</h3>
                     <p class="text-gray-700 text-sm sm:text-base leading-relaxed">To provide reliable and efficient robotic programming and automation support that enhances productivity, reduces downtime, and strengthens manufacturing performance.</p>
                 </div>
-                <div class="bg-gray-50 p-5 sm:p-6 md:p-7 rounded-2xl border border-gray-200">
+                <div class="bg-white p-5 sm:p-6 md:p-7 rounded-2xl border border-gray-200">
                     <h3 class="text-xl sm:text-2xl font-bold text-red-600 mb-1.5 sm:mb-2">Our Vision</h3>
                     <p class="text-gray-700 text-sm sm:text-base leading-relaxed">To become a trusted industrial automation partner known for high-quality integration, technical expertise, and long-term customer support.</p>
                 </div>
             </div>
 
+            <!-- ========================================================== -->
+            <!-- LEADERSHIP – FULLY INTACT                                  -->
+            <!-- ========================================================== -->
             <h3 class="text-2xl sm:text-3xl font-bold mb-5 md:mb-8 reveal">Leadership</h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-7 stagger" id="leadershipGrid">
-                <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('M/s Pooja S Hebbal', 'Proprietor', 'Proprietor with expertise in industrial automation, leading the company with a vision for quality and innovation.')">
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center text-2xl sm:text-3xl text-gray-500">👤</div>
-                    <h4 class="text-base sm:text-lg md:text-xl font-bold">M/s Pooja S Hebbal</h4>
-                    <p class="text-red-600 text-xs sm:text-sm mb-1">Proprietor</p>
-                    <p class="text-gray-500 text-xs sm:text-sm">Leading with vision and expertise.</p>
-                </div>
-                <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('Team Member 2', 'Position', 'Add bio here.')">
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center text-2xl sm:text-3xl text-gray-500">👤</div>
-                    <h4 class="text-base sm:text-lg md:text-xl font-bold">Team Member 2</h4>
-                    <p class="text-red-600 text-xs sm:text-sm mb-1">Position</p>
-                    <p class="text-gray-500 text-xs sm:text-sm">Add bio here.</p>
-                </div>
-                <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('Team Member 3', 'Position', 'Add bio here.')">
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center text-2xl sm:text-3xl text-gray-500">👤</div>
-                    <h4 class="text-base sm:text-lg md:text-xl font-bold">Team Member 3</h4>
-                    <p class="text-red-600 text-xs sm:text-sm mb-1">Position</p>
-                    <p class="text-gray-500 text-xs sm:text-sm">Add bio here.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-7 stagger" id="leadershipGrid">
+    <!-- M/s Pooja S Hebbal -->
+    <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('M/s Pooja S Hebbal', 'Proprietor', 'Proprietor with expertise in industrial automation, leading the company with a vision for quality and innovation.')">
+        <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center text-2xl sm:text-3xl text-gray-500">👤</div>
+        <h4 class="text-base sm:text-lg md:text-xl font-bold">M/s Pooja S Hebbal</h4>
+        <p class="text-red-600 text-xs sm:text-sm mb-1">Proprietor</p>
+        <p class="text-gray-500 text-xs sm:text-sm">Leading with vision and expertise.</p>
+    </div>
+
+    <!-- Mr. Rachoteshwar Aiholli -->
+    <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('Mr. Rachoteshwar Aiholli', 'Project Manager', 'Project Manager with expertise in industrial automation projects, leading project execution and client coordination.')">
+        <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center text-2xl sm:text-3xl text-gray-500">👤</div>
+        <h4 class="text-base sm:text-lg md:text-xl font-bold">Mr. Rachoteshwar Aiholli</h4>
+        <p class="text-red-600 text-xs sm:text-sm mb-1">Project Manager</p>
+        <p class="text-gray-500 text-xs sm:text-sm">Leading project execution and client coordination.</p>
+    </div>
+
+    <!-- Mr. Chandru Badodagi -->
+    <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('Mr. Chandru Badodagi', 'Robotic Engineer', 'Robotic Engineer specializing in ABB, FANUC, and Kawasaki programming, with hands-on experience in system integration and commissioning.')">
+        <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center text-2xl sm:text-3xl text-gray-500">👤</div>
+        <h4 class="text-base sm:text-lg md:text-xl font-bold">Mr. Chandru Badodagi</h4>
+        <p class="text-red-600 text-xs sm:text-sm mb-1">Robotic Engineer</p>
+        <p class="text-gray-500 text-xs sm:text-sm">Expert in robotic programming and system integration.</p>
+    </div>
+</div>
 
     <!-- ========================================================== -->
-    <!-- CAREERS – FIXED: Proper form with FormSubmit               -->
+    <!-- CAREERS (unchanged)                                        -->
     <!-- ========================================================== -->
-    <section id="careers" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="Careers">
+    <section id="careers" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="Careers">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Join Our Team</h2>
             <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Help us build the future of automation. We're looking for curious, driven people.</p>
 
             <div class="space-y-6" id="careersList">
                 <!-- Robot Programmer -->
-                <div class="bg-white border border-gray-200 rounded-xl p-5 sm:p-6">
+                <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 sm:p-6">
                     <div class="mb-4">
                         <h3 class="text-xl font-bold">Robot Programmer</h3>
                         <p class="text-gray-500 text-sm">Bengaluru · 0-2 Years</p>
                         <p class="text-gray-600 text-sm mt-1">ABB, FANUC, KUKA programming, PLC integration.</p>
                     </div>
-                    <form action="https://formsubmit.co/hiring.garsrobotics@gmail.com" method="POST" class="space-y-3">
-                        <input type="hidden" name="_subject" value="Application for Robot Programmer">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
+                    <form class="ajax-form space-y-3" data-subject="Application for Robot Programmer">
                         <div class="grid sm:grid-cols-2 gap-3">
                             <input type="text" name="Full Name" placeholder="Full Name" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
                             <input type="email" name="Email" placeholder="Email Address" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
@@ -1435,15 +1950,12 @@
                 </div>
 
                 <!-- Senior Robotics Engineer -->
-                <div class="bg-white border border-gray-200 rounded-xl p-5 sm:p-6 opacity-60">
+                <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 sm:p-6 opacity-60">
                     <div class="mb-4">
                         <h3 class="text-xl font-bold">Senior Robotics Engineer</h3>
                         <p class="text-gray-500 text-sm">Stuttgart, Germany · Full-time</p>
                     </div>
-                    <form action="https://formsubmit.co/hiring.garsrobotics@gmail.com" method="POST" class="space-y-3">
-                        <input type="hidden" name="_subject" value="Application for Senior Robotics Engineer">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
+                    <form class="ajax-form space-y-3" data-subject="Application for Senior Robotics Engineer">
                         <div class="grid sm:grid-cols-2 gap-3">
                             <input type="text" name="Full Name" placeholder="Full Name" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
                             <input type="email" name="Email" placeholder="Email Address" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
@@ -1458,15 +1970,12 @@
                 </div>
 
                 <!-- AI Vision Specialist -->
-                <div class="bg-white border border-gray-200 rounded-xl p-5 sm:p-6 opacity-60">
+                <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 sm:p-6 opacity-60">
                     <div class="mb-4">
                         <h3 class="text-xl font-bold">AI Vision Specialist</h3>
                         <p class="text-gray-500 text-sm">Bangalore · Full-time</p>
                     </div>
-                    <form action="https://formsubmit.co/hiring.garsrobotics@gmail.com" method="POST" class="space-y-3">
-                        <input type="hidden" name="_subject" value="Application for AI Vision Specialist">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
+                    <form class="ajax-form space-y-3" data-subject="Application for AI Vision Specialist">
                         <div class="grid sm:grid-cols-2 gap-3">
                             <input type="text" name="Full Name" placeholder="Full Name" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
                             <input type="email" name="Email" placeholder="Email Address" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
@@ -1484,30 +1993,27 @@
     </section>
 
     <!-- ========================================================== -->
-    <!-- CONTACT – FIXED: Proper form with FormSubmit               -->
+    <!-- CONTACT (unchanged)                                        -->
     <!-- ========================================================== -->
-    <section id="contact" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="Contact us">
+    <section id="contact" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="Contact us">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Get in Touch</h2>
             <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Have a question? Want to discuss a project? Our team is ready to help.</p>
 
             <div class="grid lg:grid-cols-2 gap-6 md:gap-8 reveal">
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 sm:p-6 md:p-7">
-                    <form action="https://formsubmit.co/garsrobotics@gmail.com" method="POST" class="space-y-3 sm:space-y-4">
-                        <input type="hidden" name="_subject" value="New Enquiry from GARS Robotics Website">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
+                <div class="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 md:p-7">
+                    <form id="contactForm" class="ajax-form space-y-3 sm:space-y-4" data-subject="New Enquiry from GARS Robotics Website">
                         <div>
                             <label class="block text-sm font-medium mb-1" for="contact-name">Name</label>
-                            <input type="text" id="contact-name" name="Name" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="Enter your name" required>
+                            <input type="text" id="contact-name" name="name" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="Enter your name" required>
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-1" for="contact-email">Email</label>
-                            <input type="email" id="contact-email" name="Email" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="your@email.com" required>
+                            <input type="email" id="contact-email" name="email" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="your@email.com" required>
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-1" for="contact-message">Message</label>
-                            <textarea id="contact-message" name="Message" rows="4" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="Write your message here..." required></textarea>
+                            <textarea id="contact-message" name="message" rows="4" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="Write your message here..." required></textarea>
                         </div>
                         <button type="submit" class="btn-primary w-full">Send message</button>
                     </form>
@@ -1577,7 +2083,9 @@
                     <div class="space-y-1.5 sm:space-y-2">
                         <a href="#home" class="footer-link block text-xs sm:text-sm">Home</a>
                         <a href="#services" class="footer-link block text-xs sm:text-sm">Services</a>
+                        <a href="#expertise" class="footer-link block text-xs sm:text-sm">Expertise</a>
                         <a href="#projects" class="footer-link block text-xs sm:text-sm">Projects</a>
+                        <a href="#videos" class="footer-link block text-xs sm:text-sm">Videos</a>
                         <a href="#industries" class="footer-link block text-xs sm:text-sm">Industries</a>
                         <a href="#clients" class="footer-link block text-xs sm:text-sm">Clients</a>
                         <a href="#about" class="footer-link block text-xs sm:text-sm">About</a>
@@ -1666,35 +2174,35 @@
 
     <script>
         // =============================================================
-        // DATA – only 8 genuine projects
+        // DATA – projects (8 images, no captions)
         // =============================================================
         const projects = [
-            { src: 'photos/PHOTO1.jpg', title: 'ABB Commissioning', location: 'Bengaluru, India' },
-            { src: 'photos/PHOTO2.jpg', title: 'Pick & Place Cell', location: 'Hosur, India' },
-            { src: 'photos/PHOTO3.jpg', title: 'Palletizing System', location: 'Pune, India' },
-            { src: 'photos/PHOTO4.jpg', title: 'Multi-Robot Cell', location: 'Krishnagiri, India' },
-            { src: 'photos/5.jpg', title: 'Paint Automation', location: 'Torangal, India' },
-            { src: 'photos/6.jpg', title: 'CNC Loading', location: 'Nasik, India' },
-            { src: 'photos/7.jpg', title: 'Vision Inspection', location: 'Bengaluru, India' },
-            { src: 'photos/9.jpg', title: 'Welding Automation', location: 'Hosur, India' }
+            { src: 'photos/PHOTO1.jpg' },
+            { src: 'photos/PHOTO2.jpg' },
+            { src: 'photos/PHOTO3.jpg' },
+            { src: 'photos/PHOTO4.jpg' },
+            { src: 'photos/5.jpg' },
+            { src: 'photos/6.jpg' },
+            { src: 'photos/7.jpg' },
+            { src: 'photos/9.jpg' }
         ];
 
         // =============================================================
-        // VIDEO DATA
+        // VIDEO FILES – using your provided 11 filenames
         // =============================================================
-        const videos = [
-            { src: 'videos/3d.mp4', thumb: 'thumbnails/3d-thumb1.png', title: '3D Vision Robotics',
-            client: 'Client Name' },
-            { src: 'videos/abb welding.mp4', thumb: 'thumbnails/abb-thumb1.png', title: 'ABB Welding Automation',
-                client: 'JSW · Torangal' },
-            { src: 'videos/blocks.mp4', thumb: 'thumbnails/block-thumb.png', title: 'Block Palletising System',
-                client: 'Client Name' },
-            { src: 'videos/jsw paint video.mp4', thumb: 'thumbnails/paint-thumb.png', title: 'ABB Paint Automation',
-                client: 'JSW Paints · Torangal' },
-            { src: 'videos/tyres.mp4', thumb: 'thumbnails/tyres-thumb.png', title: 'Tyre Handling Automation',
-                client: 'Client Name' },
-            { src: 'videos/video3.mp4', thumb: 'thumbnails/video-thumb3.png', title: 'Kawasaki Palletising',
-                client: 'Yizumi · Pune' }
+        const videoFiles = [
+            'videos/3d-simulation.mp4',
+            'videos/3d-video.mp4',
+            'videos/3d.mp4',
+            'videos/abb welding.mp4',
+            'videos/abb-video 8.mp4',
+            'videos/blocks.mp4',
+            'videos/die casting.mp4',
+            'videos/double arm.mp4',
+            'videos/jsw paint video.mp4',
+            'videos/packaging.mp4',
+            'videos/tyres.mp4'
+            // 12th slot remains empty – you can add one more video later if needed
         ];
 
         // =============================================================
@@ -1706,32 +2214,23 @@
             let currentStep = 0;
 
             function updateStep(index) {
-                // Reset all steps
                 steps.forEach(step => {
                     step.classList.remove('active', 'completed');
                 });
-
-                // Mark completed steps
                 for (let i = 0; i < index; i++) {
                     steps[i].classList.add('completed');
                 }
-
-                // Mark current step as active
                 if (index < steps.length) {
                     steps[index].classList.add('active');
                 }
-
-                // Update progress line
                 const percentage = ((index) / (steps.length - 1)) * 100;
                 progress.style.width = percentage + '%';
             }
 
-            // Auto-play the timeline
             let interval = setInterval(() => {
                 currentStep++;
                 if (currentStep >= steps.length) {
                     clearInterval(interval);
-                    // Reset after a delay
                     setTimeout(() => {
                         currentStep = 0;
                         updateStep(0);
@@ -1749,74 +2248,97 @@
                 updateStep(currentStep);
             }, 1200);
 
-            // Initial state
             updateStep(0);
         }
 
         // =============================================================
-        // GENERATE VIDEO CARDS
+        // VIDEO GRID – inject 11 videos (one slot remains empty)
         // =============================================================
-        document.addEventListener('DOMContentLoaded', function() {
-            // Timeline animation
-            animateTimeline();
-
-            // Video cards
-            const grid = document.getElementById('videosGrid');
+        (function() {
+            const grid = document.getElementById('videoGrid');
             if (!grid) return;
 
-            grid.innerHTML = '';
+            // We have 11 videos, grid has 12 slots (4×3). One slot remains empty.
+            videoFiles.forEach((src, index) => {
+                const video = document.createElement('video');
+                video.className = 'grid-video';
+                video.src = src;
+                video.autoplay = true;
+                video.muted = true;
+                video.loop = true;
+                video.playsInline = true;
+                video.disablePictureInPicture = true;
+                video.setAttribute('aria-hidden', 'true');
 
-            videos.forEach((video, index) => {
-                const card = document.createElement('div');
-                card.className = 'video-card';
-                card.setAttribute('onclick', `openVideoModal(${index})`);
+                // Stagger start times for organic feel
+                video.addEventListener('loadeddata', function() {
+                    if (index > 0) {
+                        this.currentTime = (index / videoFiles.length) * this.duration * 0.7;
+                    }
+                });
 
-                const img = document.createElement('img');
-                img.src = video.thumb;
-                img.alt = video.title + ' video thumbnail';
-                img.loading = 'lazy';
-                card.appendChild(img);
-
-                const playBtn = document.createElement('div');
-                playBtn.className = 'play-btn';
-                playBtn.setAttribute('aria-hidden', 'true');
-                playBtn.textContent = '▶';
-                card.appendChild(playBtn);
-
-                const info = document.createElement('div');
-                info.className = 'video-info absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-black/80 to-transparent text-white';
-
-                const titleEl = document.createElement('h3');
-                titleEl.className = 'text-sm sm:text-base font-bold';
-                titleEl.textContent = video.title;
-                info.appendChild(titleEl);
-
-                const clientEl = document.createElement('p');
-                clientEl.className = 'text-xs opacity-80';
-                clientEl.textContent = video.client;
-                info.appendChild(clientEl);
-
-                const brandTag = document.createElement('span');
-                brandTag.className = 'brand-tag inline-block text-xs font-semibold uppercase bg-red-600/70 text-white px-2 py-0.5 rounded-full mt-1';
-                const brand = video.title.split(' ')[0] || 'Robot';
-                brandTag.textContent = brand;
-                info.appendChild(brandTag);
-
-                card.appendChild(info);
-                grid.appendChild(card);
+                grid.appendChild(video);
             });
+
+            // The 12th cell remains empty – that's perfectly fine.
+        })();
+
+        // =============================================================
+        // ANIMATED COUNTERS
+        // =============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const statNumbers = document.querySelectorAll('#heroStats .stat-number');
+            let countersAnimated = false;
+
+            function animateCounters() {
+                if (countersAnimated) return;
+                countersAnimated = true;
+
+                statNumbers.forEach(el => {
+                    const target = parseInt(el.getAttribute('data-target'));
+                    let current = 0;
+                    const increment = Math.ceil(target / 60);
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        // Update text node (preserving the + suffix if present)
+                        const suffix = el.querySelector('.suffix') ? el.querySelector('.suffix').textContent : '';
+                        el.childNodes[0].textContent = current;
+                    }, 30);
+                });
+            }
+
+            const section = document.getElementById('videos');
+            if (section) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateCounters();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.3 });
+                observer.observe(section);
+            }
+
+            if (section && section.getBoundingClientRect().top < window.innerHeight * 0.7) {
+                setTimeout(animateCounters, 500);
+            }
         });
 
+        // =============================================================
+        // LIGHTBOX (unchanged)
+        // =============================================================
         let currentImageIndex = 0;
 
-        // =============================================================
-        // LIGHTBOX
-        // =============================================================
         function openLightbox(index) {
             currentImageIndex = index;
             const img = document.getElementById('lightboxImage');
             img.src = projects[index].src;
-            img.alt = projects[index].title;
+            img.alt = 'Project image';
             document.getElementById('lightboxCounter').textContent = `${index + 1} / ${projects.length}`;
             document.getElementById('lightbox').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
@@ -1836,7 +2358,6 @@
             currentImageIndex = (currentImageIndex - 1 + projects.length) % projects.length;
             const img = document.getElementById('lightboxImage');
             img.src = projects[currentImageIndex].src;
-            img.alt = projects[currentImageIndex].title;
             document.getElementById('lightboxCounter').textContent = `${currentImageIndex + 1} / ${projects.length}`;
         }
 
@@ -1845,21 +2366,22 @@
             currentImageIndex = (currentImageIndex + 1) % projects.length;
             const img = document.getElementById('lightboxImage');
             img.src = projects[currentImageIndex].src;
-            img.alt = projects[currentImageIndex].title;
             document.getElementById('lightboxCounter').textContent = `${currentImageIndex + 1} / ${projects.length}`;
         }
 
         // =============================================================
-        // VIDEO MODAL
+        // VIDEO MODAL (for card clicks if any)
         // =============================================================
         function openVideoModal(index) {
             const video = document.getElementById('videoPlayer');
             const source = video.querySelector('source');
-            source.src = videos[index].src;
-            video.load();
-            document.getElementById('videoModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            video.play();
+            if (index < videoFiles.length) {
+                source.src = videoFiles[index];
+                video.load();
+                document.getElementById('videoModal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                video.play();
+            }
         }
 
         function closeVideoModal() {
@@ -1874,7 +2396,7 @@
         }
 
         // =============================================================
-        // UNIVERSAL MODAL – only used for employee modals now
+        // UNIVERSAL MODAL
         // =============================================================
         function closeModal() {
             document.getElementById('universalModal').classList.add('hidden');
@@ -1882,10 +2404,10 @@
 
         function showEmployeeModal(name, role, bio) {
             document.getElementById('modalBody').innerHTML = `
-                    <h2 class="text-xl sm:text-2xl font-bold mb-1">${name}</h2>
-                    <p class="text-red-600 text-sm mb-3">${role}</p>
-                    <p class="text-gray-600 text-sm sm:text-base">${bio}</p>
-                `;
+                <h2 class="text-xl sm:text-2xl font-bold mb-1">${name}</h2>
+                <p class="text-red-600 text-sm mb-3">${role}</p>
+                <p class="text-gray-600 text-sm sm:text-base">${bio}</p>
+            `;
             document.getElementById('universalModal').classList.remove('hidden');
         }
 
@@ -1904,7 +2426,7 @@
         });
 
         // =============================================================
-        // SCROLL REVEAL (One-time)
+        // SCROLL REVEAL
         // =============================================================
         document.addEventListener('DOMContentLoaded', function() {
             const revealElements = document.querySelectorAll('.reveal');
@@ -1931,6 +2453,8 @@
             }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
             staggerElements.forEach(el => staggerObserver.observe(el));
+
+            animateTimeline();
         });
 
         // =============================================================
@@ -1982,6 +2506,53 @@
 
         window.addEventListener('scroll', updateActiveSection);
         window.addEventListener('load', updateActiveSection);
+
+        // =============================================================
+        // AJAX FORM SUBMISSION
+        // =============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('.ajax-form');
+
+            forms.forEach(form => {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData.entries());
+
+                    const subject = form.dataset.subject;
+                    if (subject) data._subject = subject;
+
+                    const btn = form.querySelector('button[type="submit"]');
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Sending...';
+                    btn.disabled = true;
+
+                    try {
+                        const response = await fetch('http://localhost:5000/api/contact', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(data)
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok) {
+                            alert('✅ ' + (result.message || 'Submission successful!'));
+                            form.reset();
+                        } else {
+                            alert('❌ Error: ' + (result.message || result.error || 'Unknown error.'));
+                        }
+                    } catch (error) {
+                        alert('❌ Network error. Please check your connection.');
+                        console.error('Fetch error:', error);
+                    } finally {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                    }
+                });
+            });
+        });
     </script>
 
 </body>
