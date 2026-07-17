@@ -59,7 +59,7 @@
     <!-- ========================================================== -->
     <script src="https://cdn.tailwindcss.com">
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
 
     <style>
@@ -101,6 +101,7 @@
         h6 {
             font-weight: 700;
             line-height: 1.2;
+            letter-spacing: -0.02em;
         }
 
         /* ── NAVBAR ── */
@@ -113,6 +114,7 @@
             color: #1f2937 !important;
             transition: color 0.2s;
             font-weight: 500;
+            letter-spacing: 0.01em;
         }
         .navbar-white .nav-link:hover {
             color: #b21d18 !important;
@@ -239,11 +241,16 @@
             font-size: 1rem;
             background: #b21d18;
             color: #fff;
+            letter-spacing: 0.01em;
         }
         .btn-primary:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 12px 36px -8px rgba(178, 29, 24, 0.4);
             background: #8a1612;
+        }
+        .btn-primary:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 12px -4px rgba(178, 29, 24, 0.25);
         }
 
         /* ── SCROLL REVEAL (One-time) ── */
@@ -338,8 +345,8 @@
         }
 
         .marquee-item:hover {
-            transform: scale(1.15);
-            box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.15);
+            transform: scale(1.08);
+            box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.1);
             z-index: 10;
         }
 
@@ -382,60 +389,12 @@
             border: 1px solid #e5e7eb;
             background: #fff;
             border-radius: 1.25rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
         }
         .glow-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 24px 48px -14px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.1);
             border-color: #b21d18;
-        }
-
-        /* ── PROJECT CARDS (Gallery) ── */
-        .project-card {
-            position: relative;
-            border-radius: 1rem;
-            overflow: hidden;
-            cursor: pointer;
-            background: #e5e7eb;
-            aspect-ratio: 4/3;
-            transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .project-card:hover {
-            box-shadow: 0 20px 48px -14px rgba(0, 0, 0, 0.2);
-        }
-        .project-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .project-card:hover img {
-            transform: scale(1.05);
-        }
-        .project-card .overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(11, 18, 32, 0.4);
-            backdrop-filter: blur(2px);
-            opacity: 0;
-            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-        .project-card:hover .overlay {
-            opacity: 1;
-        }
-        .project-card .overlay .icon {
-            font-size: 2.5rem;
-            opacity: 0.7;
-            transition: transform 0.3s ease;
-        }
-        .project-card:hover .overlay .icon {
-            transform: scale(1.2);
-            opacity: 1;
         }
 
         /* ── VIDEO CARDS (clean, no text) ── */
@@ -450,8 +409,8 @@
             border: 1px solid #e5e7eb;
         }
         .video-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 24px 48px -14px rgba(0, 0, 0, 0.18);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.12);
             border-color: #b21d18;
         }
         .video-card img {
@@ -461,7 +420,7 @@
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .video-card:hover img {
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
         .video-card .play-btn {
             position: absolute;
@@ -483,7 +442,7 @@
             border: 2px solid rgba(255, 255, 255, 0.1);
         }
         .video-card:hover .play-btn {
-            transform: translate(-50%, -50%) scale(1.12);
+            transform: translate(-50%, -50%) scale(1.08);
             background: #b21d18;
             box-shadow: 0 12px 40px rgba(178, 29, 24, 0.5);
         }
@@ -561,7 +520,7 @@
             border-color: #b21d18;
             background: #b21d18;
             color: #ffffff;
-            transform: scale(1.08);
+            transform: scale(1.06);
             box-shadow: 0 8px 28px rgba(178, 29, 24, 0.3);
         }
 
@@ -683,6 +642,7 @@
             font-weight: 800;
             color: #b21d18;
             line-height: 1.1;
+            letter-spacing: -0.02em;
         }
         .stat-label {
             font-size: 0.8rem;
@@ -706,10 +666,11 @@
             display: flex;
             align-items: flex-start;
             gap: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
         }
         .contact-info-card:hover {
             border-color: #b21d18;
-            box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.08);
         }
         .contact-info-card .icon {
             font-size: 1.5rem;
@@ -839,10 +800,11 @@
             text-align: center;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: default;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
         }
         .expertise-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.08);
             border-color: #b21d18;
         }
         .expertise-card .icon-wrap {
@@ -853,7 +815,7 @@
             transition: transform 0.35s ease;
         }
         .expertise-card:hover .icon-wrap {
-            transform: scale(1.15);
+            transform: scale(1.08);
         }
         .expertise-card h4 {
             font-size: 1rem;
@@ -890,9 +852,10 @@
             text-align: center;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: default;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
         }
         .industry-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.08);
             border-color: #b21d18;
         }
@@ -904,7 +867,7 @@
             transition: transform 0.3s ease;
         }
         .industry-card:hover .icon-wrap {
-            transform: scale(1.1);
+            transform: scale(1.06);
         }
         .industry-card span {
             display: block;
@@ -935,11 +898,12 @@
             justify-content: center;
             min-height: 80px;
             transition: all 0.35s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
         }
         .elite-logo-tile:hover {
             border-color: #b21d18;
-            box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.1);
-            transform: scale(1.04);
+            box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.08);
+            transform: scale(1.02);
         }
         .elite-logo-tile img {
             max-height: 48px;
@@ -1089,7 +1053,7 @@
             gap: 0.5rem;
             padding: 0.4rem 1.2rem;
             border-radius: 9999px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             background: rgba(255, 255, 255, 0.04);
             backdrop-filter: blur(8px);
             font-size: 0.65rem;
@@ -1164,9 +1128,9 @@
         }
         .video-hero .hero-actions .btn-outline:hover {
             border-color: #b21d18;
-            background: rgba(178, 29, 24, 0.15);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 36px -8px rgba(178, 29, 24, 0.2);
+            background: rgba(178, 29, 24, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px -8px rgba(178, 29, 24, 0.2);
         }
 
         /* Stats */
@@ -1350,8 +1314,8 @@
                     <li><a href="#home" class="nav-link text-sm font-medium" data-section="home">Home</a></li>
                     <li><a href="#services" class="nav-link text-sm font-medium" data-section="services">Services</a></li>
                     <li><a href="#expertise" class="nav-link text-sm font-medium" data-section="expertise">Expertise</a></li>
-                    <li><a href="#projects" class="nav-link text-sm font-medium" data-section="projects">Projects</a></li>
-                    <li><a href="#videos" class="nav-link text-sm font-medium" data-section="videos">Videos</a></li>
+                    <!-- Project Gallery removed – nav link removed -->
+                    <li><a href="#videos" class="nav-link text-sm font-medium" data-section="videos">Showcase</a></li>
                     <li><a href="#industries" class="nav-link text-sm font-medium" data-section="industries">Industries</a></li>
                     <li><a href="#clients" class="nav-link text-sm font-medium" data-section="clients">Clients</a></li>
                     <li><a href="#about" class="nav-link text-sm font-medium" data-section="about">About</a></li>
@@ -1368,8 +1332,7 @@
                 <a href="#home" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Home</a>
                 <a href="#services" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Services</a>
                 <a href="#expertise" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Expertise</a>
-                <a href="#projects" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Projects</a>
-                <a href="#videos" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Videos</a>
+                <a href="#videos" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Showcase</a>
                 <a href="#industries" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Industries</a>
                 <a href="#clients" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Clients</a>
                 <a href="#about" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">About</a>
@@ -1392,11 +1355,11 @@
         <div class="hero-content">
             <div class="max-w-7xl mx-auto w-full">
                 <div class="max-w-3xl text-center md:text-left mx-auto md:mx-0">
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.05]">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.05] tracking-tight">
                         <span class="heading-accent">Precision Robotics.</span><br />
                         <span class="heading-accent">Intelligent Automation.</span>
                     </h1>
-                    <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300/90 mt-4 md:mt-6 max-w-xl mx-auto md:mx-0">Futuristic, Reliable, Affordable</p>
+                    <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300/90 mt-4 md:mt-6 max-w-xl mx-auto md:mx-0 font-light">Futuristic, Reliable, Affordable</p>
                     <a href="#services" class="btn-primary mt-6 md:mt-8 mx-auto md:mx-0">Explore Solutions →</a>
                 </div>
             </div>
@@ -1591,57 +1554,8 @@
     </section>
 
     <!-- ========================================================== -->
-    <!-- PROJECT GALLERY                                            -->
     <!-- ========================================================== -->
-    <section id="projects" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="Project gallery">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Project Gallery</h2>
-            <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Real-world automation solutions in action.</p>
-
-            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5" id="galleryGrid">
-                <div class="project-card reveal" onclick="openLightbox(0)">
-                    <img src="photos/PHOTO1.jpg" alt="Project" loading="lazy" />
-                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
-                </div>
-                <div class="project-card reveal" onclick="openLightbox(1)">
-                    <img src="photos/PHOTO2.jpg" alt="Project" loading="lazy" />
-                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
-                </div>
-                <div class="project-card reveal" onclick="openLightbox(2)">
-                    <img src="photos/PHOTO3.jpg" alt="Project" loading="lazy" />
-                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
-                </div>
-                <div class="project-card reveal" onclick="openLightbox(3)">
-                    <img src="photos/PHOTO4.jpg" alt="Project" loading="lazy" />
-                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
-                </div>
-                <div class="project-card reveal" onclick="openLightbox(4)">
-                    <img src="photos/5.jpg" alt="Project" loading="lazy" />
-                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
-                </div>
-                <div class="project-card reveal" onclick="openLightbox(5)">
-                    <img src="photos/6.jpg" alt="Project" loading="lazy" />
-                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
-                </div>
-                <div class="project-card reveal" onclick="openLightbox(6)">
-                    <img src="photos/7.jpg" alt="Project" loading="lazy" />
-                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
-                </div>
-                <div class="project-card reveal" onclick="openLightbox(7)">
-                    <img src="photos/9.jpg" alt="Project" loading="lazy" />
-                    <div class="overlay"><span class="icon"><i class="fas fa-expand"></i></span></div>
-                </div>
-            </div>
-
-            <div class="text-center mt-8 md:mt-10 reveal">
-                <a href="https://drive.google.com/drive/folders/1cars7JirZcXq9TOTMRg7xPprv3jxtCqb?usp=sharing" target="_blank" class="btn-primary">View Full Portfolio</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================================== -->
-    <!-- ========================================================== -->
-    <!-- NEW: PREMIUM VIDEO HERO – 4x3 grid                         -->
+    <!-- PREMIUM VIDEO HERO – replaces the old Video Gallery        -->
     <!-- ========================================================== -->
     <!-- ========================================================== -->
     <section id="videos" class="video-hero" aria-label="Industrial Automation Showcase">
@@ -1677,9 +1591,9 @@
                     GARS Robotics is your trusted automation partner.
                 </p>
 
-                <!-- CTA Buttons -->
+                <!-- CTA Buttons – now points to #videos (same section) -->
                 <div class="hero-actions reveal">
-                    <a href="#projects" class="btn-primary">
+                    <a href="#videos" class="btn-primary">
                         <i class="fas fa-arrow-right mr-2"></i> Explore Projects
                     </a>
                     <a href="#contact" class="btn-outline">
@@ -1698,7 +1612,7 @@
                         <span class="stat-label">Industrial Clients</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-target="15">0<span class="suffix">+</span></span>
+                        <span class="stat-number" data-target="5">0<span class="suffix">+</span></span>
                         <span class="stat-label">States Served</span>
                     </div>
                     <div class="stat-item">
@@ -1865,7 +1779,7 @@
     </section>
 
     <!-- ========================================================== -->
-    <!-- ABOUT (with Leadership intact)                             -->
+    <!-- ABOUT (with Leadership – icons removed)                    -->
     <!-- ========================================================== -->
     <section id="about" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="About us">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -1890,34 +1804,33 @@
             </div>
 
             <!-- ========================================================== -->
-            <!-- LEADERSHIP – FULLY INTACT                                  -->
+            <!-- LEADERSHIP – with all 3 members, icons removed             -->
             <!-- ========================================================== -->
             <h3 class="text-2xl sm:text-3xl font-bold mb-5 md:mb-8 reveal">Leadership</h3>
-<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-7 stagger" id="leadershipGrid">
-    <!-- M/s Pooja S Hebbal -->
-    <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('M/s Pooja S Hebbal', 'Proprietor', 'Proprietor with expertise in industrial automation, leading the company with a vision for quality and innovation.')">
-        <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center text-2xl sm:text-3xl text-gray-500">👤</div>
-        <h4 class="text-base sm:text-lg md:text-xl font-bold">M/s Pooja S Hebbal</h4>
-        <p class="text-red-600 text-xs sm:text-sm mb-1">Proprietor</p>
-        <p class="text-gray-500 text-xs sm:text-sm">Leading with vision and expertise.</p>
-    </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-7 stagger" id="leadershipGrid">
+                <!-- M/s Pooja S Hebbal -->
+                <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('M/s Pooja S Hebbal', 'Proprietor', 'Proprietor with expertise in industrial automation, leading the company with a vision for quality and innovation.')">
+                    <h4 class="text-base sm:text-lg md:text-xl font-bold">M/s Pooja S Hebbal</h4>
+                    <p class="text-red-600 text-xs sm:text-sm mb-1">Proprietor</p>
+                    <p class="text-gray-500 text-xs sm:text-sm">Leading with vision and expertise.</p>
+                </div>
 
-    <!-- Mr. Rachoteshwar Aiholli -->
-    <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('Mr. Rachoteshwar Aiholli', 'Project Manager', 'Project Manager with expertise in industrial automation projects, leading project execution and client coordination.')">
-        <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center text-2xl sm:text-3xl text-gray-500">👤</div>
-        <h4 class="text-base sm:text-lg md:text-xl font-bold">Mr. Rachoteshwar Aiholli</h4>
-        <p class="text-red-600 text-xs sm:text-sm mb-1">Project Manager</p>
-        <p class="text-gray-500 text-xs sm:text-sm">Leading project execution and client coordination.</p>
-    </div>
+                <!-- Mr. Rachoteshwar Aiholli -->
+                <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('Mr. Rachoteshwar Aiholli', 'Project Manager', 'Project Manager with expertise in industrial automation projects, leading project execution and client coordination.')">
+                    <h4 class="text-base sm:text-lg md:text-xl font-bold">Mr. Rachoteshwar Aiholli</h4>
+                    <p class="text-red-600 text-xs sm:text-sm mb-1">Project Manager</p>
+                    <p class="text-gray-500 text-xs sm:text-sm">Leading project execution and client coordination.</p>
+                </div>
 
-    <!-- Mr. Chandru Badodagi -->
-    <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('Mr. Chandru Badodagi', 'Robotic Engineer', 'Robotic Engineer specializing in ABB, FANUC, and Kawasaki programming, with hands-on experience in system integration and commissioning.')">
-        <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center text-2xl sm:text-3xl text-gray-500">👤</div>
-        <h4 class="text-base sm:text-lg md:text-xl font-bold">Mr. Chandru Badodagi</h4>
-        <p class="text-red-600 text-xs sm:text-sm mb-1">Robotic Engineer</p>
-        <p class="text-gray-500 text-xs sm:text-sm">Expert in robotic programming and system integration.</p>
-    </div>
-</div>
+                <!-- Mr. Chandru Badodagi -->
+                <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('Mr. Chandru Badodagi', 'Robotic Engineer', 'Robotic Engineer specializing in ABB, FANUC, and Kawasaki programming, with hands-on experience in system integration and commissioning.')">
+                    <h4 class="text-base sm:text-lg md:text-xl font-bold">Mr. Chandru Badodagi</h4>
+                    <p class="text-red-600 text-xs sm:text-sm mb-1">Robotic Engineer</p>
+                    <p class="text-gray-500 text-xs sm:text-sm">Expert in robotic programming and system integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ========================================================== -->
     <!-- CAREERS (unchanged)                                        -->
@@ -1993,7 +1906,7 @@
     </section>
 
     <!-- ========================================================== -->
-    <!-- CONTACT (unchanged)                                        -->
+    <!-- CONTACT (with Chandru's number added)                      -->
     <!-- ========================================================== -->
     <section id="contact" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="Contact us">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -2001,6 +1914,7 @@
             <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Have a question? Want to discuss a project? Our team is ready to help.</p>
 
             <div class="grid lg:grid-cols-2 gap-6 md:gap-8 reveal">
+                <!-- Contact Form -->
                 <div class="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 md:p-7">
                     <form id="contactForm" class="ajax-form space-y-3 sm:space-y-4" data-subject="New Enquiry from GARS Robotics Website">
                         <div>
@@ -2019,6 +1933,7 @@
                     </form>
                 </div>
 
+                <!-- Contact Info -->
                 <div class="space-y-4 sm:space-y-5">
                     <div class="contact-info-card">
                         <div class="icon" aria-hidden="true">📍</div>
@@ -2039,6 +1954,15 @@
                         <div class="content">
                             <h4>Phone</h4>
                             <a href="tel:+919632463464">+91 96324 63464</a>
+                        </div>
+                    </div>
+                    <!-- ★ NEW: Chandru's contact -->
+                    <div class="contact-info-card">
+                        <div class="icon" aria-hidden="true">📞</div>
+                        <div class="content">
+                            <h4>Chandru Badodagi</h4>
+                            <a href="tel:+918296683563">+91 8296683563</a>
+                            <p class="text-xs text-gray-400 mt-0.5">Robotic Engineer</p>
                         </div>
                     </div>
                     <div class="contact-info-card">
@@ -2084,8 +2008,7 @@
                         <a href="#home" class="footer-link block text-xs sm:text-sm">Home</a>
                         <a href="#services" class="footer-link block text-xs sm:text-sm">Services</a>
                         <a href="#expertise" class="footer-link block text-xs sm:text-sm">Expertise</a>
-                        <a href="#projects" class="footer-link block text-xs sm:text-sm">Projects</a>
-                        <a href="#videos" class="footer-link block text-xs sm:text-sm">Videos</a>
+                        <a href="#videos" class="footer-link block text-xs sm:text-sm">Showcase</a>
                         <a href="#industries" class="footer-link block text-xs sm:text-sm">Industries</a>
                         <a href="#clients" class="footer-link block text-xs sm:text-sm">Clients</a>
                         <a href="#about" class="footer-link block text-xs sm:text-sm">About</a>
@@ -2174,7 +2097,7 @@
 
     <script>
         // =============================================================
-        // DATA – projects (8 images, no captions)
+        // DATA – projects (8 images, no captions) – kept for lightbox
         // =============================================================
         const projects = [
             { src: 'photos/PHOTO1.jpg' },
