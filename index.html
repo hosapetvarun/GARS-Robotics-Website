@@ -37,7 +37,8 @@
             "url": "https://www.garsrobotics.com/"
         }
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
 
@@ -622,12 +623,12 @@
             z-index: 1;
         }
 
-        /* Dark overlay for readability */
+        /* Dark overlay for readability — DECREASED OPACITY */
         .video-hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.20);
+            background: rgba(0, 0, 0, 0.08);
             z-index: 1;
             pointer-events: none;
         }
@@ -636,14 +637,14 @@
             position: absolute;
             inset: 0;
             z-index: 1;
-            background: linear-gradient(135deg, rgba(11, 18, 32, 0.88) 0%, rgba(11, 18, 32, 0.65) 40%, rgba(11, 18, 32, 0.50) 70%, rgba(11, 18, 32, 0.70) 100%);
+            background: linear-gradient(135deg, rgba(11, 18, 32, 0.30) 0%, rgba(11, 18, 32, 0.15) 40%, rgba(11, 18, 32, 0.10) 70%, rgba(11, 18, 32, 0.30) 100%);
             pointer-events: none;
         }
         .video-hero .hero-vignette {
             position: absolute;
             inset: 0;
             z-index: 1;
-            background: radial-gradient(ellipse at 30% 50%, transparent 30%, rgba(11, 18, 32, 0.50) 100%);
+            background: radial-gradient(ellipse at 30% 50%, transparent 40%, rgba(11, 18, 32, 0.15) 100%);
             pointer-events: none;
         }
         .video-hero .hero-content {
@@ -660,20 +661,23 @@
             width: 100%;
             color: #fff;
         }
+
+        /* --- DECREASED OPACITY FOR TEXT ELEMENTS --- */
         .video-hero .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             padding: 0.4rem 1.2rem;
             border-radius: 9999px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(8px);
             font-size: 0.65rem;
             font-weight: 600;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.55);
+            /* reduced from 0.8 */
             margin-bottom: 1.5rem;
             transition: all 0.3s ease;
         }
@@ -689,40 +693,28 @@
             text-transform: uppercase;
             margin-bottom: 1rem;
             text-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+            color: rgba(255, 255, 255, 0.75);
+            /* reduced from 1 */
         }
         .video-hero .hero-headline .accent {
             color: #b21d18;
+            /* keep accent bright */
         }
         .video-hero .hero-text {
             font-size: 1.05rem;
             font-weight: 300;
-            color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.50);
+            /* reduced from 0.75 */
             line-height: 1.7;
             max-width: 540px;
             margin-bottom: 2rem;
             text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
         }
-        .video-hero .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-        .video-hero .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem 2rem;
-            max-width: 600px;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .video-hero .hero-stats .stat-item {
-            text-align: left;
-        }
         .video-hero .hero-stats .stat-number {
             font-size: 2.2rem;
             font-weight: 800;
-            color: #fff;
+            color: rgba(255, 255, 255, 0.75);
+            /* reduced from 1 */
             line-height: 1;
             display: block;
             text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
@@ -735,7 +727,8 @@
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.35);
+            /* reduced from 0.5 */
             margin-top: 0.2rem;
             display: block;
         }
@@ -785,9 +778,6 @@
                 text-align: center;
                 max-width: 100%;
             }
-            .video-hero .hero-actions {
-                justify-content: center;
-            }
             .video-hero .hero-stats {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
@@ -810,10 +800,10 @@
                 padding: 0.3rem 1rem;
             }
             .video-hero .hero-overlay {
-                background: linear-gradient(180deg, rgba(11, 18, 32, 0.90) 0%, rgba(11, 18, 32, 0.70) 40%, rgba(11, 18, 32, 0.55) 70%, rgba(11, 18, 32, 0.80) 100%);
+                background: linear-gradient(180deg, rgba(11, 18, 32, 0.40) 0%, rgba(11, 18, 32, 0.15) 40%, rgba(11, 18, 32, 0.10) 70%, rgba(11, 18, 32, 0.35) 100%);
             }
             .video-hero .hero-vignette {
-                background: radial-gradient(ellipse at 50% 50%, transparent 20%, rgba(11, 18, 32, 0.70) 100%);
+                background: radial-gradient(ellipse at 50% 50%, transparent 30%, rgba(11, 18, 32, 0.25) 100%);
             }
         }
         @media (max-width: 480px) {
@@ -826,16 +816,6 @@
             }
             .video-hero .hero-text {
                 font-size: 0.8rem;
-            }
-            .video-hero .hero-actions {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-            .video-hero .hero-actions .btn-primary,
-            .video-hero .hero-actions .btn-outline {
-                width: 100%;
-                justify-content: center;
             }
             .video-hero .hero-stats {
                 grid-template-columns: repeat(2, 1fr);
@@ -1300,7 +1280,7 @@
                     <div class="marquee-item"><img src="customer logo/yizumi.webp" alt="Yizumi" loading="lazy" /></div>
                     <div class="marquee-item"><img src="customer logo/pra.webp" alt="Sipra Engineering" loading="lazy" /></div>
                     <div class="marquee-item"><img src="customer logo/ficom.png" alt="FICOM Engineering" loading="lazy" /></div>
-                    <div class="marquee-item"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/asian metals new.jpg" alt="Asian Metals" loading="lazy" /></div>
                     <div class="marquee-item"><img src="customer logo/ola real.webp" alt="Ola" loading="lazy" /></div>
                     <div class="marquee-item"><img src="customer logo/ceat.png" alt="CEAT Tyres" loading="lazy" /></div>
                     <div class="marquee-item"><img src="customer logo/gabriel.png" alt="Gabriel India" loading="lazy" /></div>
@@ -1316,7 +1296,7 @@
                     <div class="marquee-item"><img src="customer logo/yizumi.webp" alt="Yizumi" loading="lazy" /></div>
                     <div class="marquee-item"><img src="customer logo/pra.webp" alt="Sipra Engineering" loading="lazy" /></div>
                     <div class="marquee-item"><img src="customer logo/ficom.png" alt="FICOM Engineering" loading="lazy" /></div>
-                    <div class="marquee-item"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/asian metals new.jpg" alt="Asian Metals" loading="lazy" /></div>
                     <div class="marquee-item"><img src="customer logo/ola real.webp" alt="Ola" loading="lazy" /></div>
                     <div class="marquee-item"><img src="customer logo/ceat.png" alt="CEAT Tyres" loading="lazy" /></div>
                     <div class="marquee-item"><img src="customer logo/gabriel.png" alt="Gabriel India" loading="lazy" /></div>
@@ -1428,10 +1408,7 @@
                 <div class="hero-badge reveal"><i class="fas fa-industry"></i> Industrial Automation Experts</div>
                 <h1 class="hero-headline reveal"><span class="accent">AUTOMATION.</span><br /> ENGINEERED FOR EXCELLENCE.</h1>
                 <p class="hero-text reveal">Delivering intelligent robotic automation solutions for manufacturing industries across India. From programming and simulation to commissioning and production support, GARS Robotics is your trusted automation partner.</p>
-                <div class="hero-actions reveal">
-                    <a href="#videos" class="btn-primary"><i class="fas fa-arrow-right mr-2"></i> Explore Projects</a>
-                    <a href="#contact" class="btn-outline">Contact Us</a>
-                </div>
+                <!-- hero-actions (buttons) removed as requested -->
                 <div class="hero-stats" id="heroStats">
                     <div class="stat-item"><span class="stat-number" data-target="40">0<span class="suffix">+</span></span><span class="stat-label">Projects Completed</span></div>
                     <div class="stat-item"><span class="stat-number" data-target="25">0<span class="suffix">+</span></span><span class="stat-label">Industrial Clients</span></div>
@@ -1498,7 +1475,7 @@
                 <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/pra.webp" alt="Sipra Engineering" loading="lazy" onerror="this.style.display='none'" /></div>
                 <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/abb.png" alt="ABB ELSP" loading="lazy" onerror="this.style.display='none'" /></div>
                 <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/ficom.png" alt="FICOM Engineering" loading="lazy" onerror="this.style.display='none'" /></div>
-                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals & Castings" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/asian metals new.jpg" alt="Asian Metals & Castings" loading="lazy" onerror="this.style.display='none'" /></div>
                 <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/ola real.webp" alt="Ola" loading="lazy" onerror="this.style.display='none'" /></div>
                 <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/ceat.png" alt="CEAT Tyres" loading="lazy" onerror="this.style.display='none'" /></div>
                 <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/gabriel.png" alt="Gabriel India" loading="lazy" onerror="this.style.display='none'" /></div>
@@ -1734,11 +1711,11 @@
             'videos/trimmed/3d-replace trim trim.mp4',
             'videos/trimmed/abb welding trim.mp4',
             'videos/trimmed/abb -trim.mp4',
-            'videos/trimmed/abb welding trim.mp4',   // first
-            'videos/trimmed/blocks trim.mp4',   // second (replaces blocks trim)
+            'videos/trimmed/abb welding trim.mp4', // first
+            'videos/trimmed/blocks trim.mp4', // second (replaces blocks trim)
             'videos/trimmed/die casting trim.mp4',
             'videos/trimmed/jsw paint trim.mp4',
-            'videos/trimmed/3d-simulation trim.mp4',     // kept
+            'videos/trimmed/3d-simulation trim.mp4', // kept
             'videos/trimmed/two arm trim.mp4',
             'videos/trimmed/tyres trim.mp4',
             'videos/trimmed/video-12trim.mp4'
@@ -1821,7 +1798,8 @@
                         updateStep(0);
                         interval = setInterval(() => {
                             currentStep++;
-                            if (currentStep >= steps.length) { clearInterval(interval); } else { updateStep(currentStep); }
+                            if (currentStep >= steps.length) { clearInterval(interval); } else { updateStep(
+                                currentStep); }
                         }, 1200);
                     }, 2000);
                     return;
