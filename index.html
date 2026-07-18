@@ -589,7 +589,7 @@
             }
         }
 
-        /* ── VIDEO HERO ── */
+        /* ── VIDEO HERO – FINAL FIX ── */
         .video-hero {
             position: relative;
             min-height: 100vh;
@@ -605,6 +605,9 @@
             grid-template-rows: repeat(3, 1fr);
             gap: 0;
             z-index: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
         }
         .video-hero .video-grid .grid-video {
             width: 100%;
@@ -613,12 +616,22 @@
             display: block;
             background: #0B1220;
             transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform;
         }
         .video-hero .video-grid .grid-video:hover {
             transform: scale(1.04);
             z-index: 1;
         }
+
+        /* Dark overlay for readability */
+        .video-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.20);
+            z-index: 1;
+            pointer-events: none;
+        }
+
         .video-hero .hero-overlay {
             position: absolute;
             inset: 0;
@@ -1396,7 +1409,6 @@
                 <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-hand-rock"></i></div><h4>End-of-Arm Tooling</h4><p>Gripper &amp; tool design</p></div>
                 <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-industry"></i></div><h4>Die Casting Extraction</h4><p>High-pressure die casting</p></div>
                 <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-camera"></i></div><h4>Vision Integration</h4><p>Industrial machine vision</p></div>
-                <!-- FIXED ICON: Grinding & Sanding -->
                 <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-arrows-rotate"></i></div><h4>Grinding &amp; Sanding</h4><p>Surface finishing</p></div>
                 <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-hammer"></i></div><h4>Casting &amp; Forging</h4><p>Metal forming automation</p></div>
                 <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-spray-can"></i></div><h4>Dispensing &amp; Coating</h4><p>Adhesive, paint, sealant</p></div>
@@ -1716,16 +1728,17 @@
     </div>
 
     <script>
+        // ── VIDEO LIST – TWO ABB WELDING, PACKAGING KEPT ──
         const videoFiles = [
             'videos/trimmed/3d-1st trim.mp4',
             'videos/trimmed/3d-replace trim trim.mp4',
-            'videos/trimmed/3d-simulation trim.mp4',
-            'videos/trimmed/abb -trim.mp4',
             'videos/trimmed/abb welding trim.mp4',
-            'videos/trimmed/blocks trim.mp4',
+            'videos/trimmed/abb -trim.mp4',
+            'videos/trimmed/abb welding trim.mp4',   // first
+            'videos/trimmed/blocks trim.mp4',   // second (replaces blocks trim)
             'videos/trimmed/die casting trim.mp4',
             'videos/trimmed/jsw paint trim.mp4',
-            'videos/trimmed/packaging trim.mp4',
+            'videos/trimmed/3d-simulation trim.mp4',     // kept
             'videos/trimmed/two arm trim.mp4',
             'videos/trimmed/tyres trim.mp4',
             'videos/trimmed/video-12trim.mp4'
