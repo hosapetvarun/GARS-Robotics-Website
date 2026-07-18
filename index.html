@@ -3,37 +3,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-
-    <!-- ========================================================== -->
-    <!-- SEO & META TAGS                                            -->
-    <!-- ========================================================== -->
     <title>GARS Robotics – Industrial Automation &amp; Robotic Integration | Bengaluru</title>
-    <meta name="description" content="GARS Robotics provides ABB, FANUC &amp; Kawasaki robotic programming, system integration, and automation support across India. Precision robotics for modern manufacturing." />
+    <meta name="description" content="GARS Robotics provides ABB, FANUC &amp; Kawasaki robotic programming, system integration, and automation support across India." />
     <link rel="canonical" href="https://www.garsrobotics.com/" />
-
-    <!-- Open Graph -->
     <meta property="og:title" content="GARS Robotics – Industrial Automation &amp; Robotic Integration" />
-    <meta property="og:description" content="Expert robotic programming, system integration, and automation support for ABB, FANUC, and Kawasaki robots. Futuristic, Reliable, Affordable." />
+    <meta property="og:description" content="Expert robotic programming, system integration, and automation support for ABB, FANUC, and Kawasaki robots." />
     <meta property="og:url" content="https://www.garsrobotics.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.garsrobotics.com/og-image.jpg" />
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="GARS Robotics – Industrial Automation &amp; Robotic Integration" />
-    <meta name="twitter:description" content="Expert robotic programming, system integration, and automation support for ABB, FANUC, and Kawasaki robots." />
-
-    <!-- Icons & Theme -->
+    <meta name="twitter:description" content="Expert robotic programming, system integration, and automation support." />
     <link rel="icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <meta name="theme-color" content="#b21d18" />
-
-    <!-- Font Awesome for premium icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-    <!-- ========================================================== -->
-    <!-- STRUCTURED DATA (JSON-LD)                                  -->
-    <!-- ========================================================== -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -53,17 +37,12 @@
             "url": "https://www.garsrobotics.com/"
         }
     </script>
-
-    <!-- ========================================================== -->
-    <!-- STYLES                                                     -->
-    <!-- ========================================================== -->
-    <script src="https://cdn.tailwindcss.com">
-    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
 
     <style>
-        /* ── BASE ── */
+        /* ── RESET & BASE ── */
         *,
         *::before,
         *::after {
@@ -91,8 +70,6 @@
             height: auto;
             display: block;
         }
-
-        /* ── TYPOGRAPHY SCALING ── */
         h1,
         h2,
         h3,
@@ -104,7 +81,7 @@
             letter-spacing: -0.02em;
         }
 
-        /* ── NAVBAR ── */
+        /* ── NAVIGATION ── */
         .navbar-white {
             background: #ffffff !important;
             border-bottom: 1px solid #e5e7eb;
@@ -112,15 +89,15 @@
         }
         .navbar-white .nav-link {
             color: #1f2937 !important;
-            transition: color 0.2s;
+            transition: color 0.25s ease;
             font-weight: 500;
             letter-spacing: 0.01em;
         }
-        .navbar-white .nav-link:hover {
+        .navbar-white .nav-link:hover,
+        .navbar-white .nav-link.active {
             color: #b21d18 !important;
         }
         .navbar-white .nav-link.active {
-            color: #b21d18 !important;
             font-weight: 600;
         }
         .navbar-white .brand-dark {
@@ -132,8 +109,6 @@
         .navbar-white .hamburger-icon {
             color: #1f2937 !important;
         }
-
-        /* ── LOGO ── */
         .logo-text {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 1.7rem;
@@ -145,9 +120,7 @@
             align-items: baseline;
             gap: 4px;
         }
-        .logo-text .brand-gars {
-            color: #b21d18;
-        }
+        .logo-text .brand-gars,
         .logo-text .brand-robotics {
             color: #b21d18;
         }
@@ -231,6 +204,7 @@
             padding: 0.75rem 2rem;
             border-radius: 9999px;
             font-weight: 600;
+            font-size: 1rem;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             box-shadow: 0 4px 16px -4px rgba(178, 29, 24, 0.25);
             min-height: 48px;
@@ -238,10 +212,10 @@
             text-align: center;
             cursor: pointer;
             border: none;
-            font-size: 1rem;
             background: #b21d18;
             color: #fff;
             letter-spacing: 0.01em;
+            line-height: 1.2;
         }
         .btn-primary:hover {
             transform: translateY(-2px);
@@ -253,22 +227,22 @@
             box-shadow: 0 4px 12px -4px rgba(178, 29, 24, 0.25);
         }
 
-        /* ── SCROLL REVEAL (One-time) ── */
+        /* ── REVEAL ANIMATIONS ── */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .reveal.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* ── STAGGER REVEAL (One-time) ── */
         .stagger>* {
             opacity: 0;
             transform: translateY(24px);
-            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .stagger.is-visible>*:nth-child(1) {
             transition-delay: 0.05s;
@@ -276,34 +250,102 @@
             transform: translateY(0);
         }
         .stagger.is-visible>*:nth-child(2) {
-            transition-delay: 0.12s;
+            transition-delay: 0.10s;
             opacity: 1;
             transform: translateY(0);
         }
         .stagger.is-visible>*:nth-child(3) {
-            transition-delay: 0.19s;
+            transition-delay: 0.15s;
             opacity: 1;
             transform: translateY(0);
         }
         .stagger.is-visible>*:nth-child(4) {
-            transition-delay: 0.26s;
+            transition-delay: 0.20s;
             opacity: 1;
             transform: translateY(0);
         }
         .stagger.is-visible>*:nth-child(5) {
-            transition-delay: 0.33s;
+            transition-delay: 0.25s;
             opacity: 1;
             transform: translateY(0);
         }
         .stagger.is-visible>*:nth-child(6) {
+            transition-delay: 0.30s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger.is-visible>*:nth-child(7) {
+            transition-delay: 0.35s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger.is-visible>*:nth-child(8) {
             transition-delay: 0.40s;
             opacity: 1;
             transform: translateY(0);
         }
+        .stagger.is-visible>*:nth-child(9) {
+            transition-delay: 0.45s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger.is-visible>*:nth-child(10) {
+            transition-delay: 0.50s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger.is-visible>*:nth-child(11) {
+            transition-delay: 0.55s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger.is-visible>*:nth-child(12) {
+            transition-delay: 0.60s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger.is-visible>*:nth-child(13) {
+            transition-delay: 0.65s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger.is-visible>*:nth-child(14) {
+            transition-delay: 0.70s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger.is-visible>*:nth-child(15) {
+            transition-delay: 0.75s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger.is-visible>*:nth-child(16) {
+            transition-delay: 0.80s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger.is-visible>*:nth-child(17) {
+            transition-delay: 0.85s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger.is-visible>*:nth-child(18) {
+            transition-delay: 0.90s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger.is-visible>*:nth-child(19) {
+            transition-delay: 0.95s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger.is-visible>*:nth-child(20) {
+            transition-delay: 1.00s;
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-        /* ========================================================== */
-        /* 1. TRUSTED BY MARQUEE                                     */
-        /* ========================================================== */
+        /* ── MARQUEE ── */
         .marquee-wrap {
             overflow: hidden;
             position: relative;
@@ -312,18 +354,15 @@
             -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
             cursor: default;
         }
-
         .marquee-track {
             display: flex;
             width: max-content;
             animation: marqueeScroll 45s linear infinite;
             will-change: transform;
         }
-
         .marquee-wrap:hover .marquee-track {
             animation-play-state: paused;
         }
-
         @keyframes marqueeScroll {
             0% {
                 transform: translateX(0);
@@ -332,7 +371,6 @@
                 transform: translateX(-50%);
             }
         }
-
         .marquee-item {
             flex-shrink: 0;
             display: flex;
@@ -340,27 +378,19 @@
             justify-content: center;
             padding: 0 3.5rem;
             height: 80px;
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: default;
         }
-
         .marquee-item:hover {
             transform: scale(1.08);
-            box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.1);
-            z-index: 10;
         }
-
         .marquee-item img {
             max-height: 60px;
             max-width: 140px;
             width: auto;
             height: auto;
             object-fit: contain;
-            display: block;
-            transition: none;
         }
-
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .marquee-item {
                 padding: 0 2rem;
@@ -371,7 +401,6 @@
                 max-width: 100px;
             }
         }
-
         @media (max-width: 480px) {
             .marquee-item {
                 padding: 0 1.25rem;
@@ -385,77 +414,434 @@
 
         /* ── CARDS ── */
         .glow-card {
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             border: 1px solid #e5e7eb;
             background: #fff;
             border-radius: 1.25rem;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            height: 100%;
         }
         .glow-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.08);
             border-color: #b21d18;
         }
 
-        /* ── VIDEO CARDS (clean, no text) ── */
-        .video-card {
-            position: relative;
+        /* ── EXPERTISE CARDS ── */
+        .expertise-card {
+            background: #fff;
+            border: 1px solid #f0f0f0;
             border-radius: 1rem;
-            overflow: hidden;
-            cursor: pointer;
-            background: #1a1a2e;
-            aspect-ratio: 16/9;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid #e5e7eb;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: default;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            min-height: 180px;
         }
-        .video-card:hover {
+        .expertise-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.08);
             border-color: #b21d18;
         }
-        .video-card img {
-            width: 100%;
+        .expertise-card .icon-wrap {
+            font-size: 2.6rem;
+            color: #b21d18;
+            margin-bottom: 0.75rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .expertise-card:hover .icon-wrap {
+            transform: scale(1.08);
+        }
+        .expertise-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 0.2rem;
+        }
+        .expertise-card p {
+            font-size: 0.8rem;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+        @media (max-width: 768px) {
+            .expertise-card {
+                padding: 1rem 0.5rem;
+                min-height: 150px;
+            }
+            .expertise-card .icon-wrap {
+                font-size: 2rem;
+            }
+            .expertise-card h4 {
+                font-size: 0.85rem;
+            }
+            .expertise-card p {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* ── INDUSTRY CARDS ── */
+        .industry-card {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            border-radius: 0.75rem;
+            padding: 1.2rem 0.8rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: default;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .video-card:hover img {
-            transform: scale(1.04);
+        .industry-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.08);
+            border-color: #b21d18;
         }
-        .video-card .play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: rgba(178, 29, 24, 0.92);
+        .industry-card .icon-wrap {
+            font-size: 2rem;
+            color: #b21d18;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .industry-card:hover .icon-wrap {
+            transform: scale(1.06);
+        }
+        .industry-card span {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #1f2937;
+        }
+        @media (max-width: 768px) {
+            .industry-card {
+                padding: 0.8rem 0.4rem;
+            }
+            .industry-card .icon-wrap {
+                font-size: 1.5rem;
+            }
+            .industry-card span {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* ── ELITE LOGO TILES ── */
+        .elite-logo-tile {
+            background: #fff;
+            border-radius: 0.75rem;
+            border: 1px solid #f0f0f0;
+            padding: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
-            color: #fff;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 8px 28px rgba(178, 29, 24, 0.35);
-            backdrop-filter: blur(4px);
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            min-height: 80px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
         }
-        .video-card:hover .play-btn {
-            transform: translate(-50%, -50%) scale(1.08);
-            background: #b21d18;
-            box-shadow: 0 12px 40px rgba(178, 29, 24, 0.5);
+        .elite-logo-tile:hover {
+            border-color: #b21d18;
+            box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.08);
+            transform: scale(1.02);
+        }
+        .elite-logo-tile img {
+            max-height: 48px;
+            max-width: 120px;
+            object-fit: contain;
+            filter: grayscale(0.1);
+            transition: filter 0.3s ease;
+        }
+        .elite-logo-tile:hover img {
+            filter: grayscale(0);
+        }
+        .elite-logo-tile .placeholder-text {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #6b7280;
+            text-align: center;
+            letter-spacing: 0.02em;
+        }
+        .elite-logo-tile .placeholder-sub {
+            font-size: 0.55rem;
+            color: #9ca3af;
+            margin-top: 0.15rem;
+        }
+        @media (max-width: 768px) {
+            .elite-logo-tile {
+                min-height: 60px;
+                padding: 0.5rem;
+            }
+            .elite-logo-tile img {
+                max-height: 32px;
+                max-width: 80px;
+            }
+            .elite-logo-tile .placeholder-text {
+                font-size: 0.6rem;
+            }
         }
 
-        /* ========================================================== */
-        /* TIMELINE – REDESIGNED PREMIUM                              */
-        /* ========================================================== */
+        /* ── VIDEO HERO ── */
+        .video-hero {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            background: #0B1220;
+        }
+        .video-hero .video-grid {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 0;
+            z-index: 0;
+        }
+        .video-hero .video-grid .grid-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            background: #0B1220;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+        .video-hero .video-grid .grid-video:hover {
+            transform: scale(1.04);
+            z-index: 1;
+        }
+        .video-hero .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(135deg, rgba(11, 18, 32, 0.88) 0%, rgba(11, 18, 32, 0.65) 40%, rgba(11, 18, 32, 0.50) 70%, rgba(11, 18, 32, 0.70) 100%);
+            pointer-events: none;
+        }
+        .video-hero .hero-vignette {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: radial-gradient(ellipse at 30% 50%, transparent 30%, rgba(11, 18, 32, 0.50) 100%);
+            pointer-events: none;
+        }
+        .video-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2.5rem;
+            width: 100%;
+        }
+        .video-hero .hero-content .inner {
+            max-width: 720px;
+            width: 100%;
+            color: #fff;
+        }
+        .video-hero .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1.2rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(8px);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .video-hero .hero-badge i {
+            font-size: 0.55rem;
+            color: #b21d18;
+        }
+        .video-hero .hero-headline {
+            font-size: 4.2rem;
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+        }
+        .video-hero .hero-headline .accent {
+            color: #b21d18;
+        }
+        .video-hero .hero-text {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            max-width: 540px;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        }
+        .video-hero .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .video-hero .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem 2rem;
+            max-width: 600px;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .video-hero .hero-stats .stat-item {
+            text-align: left;
+        }
+        .video-hero .hero-stats .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+            display: block;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        }
+        .video-hero .hero-stats .stat-number .suffix {
+            color: #b21d18;
+        }
+        .video-hero .hero-stats .stat-label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.2rem;
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            .video-hero .hero-headline {
+                font-size: 3.2rem;
+            }
+            .video-hero .hero-content {
+                padding: 5rem 2rem;
+            }
+            .video-hero .hero-stats {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem 1.5rem;
+                max-width: 100%;
+            }
+            .video-hero .hero-stats .stat-number {
+                font-size: 1.8rem;
+            }
+            .video-hero .video-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .video-hero .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+            .video-hero .hero-content {
+                padding: 4rem 1.5rem;
+                align-items: center;
+                text-align: center;
+            }
+            .video-hero .hero-content .inner {
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .video-hero .hero-headline {
+                font-size: 2.4rem;
+                text-align: center;
+            }
+            .video-hero .hero-text {
+                font-size: 0.9rem;
+                text-align: center;
+                max-width: 100%;
+            }
+            .video-hero .hero-actions {
+                justify-content: center;
+            }
+            .video-hero .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                max-width: 100%;
+                text-align: center;
+                border-top: none;
+                padding-top: 0;
+            }
+            .video-hero .hero-stats .stat-item {
+                text-align: center;
+            }
+            .video-hero .hero-stats .stat-number {
+                font-size: 1.6rem;
+            }
+            .video-hero .hero-stats .stat-label {
+                font-size: 0.6rem;
+            }
+            .video-hero .hero-badge {
+                font-size: 0.55rem;
+                padding: 0.3rem 1rem;
+            }
+            .video-hero .hero-overlay {
+                background: linear-gradient(180deg, rgba(11, 18, 32, 0.90) 0%, rgba(11, 18, 32, 0.70) 40%, rgba(11, 18, 32, 0.55) 70%, rgba(11, 18, 32, 0.80) 100%);
+            }
+            .video-hero .hero-vignette {
+                background: radial-gradient(ellipse at 50% 50%, transparent 20%, rgba(11, 18, 32, 0.70) 100%);
+            }
+        }
+        @media (max-width: 480px) {
+            .video-hero .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+            .video-hero .hero-headline {
+                font-size: 1.8rem;
+            }
+            .video-hero .hero-text {
+                font-size: 0.8rem;
+            }
+            .video-hero .hero-actions {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .video-hero .hero-actions .btn-primary,
+            .video-hero .hero-actions .btn-outline {
+                width: 100%;
+                justify-content: center;
+            }
+            .video-hero .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+            .video-hero .hero-stats .stat-number {
+                font-size: 1.3rem;
+            }
+            .video-hero .hero-content {
+                padding: 3rem 1rem;
+            }
+        }
+
+        /* ── TIMELINE ── */
         .timeline-wrapper {
             overflow: hidden;
             padding: 1rem 0 1.5rem 0;
             position: relative;
         }
-
         .timeline-inner {
             display: flex;
             justify-content: space-between;
@@ -465,7 +851,6 @@
             position: relative;
             padding: 0 1rem;
         }
-
         .timeline-line {
             position: absolute;
             top: 32px;
@@ -477,7 +862,6 @@
             border-radius: 2px;
             overflow: hidden;
         }
-
         .timeline-line .line-progress {
             height: 100%;
             width: 0%;
@@ -485,7 +869,6 @@
             border-radius: 2px;
             transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
         .timeline-step {
             display: flex;
             flex-direction: column;
@@ -497,7 +880,6 @@
             min-width: 0;
             cursor: default;
         }
-
         .timeline-step .step-circle {
             width: 52px;
             height: 52px;
@@ -515,7 +897,6 @@
             flex-shrink: 0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
-
         .timeline-step.active .step-circle {
             border-color: #b21d18;
             background: #b21d18;
@@ -523,34 +904,28 @@
             transform: scale(1.06);
             box-shadow: 0 8px 28px rgba(178, 29, 24, 0.3);
         }
-
         .timeline-step.completed .step-circle {
             border-color: #b21d18;
             background: #b21d18;
             color: #ffffff;
             box-shadow: 0 4px 16px rgba(178, 29, 24, 0.15);
         }
-
         .timeline-step .step-circle .number {
             font-weight: 700;
             font-size: 1.1rem;
         }
-
         .timeline-step .step-circle .icon {
             display: none;
             font-size: 1.2rem;
         }
-
         .timeline-step.active .step-circle .number,
         .timeline-step.completed .step-circle .number {
             display: none;
         }
-
         .timeline-step.active .step-circle .icon,
         .timeline-step.completed .step-circle .icon {
             display: block;
         }
-
         .timeline-step .step-label {
             margin-top: 0.6rem;
             font-size: 0.7rem;
@@ -562,12 +937,10 @@
             line-height: 1.3;
             max-width: 100%;
         }
-
         .timeline-step.active .step-label,
         .timeline-step.completed .step-label {
             color: #b21d18;
         }
-
         .timeline-step .step-sub {
             font-size: 0.55rem;
             color: #9ca3af;
@@ -577,12 +950,10 @@
             line-height: 1.2;
             font-weight: 400;
         }
-
         .timeline-step.active .step-sub,
         .timeline-step.completed .step-sub {
             color: #6b7280;
         }
-
         @media (max-width: 768px) {
             .timeline-line {
                 top: 26px;
@@ -610,7 +981,6 @@
                 font-size: 0.5rem;
             }
         }
-
         @media (max-width: 480px) {
             .timeline-inner {
                 flex-wrap: wrap;
@@ -658,26 +1028,60 @@
 
         /* ── CONTACT CARDS ── */
         .contact-info-card {
-            background: #fff;
-            padding: 1.25rem;
-            border-radius: 1rem;
-            border: 1px solid #e5e7eb;
-            transition: all 0.3s ease;
             display: flex;
-            align-items: flex-start;
-            gap: 1rem;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 1.25rem 1.5rem;
+            background: #ffffff;
+            border-radius: 1rem;
+            border: 1px solid #f0f0f0;
+            border-left: 4px solid transparent;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: default;
         }
         .contact-info-card:hover {
-            border-color: #b21d18;
-            box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.08);
+            border-left-color: #b21d18;
+            border-color: #e5e7eb;
         }
-        .contact-info-card .icon {
-            font-size: 1.5rem;
+        .contact-info-card .icon-wrap {
             flex-shrink: 0;
+            width: 2.8rem;
+            height: 2.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
             color: #b21d18;
-            width: 2rem;
-            text-align: center;
+            background: rgba(178, 29, 24, 0.06);
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .contact-info-card:hover .icon-wrap {
+            background: #b21d18;
+            color: #ffffff;
+            transform: scale(1.04);
+        }
+        .contact-info-card .content h4 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #6b7280;
+            margin-bottom: 0.1rem;
+        }
+        .contact-info-card .content p,
+        .contact-info-card .content a {
+            font-size: 0.95rem;
+            color: #1f2937;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .contact-info-card .content a:hover {
+            color: #b21d18;
         }
 
         /* ── FOOTER ── */
@@ -698,7 +1102,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* ── MOBILE RESPONSIVE OVERRIDES ── */
+        /* ── RESPONSIVE TWEAKS ── */
         @media (max-width: 480px) {
             .logo-text {
                 font-size: 1.2rem;
@@ -721,10 +1125,9 @@
             .btn-primary {
                 padding: 0.6rem 1.2rem;
                 font-size: 0.85rem;
-                min-height: 40px;
+                min-height: 44px;
             }
         }
-
         @media (max-width: 768px) {
             .hero-robot-img {
                 opacity: 0.3;
@@ -753,21 +1156,16 @@
                 padding: 5rem 1.5rem;
                 min-height: 90vh;
             }
-            .hero-content h1 {
-                text-align: center;
-            }
-            .hero-content p {
-                text-align: center;
-                margin-left: auto;
-                margin-right: auto;
-            }
+            .hero-content h1,
+            .hero-content p,
             .hero-content .btn-primary {
+                text-align: center;
                 margin-left: auto;
                 margin-right: auto;
             }
         }
 
-        /* ── KEYBOARD FOCUS VISIBILITY ── */
+        /* ── ACCESSIBILITY ── */
         a:focus-visible,
         button:focus-visible,
         input:focus-visible,
@@ -775,8 +1173,6 @@
             outline: 3px solid #b21d18;
             outline-offset: 2px;
         }
-
-        /* ── SCROLLBAR STYLING ── */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -791,530 +1187,52 @@
             background: #8a1612;
         }
 
-        /* ── NEW: EXPERTISE CARDS ── */
-        .expertise-card {
-            background: #fff;
-            border: 1px solid #f0f0f0;
-            border-radius: 1rem;
-            padding: 1.5rem 1rem;
-            text-align: center;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: default;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-        }
-        .expertise-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.08);
-            border-color: #b21d18;
-        }
-        .expertise-card .icon-wrap {
-            font-size: 2.6rem;
-            color: #b21d18;
-            margin-bottom: 0.75rem;
-            display: inline-block;
-            transition: transform 0.35s ease;
-        }
-        .expertise-card:hover .icon-wrap {
-            transform: scale(1.08);
-        }
-        .expertise-card h4 {
+        /* ── BUTTON OUTLINE (video hero) ── */
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
             font-size: 1rem;
-            font-weight: 600;
-            color: #1a1a2e;
-            margin-bottom: 0.2rem;
-        }
-        .expertise-card p {
-            font-size: 0.8rem;
-            color: #6b7280;
-            line-height: 1.4;
-        }
-        @media (max-width: 768px) {
-            .expertise-card {
-                padding: 1rem 0.5rem;
-            }
-            .expertise-card .icon-wrap {
-                font-size: 2rem;
-            }
-            .expertise-card h4 {
-                font-size: 0.85rem;
-            }
-            .expertise-card p {
-                font-size: 0.7rem;
-            }
-        }
-
-        /* ── NEW: INDUSTRY CARDS ── */
-        .industry-card {
-            background: #fff;
-            border: 1px solid #f0f0f0;
-            border-radius: 0.75rem;
-            padding: 1.2rem 0.8rem;
-            text-align: center;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: default;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-        }
-        .industry-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.08);
-            border-color: #b21d18;
-        }
-        .industry-card .icon-wrap {
-            font-size: 2rem;
-            color: #b21d18;
-            margin-bottom: 0.5rem;
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-        .industry-card:hover .icon-wrap {
-            transform: scale(1.06);
-        }
-        .industry-card span {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #1f2937;
-        }
-        @media (max-width: 768px) {
-            .industry-card {
-                padding: 0.8rem 0.4rem;
-            }
-            .industry-card .icon-wrap {
-                font-size: 1.5rem;
-            }
-            .industry-card span {
-                font-size: 0.7rem;
-            }
-        }
-
-        /* ── ELITE CUSTOMERS TILES ── */
-        .elite-logo-tile {
-            background: #fff;
-            border-radius: 0.75rem;
-            border: 1px solid #f0f0f0;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 80px;
-            transition: all 0.35s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-        }
-        .elite-logo-tile:hover {
-            border-color: #b21d18;
-            box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.08);
-            transform: scale(1.02);
-        }
-        .elite-logo-tile img {
-            max-height: 48px;
-            max-width: 120px;
-            object-fit: contain;
-            filter: grayscale(0.1);
-            transition: filter 0.35s ease;
-        }
-        .elite-logo-tile:hover img {
-            filter: grayscale(0);
-        }
-        @media (max-width: 768px) {
-            .elite-logo-tile {
-                min-height: 60px;
-                padding: 0.5rem;
-            }
-            .elite-logo-tile img {
-                max-height: 32px;
-                max-width: 80px;
-            }
-        }
-
-        /* ── SCROLL REVEAL DELAYS (for staggered animations) ── */
-        .stagger>* {
-            transition-delay: 0.05s;
-        }
-        .stagger>*:nth-child(2) {
-            transition-delay: 0.1s;
-        }
-        .stagger>*:nth-child(3) {
-            transition-delay: 0.15s;
-        }
-        .stagger>*:nth-child(4) {
-            transition-delay: 0.2s;
-        }
-        .stagger>*:nth-child(5) {
-            transition-delay: 0.25s;
-        }
-        .stagger>*:nth-child(6) {
-            transition-delay: 0.3s;
-        }
-        .stagger>*:nth-child(7) {
-            transition-delay: 0.35s;
-        }
-        .stagger>*:nth-child(8) {
-            transition-delay: 0.4s;
-        }
-        .stagger>*:nth-child(9) {
-            transition-delay: 0.45s;
-        }
-        .stagger>*:nth-child(10) {
-            transition-delay: 0.5s;
-        }
-        .stagger>*:nth-child(11) {
-            transition-delay: 0.55s;
-        }
-        .stagger>*:nth-child(12) {
-            transition-delay: 0.6s;
-        }
-        .stagger>*:nth-child(13) {
-            transition-delay: 0.65s;
-        }
-        .stagger>*:nth-child(14) {
-            transition-delay: 0.7s;
-        }
-
-        /* ========================================================== */
-        /* NEW: PREMIUM VIDEO HERO SECTION                            */
-        /* ========================================================== */
-        .video-hero {
-            position: relative;
-            min-height: 100vh;
-            width: 100%;
-            overflow: hidden;
-            background: #0B1220;
-        }
-
-        .video-hero .video-grid {
-            position: absolute;
-            inset: 0;
-            display: grid;
-            /* 4 columns × 3 rows = 12 slots – enough for 11 videos */
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 0;
-            z-index: 0;
-        }
-
-        .video-hero .video-grid .grid-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            background: #0B1220;
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform;
-        }
-
-        .video-hero .video-grid .grid-video:hover {
-            transform: scale(1.04);
-            z-index: 1;
-        }
-
-        /* Overlay with gradient */
-        .video-hero .hero-overlay {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            background: linear-gradient(135deg,
-                    rgba(11, 18, 32, 0.88) 0%,
-                    rgba(11, 18, 32, 0.65) 40%,
-                    rgba(11, 18, 32, 0.50) 70%,
-                    rgba(11, 18, 32, 0.70) 100%);
-            pointer-events: none;
-        }
-
-        /* Additional vignette */
-        .video-hero .hero-vignette {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            background: radial-gradient(ellipse at 30% 50%, transparent 30%, rgba(11, 18, 32, 0.50) 100%);
-            pointer-events: none;
-        }
-
-        /* Content wrapper */
-        .video-hero .hero-content {
-            position: relative;
-            z-index: 2;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 6rem 2.5rem;
-            width: 100%;
-        }
-
-        .video-hero .hero-content .inner {
-            max-width: 720px;
-            width: 100%;
-            color: #fff;
-        }
-
-        /* Badge */
-        .video-hero .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 1.2rem;
-            border-radius: 9999px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(8px);
-            font-size: 0.65rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        .video-hero .hero-badge i {
-            font-size: 0.55rem;
-            color: #b21d18;
-        }
-
-        /* Headline */
-        .video-hero .hero-headline {
-            font-size: 4.2rem;
-            font-weight: 900;
-            line-height: 1.05;
-            letter-spacing: -0.03em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            text-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
-        }
-        .video-hero .hero-headline .accent {
-            color: #b21d18;
-        }
-
-        /* Sub text */
-        .video-hero .hero-text {
-            font-size: 1.05rem;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.7;
-            max-width: 540px;
-            margin-bottom: 2rem;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Buttons */
-        .video-hero .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-        .video-hero .hero-actions .btn-primary {
-            background: #b21d18;
-            color: #fff;
-            padding: 0.85rem 2.4rem;
-            font-size: 0.95rem;
-            box-shadow: 0 8px 32px rgba(178, 29, 24, 0.35);
-        }
-        .video-hero .hero-actions .btn-primary:hover {
-            background: #8a1612;
-            box-shadow: 0 12px 48px rgba(178, 29, 24, 0.5);
-        }
-        .video-hero .hero-actions .btn-outline {
-            border-color: rgba(255, 255, 255, 0.25);
-            color: #fff;
-            padding: 0.85rem 2.4rem;
-            font-size: 0.95rem;
-            border-radius: 9999px;
-            font-weight: 600;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             min-height: 48px;
+            min-width: 48px;
             text-align: center;
             cursor: pointer;
-            border: 2px solid rgba(255, 255, 255, 0.25);
             background: transparent;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.2;
         }
-        .video-hero .hero-actions .btn-outline:hover {
+        .btn-outline:hover {
             border-color: #b21d18;
             background: rgba(178, 29, 24, 0.12);
             transform: translateY(-2px);
             box-shadow: 0 8px 28px -8px rgba(178, 29, 24, 0.2);
         }
 
-        /* Stats */
-        .video-hero .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem 2rem;
-            max-width: 600px;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .video-hero .hero-stats .stat-item {
-            text-align: left;
-        }
-        .video-hero .hero-stats .stat-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #fff;
-            line-height: 1;
-            display: block;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-        }
-        .video-hero .hero-stats .stat-number .suffix {
-            color: #b21d18;
-        }
-        .video-hero .hero-stats .stat-label {
-            font-size: 0.7rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: rgba(255, 255, 255, 0.5);
-            margin-top: 0.2rem;
-            display: block;
-        }
-
-        /* Responsive: Tablet */
-        @media (max-width: 1024px) {
-            .video-hero .hero-headline {
-                font-size: 3.2rem;
-            }
-            .video-hero .hero-content {
-                padding: 5rem 2rem;
-            }
-            .video-hero .hero-stats {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1rem 1.5rem;
-                max-width: 100%;
-            }
-            .video-hero .hero-stats .stat-number {
-                font-size: 1.8rem;
-            }
-            /* Tablet video grid: 3 columns × 4 rows */
-            .video-hero .video-grid {
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(4, 1fr);
-            }
-        }
-
-        /* Responsive: Mobile */
-        @media (max-width: 768px) {
-            .video-hero .video-grid {
-                /* Mobile: 2 columns × 6 rows */
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(6, 1fr);
-            }
-            .video-hero .hero-content {
-                padding: 4rem 1.5rem;
-                align-items: center;
-                text-align: center;
-            }
-            .video-hero .hero-content .inner {
-                max-width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .video-hero .hero-headline {
-                font-size: 2.4rem;
-                text-align: center;
-            }
-            .video-hero .hero-text {
-                font-size: 0.9rem;
-                text-align: center;
-                max-width: 100%;
-            }
-            .video-hero .hero-actions {
-                justify-content: center;
-            }
-            .video-hero .hero-actions .btn-primary,
-            .video-hero .hero-actions .btn-outline {
-                padding: 0.7rem 1.6rem;
-                font-size: 0.85rem;
-            }
-            .video-hero .hero-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-                max-width: 100%;
-                text-align: center;
-                border-top: none;
-                padding-top: 0;
-            }
-            .video-hero .hero-stats .stat-item {
-                text-align: center;
-            }
-            .video-hero .hero-stats .stat-number {
-                font-size: 1.6rem;
-            }
-            .video-hero .hero-stats .stat-label {
-                font-size: 0.6rem;
-            }
-            .video-hero .hero-badge {
-                font-size: 0.55rem;
-                padding: 0.3rem 1rem;
-            }
-            .video-hero .hero-overlay {
-                background: linear-gradient(180deg,
-                        rgba(11, 18, 32, 0.90) 0%,
-                        rgba(11, 18, 32, 0.70) 40%,
-                        rgba(11, 18, 32, 0.55) 70%,
-                        rgba(11, 18, 32, 0.80) 100%);
-            }
-            .video-hero .hero-vignette {
-                background: radial-gradient(ellipse at 50% 50%, transparent 20%, rgba(11, 18, 32, 0.70) 100%);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .video-hero .video-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(6, 1fr);
-            }
-            .video-hero .hero-headline {
-                font-size: 1.8rem;
-            }
-            .video-hero .hero-text {
-                font-size: 0.8rem;
-            }
-            .video-hero .hero-actions {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-            .video-hero .hero-actions .btn-primary,
-            .video-hero .hero-actions .btn-outline {
-                width: 100%;
-                justify-content: center;
-            }
-            .video-hero .hero-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.75rem;
-            }
-            .video-hero .hero-stats .stat-number {
-                font-size: 1.3rem;
-            }
-            .video-hero .hero-content {
-                padding: 3rem 1rem;
-            }
+        /* ── GRID AUTO ROWS ── */
+        .grid-auto-rows-1fr {
+            grid-auto-rows: 1fr;
         }
     </style>
     <base target="_blank" />
 </head>
 
 <body>
-
-    <!-- ========================================================== -->
-    <!-- NAVBAR                                                     -->
-    <!-- ========================================================== -->
     <nav class="fixed top-0 w-full z-50 navbar-white" role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-12">
             <div class="flex justify-between items-center h-14 md:h-16 lg:h-20">
-
                 <a href="#" class="logo-container brand-dark" aria-label="GARS Robotics Home">
                     <img src="gars logo/new gars.png" class="logo-img" alt="GARS Robotics Logo" />
-                    <span class="logo-text">
-                        <span class="brand-gars">GARS</span>
-                        <span class="brand-robotics">ROBOTICS</span>
-                    </span>
+                    <span class="logo-text"><span class="brand-gars">GARS</span><span class="brand-robotics">ROBOTICS</span></span>
                 </a>
-
                 <ul class="hidden md:flex space-x-5 lg:space-x-7">
                     <li><a href="#home" class="nav-link text-sm font-medium" data-section="home">Home</a></li>
                     <li><a href="#services" class="nav-link text-sm font-medium" data-section="services">Services</a></li>
                     <li><a href="#expertise" class="nav-link text-sm font-medium" data-section="expertise">Expertise</a></li>
-                    <!-- Project Gallery removed – nav link removed -->
                     <li><a href="#videos" class="nav-link text-sm font-medium" data-section="videos">Showcase</a></li>
                     <li><a href="#industries" class="nav-link text-sm font-medium" data-section="industries">Industries</a></li>
                     <li><a href="#clients" class="nav-link text-sm font-medium" data-section="clients">Clients</a></li>
@@ -1322,12 +1240,8 @@
                     <li><a href="#careers" class="nav-link text-sm font-medium" data-section="careers">Careers</a></li>
                     <li><a href="#contact" class="nav-link text-sm font-medium" data-section="contact">Contact</a></li>
                 </ul>
-
-                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hamburger-icon text-2xl" aria-label="Toggle mobile menu" aria-expanded="false">
-                    ☰
-                </button>
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hamburger-icon text-2xl" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
             </div>
-
             <div id="mobileMenu" class="md:hidden hidden py-3 border-t border-gray-200" role="menu">
                 <a href="#home" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Home</a>
                 <a href="#services" class="block py-2.5 text-sm font-medium mobile-menu-link" role="menuitem" onclick="closeMobileMenu()">Services</a>
@@ -1342,16 +1256,10 @@
         </div>
     </nav>
 
-    <!-- ========================================================== -->
-    <!-- HERO                                                       -->
-    <!-- ========================================================== -->
     <section id="home" class="relative min-h-screen overflow-hidden bg-[#0B1220]" aria-label="Hero section">
-        <div class="hero-bg-container">
-            <img src="verticle.jpg" alt="Industrial Robot in manufacturing facility" class="hero-robot-img" />
-        </div>
+        <div class="hero-bg-container"><img src="verticle.jpg" alt="Industrial Robot in manufacturing facility" class="hero-robot-img" /></div>
         <div class="hero-vignette"></div>
         <div class="hero-gradient-overlay"></div>
-
         <div class="hero-content">
             <div class="max-w-7xl mx-auto w-full">
                 <div class="max-w-3xl text-center md:text-left mx-auto md:mx-0">
@@ -1366,110 +1274,99 @@
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- TRUST BAR (Marquee)                                        -->
-    <!-- ========================================================== -->
     <section class="py-6 sm:py-8 md:py-10 lg:py-12 bg-white border-y border-gray-100" aria-label="Trusted by Industry Leaders">
         <div class="max-w-7xl mx-auto">
             <p class="text-center text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-widest mb-3 sm:mb-4 md:mb-5">Trusted by Industry Leaders</p>
             <div class="marquee-wrap">
                 <div class="marquee-track" id="marqueeTrack">
-                    <div class="marquee-item"><img src="customer logo/abb.png" alt="ABB Robotics" /></div>
-                    <div class="marquee-item"><img src="customer logo/uni.jpg" alt="HUL" /></div>
-                    <div class="marquee-item"><img src="customer logo/jsw.webp" alt="JSW" /></div>
-                    <div class="marquee-item"><img src="customer logo/jsw_paints_logo.svg" alt="JSW Paints" /></div>
-                    <div class="marquee-item"><img src="customer logo/tvs.png" alt="TVS Group" /></div>
-                    <div class="marquee-item"><img src="customer logo/yizumi.webp" alt="Yizumi" /></div>
-                    <div class="marquee-item"><img src="customer logo/pra.webp" alt="Sipra Engineering" /></div>
-                    <div class="marquee-item"><img src="customer logo/ficom.png" alt="FICOM Engineering" /></div>
-                    <div class="marquee-item"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals" /></div>
-                    <div class="marquee-item"><img src="customer logo/ola-cabs.webp" alt="Ola" /></div>
-                    <div class="marquee-item"><img src="customer logo/abb.png" alt="ABB Robotics" /></div>
-                    <div class="marquee-item"><img src="customer logo/uni.jpg" alt="HUL" /></div>
-                    <div class="marquee-item"><img src="customer logo/jsw.webp" alt="JSW" /></div>
-                    <div class="marquee-item"><img src="customer logo/jsw_paints_logo.svg" alt="JSW Paints" /></div>
-                    <div class="marquee-item"><img src="customer logo/tvs.png" alt="TVS Group" /></div>
-                    <div class="marquee-item"><img src="customer logo/yizumi.webp" alt="Yizumi" /></div>
-                    <div class="marquee-item"><img src="customer logo/pra.webp" alt="Sipra Engineering" /></div>
-                    <div class="marquee-item"><img src="customer logo/ficom.png" alt="FICOM Engineering" /></div>
-                    <div class="marquee-item"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals" /></div>
-                    <div class="marquee-item"><img src="customer logo/ola-cabs.webp" alt="Ola" /></div>
+                    <div class="marquee-item"><img src="customer logo/abb.png" alt="ABB Robotics" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/uni.jpg" alt="HUL" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/jsw.webp" alt="JSW" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/jsw_paints_logo.svg" alt="JSW Paints" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/tvs.png" alt="TVS Group" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/yizumi.webp" alt="Yizumi" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/pra.webp" alt="Sipra Engineering" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/ficom.png" alt="FICOM Engineering" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/ola real.webp" alt="Ola" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/ceat.png" alt="CEAT Tyres" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/gabriel.png" alt="Gabriel India" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/pi.png" alt="PI Industries" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/sonalika.jpg" alt="Sonalika" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/tata.png" alt="Tata Motors" loading="lazy" /></div>
+                    <!-- duplicate for seamless loop -->
+                    <div class="marquee-item"><img src="customer logo/abb.png" alt="ABB Robotics" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/uni.jpg" alt="HUL" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/jsw.webp" alt="JSW" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/jsw_paints_logo.svg" alt="JSW Paints" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/tvs.png" alt="TVS Group" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/yizumi.webp" alt="Yizumi" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/pra.webp" alt="Sipra Engineering" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/ficom.png" alt="FICOM Engineering" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/ola real.webp" alt="Ola" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/ceat.png" alt="CEAT Tyres" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/gabriel.png" alt="Gabriel India" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/pi.png" alt="PI Industries" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/sonalika.jpg" alt="Sonalika" loading="lazy" /></div>
+                    <div class="marquee-item"><img src="customer logo/tata.png" alt="Tata Motors" loading="lazy" /></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- STATS                                                      -->
-    <!-- ========================================================== -->
     <section class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="Company statistics">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center stagger" id="statsGrid">
-                <div>
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Projects Completed</div>
-                </div>
-                <div>
-                    <div class="stat-number">25+</div>
-                    <div class="stat-label">Industrial Clients</div>
-                </div>
-                <div>
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">States Served</div>
-                </div>
-                <div>
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Technical Support</div>
-                </div>
+                <div><div class="stat-number">50+</div><div class="stat-label">Projects Completed</div></div>
+                <div><div class="stat-number">25+</div><div class="stat-label">Industrial Clients</div></div>
+                <div><div class="stat-number">15+</div><div class="stat-label">States Served</div></div>
+                <div><div class="stat-number">24/7</div><div class="stat-label">Technical Support</div></div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- SERVICES (unchanged)                                       -->
-    <!-- ========================================================== -->
     <section id="services" class="py-10 sm:py-14 md:py-16 lg:py-20" aria-label="Our services">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Our Services</h2>
             <p class="text-gray-600 mb-8 md:mb-12 max-w-2xl text-sm sm:text-base reveal">Comprehensive robotic integration and automation support for modern manufacturing.</p>
-
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-7 stagger" id="servicesGrid">
-                <div class="glow-card p-5 sm:p-6 md:p-7">
+                <div class="glow-card p-5 sm:p-6 md:p-7 flex flex-col">
                     <div class="icon-svg mb-3 md:mb-4 text-red-600">
                         <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.25v-.75a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v.75m-4.5-9.75v.75m4.5-3.75v.75m-9 4.5v-.75a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v.75m-4.5-3.75v.75m4.5-3.75v.75" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5ZM4.5 12a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Zm15 0a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5ZM12 12a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Z" /></svg>
                     </div>
                     <h3 class="text-base sm:text-lg md:text-xl font-bold mb-1.5 md:mb-2">Robot Programming</h3>
                     <p class="text-gray-600 text-sm">ABB, Fanuc, Kawasaki programming and configuration.</p>
                 </div>
-                <div class="glow-card p-5 sm:p-6 md:p-7">
+                <div class="glow-card p-5 sm:p-6 md:p-7 flex flex-col">
                     <div class="icon-svg mb-3 md:mb-4 text-red-600">
                         <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
                     </div>
                     <h3 class="text-base sm:text-lg md:text-xl font-bold mb-1.5 md:mb-2">ABB Core Expertise</h3>
-                    <p class="text-gray-600 text-sm">RAPID programming, IRC5 controllers, system integration.</p>
+                    <p class="text-gray-600 text-sm">RAPID programming, IRC5 controllers, system integration, omnicore controllers.</p>
                 </div>
-                <div class="glow-card p-5 sm:p-6 md:p-7">
+                <div class="glow-card p-5 sm:p-6 md:p-7 flex flex-col">
                     <div class="icon-svg mb-3 md:mb-4 text-red-600">
                         <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0z" /></svg>
                     </div>
                     <h3 class="text-base sm:text-lg md:text-xl font-bold mb-1.5 md:mb-2">System Integration</h3>
                     <p class="text-gray-600 text-sm">Robots with conveyors, grippers, PLC systems.</p>
                 </div>
-                <div class="glow-card p-5 sm:p-6 md:p-7">
+                <div class="glow-card p-5 sm:p-6 md:p-7 flex flex-col">
                     <div class="icon-svg mb-3 md:mb-4 text-red-600">
                         <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" /></svg>
                     </div>
                     <h3 class="text-base sm:text-lg md:text-xl font-bold mb-1.5 md:mb-2">Commissioning &amp; Support</h3>
                     <p class="text-gray-600 text-sm">Startup assistance, cycle optimization, production support.</p>
                 </div>
-                <div class="glow-card p-5 sm:p-6 md:p-7">
+                <div class="glow-card p-5 sm:p-6 md:p-7 flex flex-col">
                     <div class="icon-svg mb-3 md:mb-4 text-red-600">
                         <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.048.58.024 1.193-.14 1.743" /></svg>
                     </div>
                     <h3 class="text-base sm:text-lg md:text-xl font-bold mb-1.5 md:mb-2">Troubleshooting</h3>
                     <p class="text-gray-600 text-sm">Fault recovery, preventive maintenance, performance improvement.</p>
                 </div>
-                <div class="glow-card p-5 sm:p-6 md:p-7">
+                <div class="glow-card p-5 sm:p-6 md:p-7 flex flex-col">
                     <div class="icon-svg mb-3 md:mb-4 text-red-600">
                         <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25z" /></svg>
                     </div>
@@ -1480,213 +1377,83 @@
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- EXPERTISE SECTION                                          -->
-    <!-- ========================================================== -->
     <section id="expertise" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="Our expertise">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Our Expertise</h2>
             <p class="text-gray-600 mb-8 md:mb-12 max-w-2xl text-sm sm:text-base reveal">Robotic automation capabilities across the industrial spectrum.</p>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-5 md:gap-6 stagger" id="expertiseGrid">
-                <div class="expertise-card">
-                    <div class="icon-wrap"><i class="fas fa-cubes"></i></div>
-                    <h4>Palletizing</h4>
-                    <p>Stacking &amp; handling</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon-wrap"><i class="fas fa-arrows-alt-h"></i></div>
-                    <h4>Material Handling</h4>
-                    <p>Conveyor &amp; transfer</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon-wrap"><i class="fas fa-cogs"></i></div>
-                    <h4>Machine Tending</h4>
-                    <p>CNC, injection molding</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon-wrap"><i class="fas fa-bolt"></i></div>
-                    <h4>Welding Applications</h4>
-                    <p>Arc, spot, laser</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon-wrap"><i class="fas fa-gem"></i></div>
-                    <h4>Buffing</h4>
-                    <p>Polishing &amp; finishing</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon-wrap"><i class="fas fa-paint-roller"></i></div>
-                    <h4>Gluing</h4>
-                    <p>Adhesive dispensing</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon-wrap"><i class="fas fa-boxes"></i></div>
-                    <h4>Packaging</h4>
-                    <p>End-of-line automation</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon-wrap"><i class="fas fa-hand-paper"></i></div>
-                    <h4>Pick &amp; Place</h4>
-                    <p>Precision placement</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon-wrap"><i class="fas fa-eye"></i></div>
-                    <h4>Vision Inspection</h4>
-                    <p>Quality assurance</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon-wrap"><i class="fas fa-microchip"></i></div>
-                    <h4>Robotic Assembly</h4>
-                    <p>Component integration</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon-wrap"><i class="fas fa-arrows-alt-v"></i></div>
-                    <h4>Conveyor Integration</h4>
-                    <p>Line synchronization</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon-wrap"><i class="fas fa-hand-grip"></i></div>
-                    <h4>End-of-Arm Tooling</h4>
-                    <p>Gripper &amp; tool design</p>
-                </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 stagger grid-auto-rows-1fr" id="expertiseGrid">
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-cubes"></i></div><h4>Palletizing</h4><p>Stacking &amp; handling</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-arrows-left-right"></i></div><h4>Material Handling</h4><p>Conveyor &amp; transfer</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-gears"></i></div><h4>Machine Tending</h4><p>CNC, injection molding</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-bolt"></i></div><h4>Welding Applications</h4><p>Arc, spot, laser</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-gem"></i></div><h4>Buffing</h4><p>Polishing &amp; finishing</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-paint-roller"></i></div><h4>Gluing</h4><p>Adhesive dispensing</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-box-open"></i></div><h4>Packaging</h4><p>End-of-line automation</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-hand-pointer"></i></div><h4>Pick &amp; Place</h4><p>Precision placement</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-eye"></i></div><h4>Vision Inspection</h4><p>Quality assurance</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-microchip"></i></div><h4>Robotic Assembly</h4><p>Component integration</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-arrows-up-down"></i></div><h4>Conveyor Integration</h4><p>Line synchronization</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-hand-rock"></i></div><h4>End-of-Arm Tooling</h4><p>Gripper &amp; tool design</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-industry"></i></div><h4>Die Casting Extraction</h4><p>High-pressure die casting</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-camera"></i></div><h4>Vision Integration</h4><p>Industrial machine vision</p></div>
+                <!-- FIXED ICON: Grinding & Sanding -->
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-arrows-rotate"></i></div><h4>Grinding &amp; Sanding</h4><p>Surface finishing</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-hammer"></i></div><h4>Casting &amp; Forging</h4><p>Metal forming automation</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-spray-can"></i></div><h4>Dispensing &amp; Coating</h4><p>Adhesive, paint, sealant</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-robot"></i></div><h4>Automated Assembly</h4><p>Multi‑step assembly lines</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-warehouse"></i></div><h4>AGV &amp; Warehouse</h4><p>Autonomous material transport</p></div>
+                <div class="expertise-card"><div class="icon-wrap"><i class="fas fa-arrows-spin"></i></div><h4>Parts Orientation</h4><p>Marking &amp; positioning</p></div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- ========================================================== -->
-    <!-- PREMIUM VIDEO HERO – replaces the old Video Gallery        -->
-    <!-- ========================================================== -->
-    <!-- ========================================================== -->
     <section id="videos" class="video-hero" aria-label="Industrial Automation Showcase">
-
-        <!-- 4×3 Video Grid Background (12 slots – we inject 11 videos) -->
-        <div class="video-grid" id="videoGrid">
-            <!-- 11 videos injected by JavaScript, one slot remains empty -->
-        </div>
-
-        <!-- Dark gradient overlay -->
+        <div class="video-grid" id="videoGrid"></div>
         <div class="hero-overlay"></div>
         <div class="hero-vignette"></div>
-
-        <!-- Content -->
         <div class="hero-content">
             <div class="inner">
-                <!-- Badge -->
-                <div class="hero-badge reveal">
-                    <i class="fas fa-industry"></i>
-                    Industrial Automation Experts
-                </div>
-
-                <!-- Headline -->
-                <h1 class="hero-headline reveal">
-                    <span class="accent">AUTOMATION.</span><br />
-                    ENGINEERED FOR EXCELLENCE.
-                </h1>
-
-                <!-- Supporting text -->
-                <p class="hero-text reveal">
-                    Delivering intelligent robotic automation solutions for manufacturing industries across India.
-                    From programming and simulation to commissioning and production support,
-                    GARS Robotics is your trusted automation partner.
-                </p>
-
-                <!-- CTA Buttons – now points to #videos (same section) -->
+                <div class="hero-badge reveal"><i class="fas fa-industry"></i> Industrial Automation Experts</div>
+                <h1 class="hero-headline reveal"><span class="accent">AUTOMATION.</span><br /> ENGINEERED FOR EXCELLENCE.</h1>
+                <p class="hero-text reveal">Delivering intelligent robotic automation solutions for manufacturing industries across India. From programming and simulation to commissioning and production support, GARS Robotics is your trusted automation partner.</p>
                 <div class="hero-actions reveal">
-                    <a href="#videos" class="btn-primary">
-                        <i class="fas fa-arrow-right mr-2"></i> Explore Projects
-                    </a>
-                    <a href="#contact" class="btn-outline">
-                        Contact Us
-                    </a>
+                    <a href="#videos" class="btn-primary"><i class="fas fa-arrow-right mr-2"></i> Explore Projects</a>
+                    <a href="#contact" class="btn-outline">Contact Us</a>
                 </div>
-
-                <!-- Bottom Statistics with animated counters -->
                 <div class="hero-stats" id="heroStats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="40">0<span class="suffix">+</span></span>
-                        <span class="stat-label">Projects Completed</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="15">0<span class="suffix">+</span></span>
-                        <span class="stat-label">Industrial Clients</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="5">0<span class="suffix">+</span></span>
-                        <span class="stat-label">States Served</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="24">0</span>
-                        <span class="stat-label">24/7 Technical Support</span>
-                    </div>
+                    <div class="stat-item"><span class="stat-number" data-target="40">0<span class="suffix">+</span></span><span class="stat-label">Projects Completed</span></div>
+                    <div class="stat-item"><span class="stat-number" data-target="25">0<span class="suffix">+</span></span><span class="stat-label">Industrial Clients</span></div>
+                    <div class="stat-item"><span class="stat-number" data-target="15">0<span class="suffix">+</span></span><span class="stat-label">States Served</span></div>
+                    <div class="stat-item"><span class="stat-number" data-target="24">0</span><span class="stat-label">24/7 Technical Support</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- TIMELINE – REDESIGNED PREMIUM                              -->
-    <!-- ========================================================== -->
     <section class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="Project workflow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-center reveal">Project Workflow</h2>
             <p class="text-gray-600 mb-8 md:mb-12 text-center max-w-2xl mx-auto text-sm sm:text-base reveal">Our engineering process from concept to production support.</p>
-
             <div class="timeline-wrapper">
                 <div class="timeline-inner" id="timeline">
-                    <div class="timeline-line">
-                        <div class="line-progress" id="lineProgress"></div>
-                    </div>
-
-                    <div class="timeline-step" data-step="0">
-                        <div class="step-circle"><span class="number">1</span><i class="fas fa-search icon"></i></div>
-                        <div class="step-label">Analysis</div>
-                        <div class="step-sub">Requirement study</div>
-                    </div>
-                    <div class="timeline-step" data-step="1">
-                        <div class="step-circle"><span class="number">2</span><i class="fas fa-cog icon"></i></div>
-                        <div class="step-label">Simulation</div>
-                        <div class="step-sub">Virtual validation</div>
-                    </div>
-                    <div class="timeline-step" data-step="2">
-                        <div class="step-circle"><span class="number">3</span><i class="fas fa-check-circle icon"></i></div>
-                        <div class="step-label">FAT</div>
-                        <div class="step-sub">Factory test</div>
-                    </div>
-                    <div class="timeline-step" data-step="3">
-                        <div class="step-circle"><span class="number">4</span><i class="fas fa-tools icon"></i></div>
-                        <div class="step-label">Installation</div>
-                        <div class="step-sub">On‑site setup</div>
-                    </div>
-                    <div class="timeline-step" data-step="4">
-                        <div class="step-circle"><span class="number">5</span><i class="fas fa-code icon"></i></div>
-                        <div class="step-label">Programming</div>
-                        <div class="step-sub">Logic &amp; code</div>
-                    </div>
-                    <div class="timeline-step" data-step="5">
-                        <div class="step-circle"><span class="number">6</span><i class="fas fa-play icon"></i></div>
-                        <div class="step-label">Commissioning</div>
-                        <div class="step-sub">Tuning &amp; test</div>
-                    </div>
-                    <div class="timeline-step" data-step="6">
-                        <div class="step-circle"><span class="number">7</span><i class="fas fa-industry icon"></i></div>
-                        <div class="step-label">Production</div>
-                        <div class="step-sub">Live support</div>
-                    </div>
+                    <div class="timeline-line"><div class="line-progress" id="lineProgress"></div></div>
+                    <div class="timeline-step" data-step="0"><div class="step-circle"><span class="number">1</span><i class="fas fa-search icon"></i></div><div class="step-label">Analysis</div><div class="step-sub">Requirement study</div></div>
+                    <div class="timeline-step" data-step="1"><div class="step-circle"><span class="number">2</span><i class="fas fa-cog icon"></i></div><div class="step-label">Simulation</div><div class="step-sub">Virtual validation</div></div>
+                    <div class="timeline-step" data-step="2"><div class="step-circle"><span class="number">3</span><i class="fas fa-check-circle icon"></i></div><div class="step-label">FAT</div><div class="step-sub">Factory test</div></div>
+                    <div class="timeline-step" data-step="3"><div class="step-circle"><span class="number">4</span><i class="fas fa-tools icon"></i></div><div class="step-label">Installation</div><div class="step-sub">On‑site setup</div></div>
+                    <div class="timeline-step" data-step="4"><div class="step-circle"><span class="number">5</span><i class="fas fa-code icon"></i></div><div class="step-label">Programming</div><div class="step-sub">Logic &amp; code</div></div>
+                    <div class="timeline-step" data-step="5"><div class="step-circle"><span class="number">6</span><i class="fas fa-play icon"></i></div><div class="step-label">Commissioning</div><div class="step-sub">Tuning &amp; test</div></div>
+                    <div class="timeline-step" data-step="6"><div class="step-circle"><span class="number">7</span><i class="fas fa-industry icon"></i></div><div class="step-label">Production</div><div class="step-sub">Live support</div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- INDUSTRIES – Expanded (All 14)                             -->
-    <!-- ========================================================== -->
     <section id="industries" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="Industries we serve">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Industries We Serve</h2>
             <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Automation solutions tailored for diverse sectors.</p>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5 stagger" id="industriesGrid">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 stagger grid-auto-rows-1fr" id="industriesGrid">
                 <div class="industry-card"><div class="icon-wrap"><i class="fas fa-blender-phone"></i></div><span>Appliances</span></div>
                 <div class="industry-card"><div class="icon-wrap"><i class="fas fa-car"></i></div><span>Automotive</span></div>
                 <div class="industry-card"><div class="icon-wrap"><i class="fas fa-flask"></i></div><span>Chemical</span></div>
@@ -1705,71 +1472,27 @@
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- ELITE CUSTOMERS – CLEAN LOGO GRID                          -->
-    <!-- ========================================================== -->
     <section id="clients" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="Elite customers">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Our Elite Customers</h2>
             <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Trusted by leading manufacturers across India and beyond.</p>
-
             <div class="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6" id="clientsGrid">
-                <!-- ABB Robotics -->
-                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
-                    <img src="customer logo/abb.png" alt="ABB Robotics" onerror="this.style.display='none'" />
-                </div>
-
-                <!-- HUL -->
-                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
-                    <img src="customer logo/uni.jpg" alt="HUL" onerror="this.style.display='none'" />
-                </div>
-
-                <!-- JSW -->
-                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
-                    <img src="customer logo/jsw.webp" alt="JSW" onerror="this.style.display='none'" />
-                </div>
-
-                <!-- JSW Paints -->
-                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
-                    <img src="customer logo/jsw_paints_logo.svg" alt="JSW Paints" onerror="this.style.display='none'" />
-                </div>
-
-                <!-- SCL - TVS Group -->
-                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
-                    <img src="customer logo/tvs.png" alt="TVS Group" onerror="this.style.display='none'" />
-                </div>
-
-                <!-- Yizumi -->
-                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
-                    <img src="customer logo/yizumi.webp" alt="Yizumi" onerror="this.style.display='none'" />
-                </div>
-
-                <!-- Sipra Engineering -->
-                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
-                    <img src="customer logo/pra.webp" alt="Sipra Engineering" onerror="this.style.display='none'" />
-                </div>
-
-                <!-- ABB ELSP -->
-                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
-                    <img src="customer logo/abb.png" alt="ABB ELSP" onerror="this.style.display='none'" />
-                </div>
-
-                <!-- FICOM Engineering -->
-                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
-                    <img src="customer logo/ficom.png" alt="FICOM Engineering" onerror="this.style.display='none'" />
-                </div>
-
-                <!-- Asian Metals & Castings -->
-                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
-                    <img src="customer logo/asian_metals_logo.svg" alt="Asian Metals & Castings" onerror="this.style.display='none'" />
-                </div>
-
-                <!-- Ola -->
-                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;">
-                    <img src="customer logo/ola real.webp" alt="Ola" onerror="this.style.display='none'" />
-                </div>
-
-                <!-- Many More Coming Soon -->
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/abb.png" alt="ABB Robotics" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/uni.jpg" alt="HUL" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/jsw.webp" alt="JSW" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/jsw_paints_logo.svg" alt="JSW Paints" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/tvs.png" alt="TVS Group" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/yizumi.webp" alt="Yizumi" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/pra.webp" alt="Sipra Engineering" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/abb.png" alt="ABB ELSP" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/ficom.png" alt="FICOM Engineering" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/asian_metals_logo.svg" alt="Asian Metals & Castings" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/ola real.webp" alt="Ola" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/ceat.png" alt="CEAT Tyres" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/gabriel.png" alt="Gabriel India" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/sonalika.jpg" alt="Sonalika" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/tata.png" alt="Tata Motors" loading="lazy" onerror="this.style.display='none'" /></div>
+                <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px;"><img src="customer logo/pi.png" alt="PI Industries" loading="lazy" onerror="this.style.display='none'" /></div>
                 <div class="elite-logo-tile" style="flex:0 0 calc(20% - 1.5rem); min-width:100px; max-width:160px; border:1px dashed #d1d5db; background:#fafafa; flex-direction:column; gap:0.15rem; padding:0.75rem;">
                     <span class="text-gray-400 text-sm font-medium">Many More</span>
                     <span class="text-gray-400 text-xs">Coming Soon</span>
@@ -1778,20 +1501,15 @@
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- ABOUT (with Leadership – icons removed)                    -->
-    <!-- ========================================================== -->
     <section id="about" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="About us">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">About GARS Robotics</h2>
             <p class="text-gray-600 mb-4 md:mb-6 max-w-3xl text-sm sm:text-base reveal">Founded in 2019, we are on a mission to make industrial automation accessible, intelligent, and reliable.</p>
-
             <div class="prose prose-sm sm:prose-base lg:prose-lg max-w-none mb-6 md:mb-8 reveal">
                 <p><strong>About Us —</strong> GARS Robotics and Automation is a Bangalore-based robotic integration company specializing in industrial robot programming, commissioning, and automation support. We work with globally recognized robotic platforms such as ABB, FANUC, Kawasaki, and other leading automation systems. Our core expertise lies in ABB industrial robots.</p>
                 <div class="h-px bg-gray-200 my-4 md:my-6"></div>
                 <p>Our expertise includes robotic cell integration, cycle time optimization, troubleshooting, preventive maintenance, and on-site technical support for manufacturing environments. We focus on delivering reliable and efficient automation solutions designed to improve productivity, accuracy, and operational safety. With a commitment to quality and long-term industrial support, GARS Robotics and Automation partners with manufacturing companies to enhance automation performance and reduce production downtime.</p>
             </div>
-
             <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-7 mb-8 md:mb-12 reveal">
                 <div class="bg-white p-5 sm:p-6 md:p-7 rounded-2xl border border-gray-200">
                     <h3 class="text-xl sm:text-2xl font-bold text-red-600 mb-1.5 sm:mb-2">Our Mission</h3>
@@ -1802,27 +1520,18 @@
                     <p class="text-gray-700 text-sm sm:text-base leading-relaxed">To become a trusted industrial automation partner known for high-quality integration, technical expertise, and long-term customer support.</p>
                 </div>
             </div>
-
-            <!-- ========================================================== -->
-            <!-- LEADERSHIP – with all 3 members, icons removed             -->
-            <!-- ========================================================== -->
             <h3 class="text-2xl sm:text-3xl font-bold mb-5 md:mb-8 reveal">Leadership</h3>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-7 stagger" id="leadershipGrid">
-                <!-- M/s Pooja S Hebbal -->
                 <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('M/s Pooja S Hebbal', 'Proprietor', 'Proprietor with expertise in industrial automation, leading the company with a vision for quality and innovation.')">
                     <h4 class="text-base sm:text-lg md:text-xl font-bold">M/s Pooja S Hebbal</h4>
                     <p class="text-red-600 text-xs sm:text-sm mb-1">Proprietor</p>
                     <p class="text-gray-500 text-xs sm:text-sm">Leading with vision and expertise.</p>
                 </div>
-
-                <!-- Mr. Rachoteshwar Aiholli -->
                 <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('Mr. Rachoteshwar Aiholli', 'Project Manager', 'Project Manager with expertise in industrial automation projects, leading project execution and client coordination.')">
                     <h4 class="text-base sm:text-lg md:text-xl font-bold">Mr. Rachoteshwar Aiholli</h4>
                     <p class="text-red-600 text-xs sm:text-sm mb-1">Project Manager</p>
                     <p class="text-gray-500 text-xs sm:text-sm">Leading project execution and client coordination.</p>
                 </div>
-
-                <!-- Mr. Chandru Badodagi -->
                 <div class="glow-card p-5 sm:p-6 md:p-7 text-center cursor-pointer" onclick="showEmployeeModal('Mr. Chandru Badodagi', 'Robotic Engineer', 'Robotic Engineer specializing in ABB, FANUC, and Kawasaki programming, with hands-on experience in system integration and commissioning.')">
                     <h4 class="text-base sm:text-lg md:text-xl font-bold">Mr. Chandru Badodagi</h4>
                     <p class="text-red-600 text-xs sm:text-sm mb-1">Robotic Engineer</p>
@@ -1832,22 +1541,13 @@
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- CAREERS (unchanged)                                        -->
-    <!-- ========================================================== -->
     <section id="careers" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-white" aria-label="Careers">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Join Our Team</h2>
             <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Help us build the future of automation. We're looking for curious, driven people.</p>
-
             <div class="space-y-6" id="careersList">
-                <!-- Robot Programmer -->
                 <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 sm:p-6">
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">Robot Programmer</h3>
-                        <p class="text-gray-500 text-sm">Bengaluru · 0-2 Years</p>
-                        <p class="text-gray-600 text-sm mt-1">ABB, FANUC, KUKA programming, PLC integration.</p>
-                    </div>
+                    <div class="mb-4"><h3 class="text-xl font-bold">Robot Programmer</h3><p class="text-gray-500 text-sm">Bengaluru · 0-2 Years</p><p class="text-gray-600 text-sm mt-1">ABB, FANUC, KUKA programming, PLC integration.</p></div>
                     <form class="ajax-form space-y-3" data-subject="Application for Robot Programmer">
                         <div class="grid sm:grid-cols-2 gap-3">
                             <input type="text" name="Full Name" placeholder="Full Name" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
@@ -1861,13 +1561,8 @@
                         <button type="submit" class="btn-primary w-full sm:w-auto">Submit Application</button>
                     </form>
                 </div>
-
-                <!-- Senior Robotics Engineer -->
                 <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 sm:p-6 opacity-60">
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">Senior Robotics Engineer</h3>
-                        <p class="text-gray-500 text-sm">Stuttgart, Germany · Full-time</p>
-                    </div>
+                    <div class="mb-4"><h3 class="text-xl font-bold">Senior Robotics Engineer</h3><p class="text-gray-500 text-sm">Stuttgart, Germany · Full-time</p></div>
                     <form class="ajax-form space-y-3" data-subject="Application for Senior Robotics Engineer">
                         <div class="grid sm:grid-cols-2 gap-3">
                             <input type="text" name="Full Name" placeholder="Full Name" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
@@ -1881,13 +1576,8 @@
                         <button type="submit" class="btn-primary w-full sm:w-auto">Submit Application</button>
                     </form>
                 </div>
-
-                <!-- AI Vision Specialist -->
                 <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 sm:p-6 opacity-60">
-                    <div class="mb-4">
-                        <h3 class="text-xl font-bold">AI Vision Specialist</h3>
-                        <p class="text-gray-500 text-sm">Bangalore · Full-time</p>
-                    </div>
+                    <div class="mb-4"><h3 class="text-xl font-bold">AI Vision Specialist</h3><p class="text-gray-500 text-sm">Bangalore · Full-time</p></div>
                     <form class="ajax-form space-y-3" data-subject="Application for AI Vision Specialist">
                         <div class="grid sm:grid-cols-2 gap-3">
                             <input type="text" name="Full Name" placeholder="Full Name" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 bg-white text-sm" required>
@@ -1905,75 +1595,57 @@
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- CONTACT (with Chandru's number added)                      -->
-    <!-- ========================================================== -->
     <section id="contact" class="py-10 sm:py-14 md:py-16 lg:py-20 bg-gray-50" aria-label="Contact us">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 reveal">Get in Touch</h2>
             <p class="text-gray-600 mb-6 md:mb-10 max-w-2xl text-sm sm:text-base reveal">Have a question? Want to discuss a project? Our team is ready to help.</p>
-
             <div class="grid lg:grid-cols-2 gap-6 md:gap-8 reveal">
-                <!-- Contact Form -->
                 <div class="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 md:p-7">
                     <form id="contactForm" class="ajax-form space-y-3 sm:space-y-4" data-subject="New Enquiry from GARS Robotics Website">
-                        <div>
-                            <label class="block text-sm font-medium mb-1" for="contact-name">Name</label>
-                            <input type="text" id="contact-name" name="name" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="Enter your name" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-1" for="contact-email">Email</label>
-                            <input type="email" id="contact-email" name="email" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="your@email.com" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-1" for="contact-message">Message</label>
-                            <textarea id="contact-message" name="message" rows="4" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="Write your message here..." required></textarea>
-                        </div>
+                        <div><label class="block text-sm font-medium mb-1" for="contact-name">Name</label><input type="text" id="contact-name" name="name" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="Enter your name" required></div>
+                        <div><label class="block text-sm font-medium mb-1" for="contact-email">Email</label><input type="email" id="contact-email" name="email" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="your@email.com" required></div>
+                        <div><label class="block text-sm font-medium mb-1" for="contact-message">Message</label><textarea id="contact-message" name="message" rows="4" class="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 text-gray-900 bg-white text-sm sm:text-base" placeholder="Write your message here..." required></textarea></div>
                         <button type="submit" class="btn-primary w-full">Send message</button>
                     </form>
                 </div>
-
-                <!-- Contact Info -->
                 <div class="space-y-4 sm:space-y-5">
                     <div class="contact-info-card">
-                        <div class="icon" aria-hidden="true">📍</div>
+                        <div class="icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
                         <div class="content">
                             <h4>Address</h4>
                             <p>17th Cross, No.17, Balaji Nagara,<br />Thigalarapalya Main Road, Peenya 2nd Stage,<br />Bengaluru - 560058, India</p>
                         </div>
                     </div>
                     <div class="contact-info-card">
-                        <div class="icon" aria-hidden="true">✉️</div>
+                        <div class="icon-wrap"><i class="fa-solid fa-envelope"></i></div>
                         <div class="content">
                             <h4>Email</h4>
                             <a href="mailto:garsrobotics@gmail.com">garsrobotics@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-info-card">
-                        <div class="icon" aria-hidden="true">📞</div>
+                        <div class="icon-wrap"><i class="fa-solid fa-phone"></i></div>
                         <div class="content">
                             <h4>Phone</h4>
                             <a href="tel:+919632463464">+91 96324 63464</a>
                         </div>
                     </div>
-                    <!-- ★ NEW: Chandru's contact -->
                     <div class="contact-info-card">
-                        <div class="icon" aria-hidden="true">📞</div>
+                        <div class="icon-wrap"><i class="fa-solid fa-phone"></i></div>
                         <div class="content">
-                            <h4>Chandru Badodagi</h4>
+                            <h4>Phone</h4>
                             <a href="tel:+918296683563">+91 8296683563</a>
-                            <p class="text-xs text-gray-400 mt-0.5">Robotic Engineer</p>
                         </div>
                     </div>
                     <div class="contact-info-card">
-                        <div class="icon" aria-hidden="true">🕒</div>
+                        <div class="icon-wrap"><i class="fa-solid fa-clock"></i></div>
                         <div class="content">
                             <h4>Working Hours</h4>
                             <p>Mon–Fri, 9:00 AM – 6:00 PM (IST)</p>
                         </div>
                     </div>
                     <div class="contact-info-card">
-                        <div class="icon" aria-hidden="true">🏷️</div>
+                        <div class="icon-wrap"><i class="fa-solid fa-tag"></i></div>
                         <div class="content">
                             <h4>GSTIN</h4>
                             <p>29HBGPP0907K1Z8</p>
@@ -1985,9 +1657,6 @@
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- CTA                                                       -->
-    <!-- ========================================================== -->
     <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-center" aria-label="Call to action">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 reveal">Need Automation for Your Factory?</h2>
@@ -1996,78 +1665,32 @@
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- FOOTER                                                     -->
-    <!-- ========================================================== -->
     <footer class="bg-gray-900 text-gray-400 pt-10 sm:pt-12 md:pt-16 pb-6 sm:pb-8 border-t border-gray-800/50" role="contentinfo">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 pb-8 sm:pb-10 md:pb-12 border-b border-gray-800">
-                <div>
-                    <h4 class="footer-heading text-sm sm:text-base">Quick Links</h4>
-                    <div class="space-y-1.5 sm:space-y-2">
-                        <a href="#home" class="footer-link block text-xs sm:text-sm">Home</a>
-                        <a href="#services" class="footer-link block text-xs sm:text-sm">Services</a>
-                        <a href="#expertise" class="footer-link block text-xs sm:text-sm">Expertise</a>
-                        <a href="#videos" class="footer-link block text-xs sm:text-sm">Showcase</a>
-                        <a href="#industries" class="footer-link block text-xs sm:text-sm">Industries</a>
-                        <a href="#clients" class="footer-link block text-xs sm:text-sm">Clients</a>
-                        <a href="#about" class="footer-link block text-xs sm:text-sm">About</a>
-                        <a href="#careers" class="footer-link block text-xs sm:text-sm">Careers</a>
-                        <a href="#contact" class="footer-link block text-xs sm:text-sm">Contact</a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="footer-heading text-sm sm:text-base">Services</h4>
-                    <div class="space-y-1.5 sm:space-y-2">
-                        <span class="footer-link block text-xs sm:text-sm">Robot Programming</span>
-                        <span class="footer-link block text-xs sm:text-sm">ABB Expertise</span>
-                        <span class="footer-link block text-xs sm:text-sm">System Integration</span>
-                        <span class="footer-link block text-xs sm:text-sm">Commissioning</span>
-                        <span class="footer-link block text-xs sm:text-sm">Troubleshooting</span>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="footer-heading text-sm sm:text-base">Industries</h4>
-                    <div class="space-y-1.5 sm:space-y-2">
-                        <span class="footer-link block text-xs sm:text-sm">Automotive</span>
-                        <span class="footer-link block text-xs sm:text-sm">Electronics</span>
-                        <span class="footer-link block text-xs sm:text-sm">Pharma</span>
-                        <span class="footer-link block text-xs sm:text-sm">Food &amp; Beverage</span>
-                        <span class="footer-link block text-xs sm:text-sm">Textiles</span>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="footer-heading text-sm sm:text-base">Projects</h4>
-                    <div class="space-y-1.5 sm:space-y-2">
-                        <span class="footer-link block text-xs sm:text-sm">Featured Projects</span>
-                        <span class="footer-link block text-xs sm:text-sm">Project Gallery</span>
-                        <span class="footer-link block text-xs sm:text-sm">Videos</span>
-                        <span class="footer-link block text-xs sm:text-sm">Case Studies</span>
-                    </div>
-                </div>
+                <div><h4 class="footer-heading text-sm sm:text-base">Quick Links</h4><div class="space-y-1.5 sm:space-y-2"><a href="#home" class="footer-link block text-xs sm:text-sm">Home</a><a href="#services" class="footer-link block text-xs sm:text-sm">Services</a><a href="#expertise" class="footer-link block text-xs sm:text-sm">Expertise</a><a href="#videos" class="footer-link block text-xs sm:text-sm">Showcase</a><a href="#industries" class="footer-link block text-xs sm:text-sm">Industries</a><a href="#clients" class="footer-link block text-xs sm:text-sm">Clients</a><a href="#about" class="footer-link block text-xs sm:text-sm">About</a><a href="#careers" class="footer-link block text-xs sm:text-sm">Careers</a><a href="#contact" class="footer-link block text-xs sm:text-sm">Contact</a></div></div>
+                <div><h4 class="footer-heading text-sm sm:text-base">Services</h4><div class="space-y-1.5 sm:space-y-2"><span class="footer-link block text-xs sm:text-sm">Robot Programming</span><span class="footer-link block text-xs sm:text-sm">ABB Expertise</span><span class="footer-link block text-xs sm:text-sm">System Integration</span><span class="footer-link block text-xs sm:text-sm">Commissioning</span><span class="footer-link block text-xs sm:text-sm">Troubleshooting</span></div></div>
+                <div><h4 class="footer-heading text-sm sm:text-base">Industries</h4><div class="space-y-1.5 sm:space-y-2"><span class="footer-link block text-xs sm:text-sm">Automotive</span><span class="footer-link block text-xs sm:text-sm">Electronics</span><span class="footer-link block text-xs sm:text-sm">Pharma</span><span class="footer-link block text-xs sm:text-sm">Food &amp; Beverage</span><span class="footer-link block text-xs sm:text-sm">Textiles</span></div></div>
+                <div><h4 class="footer-heading text-sm sm:text-base">Projects</h4><div class="space-y-1.5 sm:space-y-2"><span class="footer-link block text-xs sm:text-sm">Featured Projects</span><span class="footer-link block text-xs sm:text-sm">Project Gallery</span><span class="footer-link block text-xs sm:text-sm">Videos</span><span class="footer-link block text-xs sm:text-sm">Case Studies</span></div></div>
                 <div class="col-span-2 sm:col-span-1">
                     <h4 class="footer-heading text-sm sm:text-base">Contact</h4>
                     <div class="space-y-1.5 text-xs sm:text-sm">
-                        <p class="text-gray-400">📞 <a href="tel:+919632463464" class="hover:text-white transition">+91 96324 63464</a></p>
-                        <p class="text-gray-400">✉️ <a href="mailto:garsrobotics@gmail.com" class="hover:text-white transition">garsrobotics@gmail.com</a></p>
-                        <p class="text-gray-400 text-[0.6rem] sm:text-xs">📍 Bengaluru, India</p>
-                        <p class="text-gray-400 text-[0.6rem] sm:text-xs">GSTIN: 29HBGPP0907K1Z8</p>
+                        <p class="text-gray-400 flex items-center"><i class="fa-solid fa-phone mr-2 w-4 text-red-500"></i><a href="tel:+919632463464" class="hover:text-white transition">+91 96324 63464</a></p>
+                        <p class="text-gray-400 flex items-center"><i class="fa-solid fa-phone mr-2 w-4 text-red-500"></i><a href="tel:+918296683563" class="hover:text-white transition">+91 8296683563</a></p>
+                        <p class="text-gray-400 flex items-center"><i class="fa-solid fa-envelope mr-2 w-4 text-red-500"></i><a href="mailto:garsrobotics@gmail.com" class="hover:text-white transition">garsrobotics@gmail.com</a></p>
+                        <p class="text-gray-400 flex items-center"><i class="fa-solid fa-location-dot mr-2 w-4 text-red-500"></i>Bengaluru, India</p>
+                        <p class="text-gray-400 flex items-center"><i class="fa-solid fa-tag mr-2 w-4 text-red-500"></i>GSTIN: 29HBGPP0907K1Z8</p>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col sm:flex-row justify-between items-center pt-5 sm:pt-6 md:pt-8 text-xs sm:text-sm text-gray-500 gap-3 sm:gap-0">
                 <p>&copy; 2026 GARS Robotics &amp; Automation. All Rights Reserved.</p>
-                <div class="flex gap-4 sm:gap-6">
-                    <a href="https://maps.google.com/maps?q=17th+Cross+Balaji+Nagara+Peenya+Bengaluru" target="_blank" class="hover:text-white transition text-xs sm:text-sm">Google Maps</a>
-                    <a href="mailto:garsrobotics@gmail.com" class="hover:text-white transition text-xs sm:text-sm">Email</a>
-                </div>
+                <div class="flex gap-4 sm:gap-6"><a href="https://maps.google.com/maps?q=17th+Cross+Balaji+Nagara+Peenya+Bengaluru" target="_blank" class="hover:text-white transition text-xs sm:text-sm">Google Maps</a><a href="mailto:garsrobotics@gmail.com" class="hover:text-white transition text-xs sm:text-sm">Email</a></div>
             </div>
         </div>
     </footer>
 
-    <!-- ========================================================== -->
-    <!-- MODALS                                                     -->
-    <!-- ========================================================== -->
+    <!-- MODALS -->
     <div id="lightbox" class="lightbox fixed inset-0 bg-black/95 z-[3000] flex items-center justify-center p-4 hidden" onclick="closeLightboxOutside(event)">
         <div class="lb-content max-w-[92vw] max-h-[85vh] relative">
             <button class="lb-close absolute -top-10 sm:-top-12 right-0 text-white text-3xl sm:text-4xl opacity-70 hover:opacity-100 transition" onclick="closeLightbox()">✕</button>
@@ -2081,10 +1704,7 @@
     <div id="videoModal" class="video-modal fixed inset-0 bg-black/95 z-[3000] flex items-center justify-center p-4 hidden" onclick="closeVideoOutside(event)">
         <div class="vm-wrapper max-w-[92vw] max-h-[70vh] sm:max-w-[80vw] sm:max-h-[80vh] w-full relative bg-black rounded-xl overflow-hidden">
             <button class="vm-close absolute -top-10 sm:-top-12 right-0 text-white text-3xl sm:text-4xl opacity-70 hover:opacity-100 transition" onclick="closeVideoModal()">✕</button>
-            <video id="videoPlayer" controls playsinline class="w-full max-h-[70vh] sm:max-h-[80vh] block">
-                <source src="" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
+            <video id="videoPlayer" controls playsinline class="w-full max-h-[70vh] sm:max-h-[80vh] block"><source src="" type="video/mp4" />Your browser does not support the video tag.</video>
         </div>
     </div>
 
@@ -2096,9 +1716,67 @@
     </div>
 
     <script>
-        // =============================================================
-        // DATA – projects (8 images, no captions) – kept for lightbox
-        // =============================================================
+        const videoFiles = [
+            'videos/trimmed/3d-1st trim.mp4',
+            'videos/trimmed/3d-replace trim trim.mp4',
+            'videos/trimmed/3d-simulation trim.mp4',
+            'videos/trimmed/abb -trim.mp4',
+            'videos/trimmed/abb welding trim.mp4',
+            'videos/trimmed/blocks trim.mp4',
+            'videos/trimmed/die casting trim.mp4',
+            'videos/trimmed/jsw paint trim.mp4',
+            'videos/trimmed/packaging trim.mp4',
+            'videos/trimmed/two arm trim.mp4',
+            'videos/trimmed/tyres trim.mp4',
+            'videos/trimmed/video-12trim.mp4'
+        ];
+
+        (function() {
+            const grid = document.getElementById('videoGrid');
+            if (!grid) return;
+            const videos = [];
+            videoFiles.forEach((src, index) => {
+                const video = document.createElement('video');
+                video.className = 'grid-video';
+                video.src = src;
+                video.muted = true;
+                video.loop = true;
+                video.playsInline = true;
+                video.disablePictureInPicture = true;
+                video.setAttribute('aria-hidden', 'true');
+                video.addEventListener('loadeddata', function() {
+                    if (index > 0) this.currentTime = (index / videoFiles.length) * this.duration * 0.7;
+                });
+                grid.appendChild(video);
+                videos.push(video);
+            });
+
+            function playAllVideos() {
+                videos.forEach(v => v.play().catch(() => {}));
+            }
+            const section = document.getElementById('videos');
+            if (section) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            playAllVideos();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                observer.observe(section);
+            }
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(playAllVideos, 300);
+            });
+            document.addEventListener('click', function() {
+                videos.forEach(v => { if (v.paused) v.play().catch(() => {}); });
+            }, { once: true });
+            document.addEventListener('touchstart', function() {
+                videos.forEach(v => { if (v.paused) v.play().catch(() => {}); });
+            }, { once: true });
+        })();
+
         const projects = [
             { src: 'photos/PHOTO1.jpg' },
             { src: 'photos/PHOTO2.jpg' },
@@ -2110,46 +1788,17 @@
             { src: 'photos/9.jpg' }
         ];
 
-        // =============================================================
-        // VIDEO FILES – using your provided 11 filenames
-        // =============================================================
-        const videoFiles = [
-            'videos/3d-simulation.mp4',
-            'videos/3d-video.mp4',
-            'videos/3d.mp4',
-            'videos/abb welding.mp4',
-            'videos/abb-video 8.mp4',
-            'videos/blocks.mp4',
-            'videos/die casting.mp4',
-            'videos/double arm.mp4',
-            'videos/jsw paint video.mp4',
-            'videos/packaging.mp4',
-            'videos/tyres.mp4'
-            // 12th slot remains empty – you can add one more video later if needed
-        ];
-
-        // =============================================================
-        // TIMELINE ANIMATION
-        // =============================================================
         function animateTimeline() {
             const steps = document.querySelectorAll('.timeline-step');
             const progress = document.getElementById('lineProgress');
             let currentStep = 0;
 
             function updateStep(index) {
-                steps.forEach(step => {
-                    step.classList.remove('active', 'completed');
-                });
-                for (let i = 0; i < index; i++) {
-                    steps[i].classList.add('completed');
-                }
-                if (index < steps.length) {
-                    steps[index].classList.add('active');
-                }
-                const percentage = ((index) / (steps.length - 1)) * 100;
-                progress.style.width = percentage + '%';
+                steps.forEach(step => { step.classList.remove('active', 'completed'); });
+                for (let i = 0; i < index; i++) { steps[i].classList.add('completed'); }
+                if (index < steps.length) { steps[index].classList.add('active'); }
+                progress.style.width = ((index) / (steps.length - 1)) * 100 + '%';
             }
-
             let interval = setInterval(() => {
                 currentStep++;
                 if (currentStep >= steps.length) {
@@ -2159,56 +1808,16 @@
                         updateStep(0);
                         interval = setInterval(() => {
                             currentStep++;
-                            if (currentStep >= steps.length) {
-                                clearInterval(interval);
-                            } else {
-                                updateStep(currentStep);
-                            }
+                            if (currentStep >= steps.length) { clearInterval(interval); } else { updateStep(currentStep); }
                         }, 1200);
                     }, 2000);
                     return;
                 }
                 updateStep(currentStep);
             }, 1200);
-
             updateStep(0);
         }
 
-        // =============================================================
-        // VIDEO GRID – inject 11 videos (one slot remains empty)
-        // =============================================================
-        (function() {
-            const grid = document.getElementById('videoGrid');
-            if (!grid) return;
-
-            // We have 11 videos, grid has 12 slots (4×3). One slot remains empty.
-            videoFiles.forEach((src, index) => {
-                const video = document.createElement('video');
-                video.className = 'grid-video';
-                video.src = src;
-                video.autoplay = true;
-                video.muted = true;
-                video.loop = true;
-                video.playsInline = true;
-                video.disablePictureInPicture = true;
-                video.setAttribute('aria-hidden', 'true');
-
-                // Stagger start times for organic feel
-                video.addEventListener('loadeddata', function() {
-                    if (index > 0) {
-                        this.currentTime = (index / videoFiles.length) * this.duration * 0.7;
-                    }
-                });
-
-                grid.appendChild(video);
-            });
-
-            // The 12th cell remains empty – that's perfectly fine.
-        })();
-
-        // =============================================================
-        // ANIMATED COUNTERS
-        // =============================================================
         document.addEventListener('DOMContentLoaded', function() {
             const statNumbers = document.querySelectorAll('#heroStats .stat-number');
             let countersAnimated = false;
@@ -2216,24 +1825,17 @@
             function animateCounters() {
                 if (countersAnimated) return;
                 countersAnimated = true;
-
                 statNumbers.forEach(el => {
                     const target = parseInt(el.getAttribute('data-target'));
                     let current = 0;
-                    const increment = Math.ceil(target / 60);
                     const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
-                        }
-                        // Update text node (preserving the + suffix if present)
-                        const suffix = el.querySelector('.suffix') ? el.querySelector('.suffix').textContent : '';
+                        current += Math.ceil(target / 60);
+                        if (current >= target) { current = target;
+                            clearInterval(timer); }
                         el.childNodes[0].textContent = current;
                     }, 30);
                 });
             }
-
             const section = document.getElementById('videos');
             if (section) {
                 const observer = new IntersectionObserver((entries) => {
@@ -2246,15 +1848,33 @@
                 }, { threshold: 0.3 });
                 observer.observe(section);
             }
-
             if (section && section.getBoundingClientRect().top < window.innerHeight * 0.7) {
                 setTimeout(animateCounters, 500);
             }
+
+            const revealElements = document.querySelectorAll('.reveal');
+            const staggerElements = document.querySelectorAll('.stagger');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+            revealElements.forEach(el => revealObserver.observe(el));
+            const staggerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        staggerObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+            staggerElements.forEach(el => staggerObserver.observe(el));
+            animateTimeline();
         });
 
-        // =============================================================
-        // LIGHTBOX (unchanged)
-        // =============================================================
         let currentImageIndex = 0;
 
         function openLightbox(index) {
@@ -2279,22 +1899,17 @@
         function prevImage(e) {
             e.stopPropagation();
             currentImageIndex = (currentImageIndex - 1 + projects.length) % projects.length;
-            const img = document.getElementById('lightboxImage');
-            img.src = projects[currentImageIndex].src;
+            document.getElementById('lightboxImage').src = projects[currentImageIndex].src;
             document.getElementById('lightboxCounter').textContent = `${currentImageIndex + 1} / ${projects.length}`;
         }
 
         function nextImage(e) {
             e.stopPropagation();
             currentImageIndex = (currentImageIndex + 1) % projects.length;
-            const img = document.getElementById('lightboxImage');
-            img.src = projects[currentImageIndex].src;
+            document.getElementById('lightboxImage').src = projects[currentImageIndex].src;
             document.getElementById('lightboxCounter').textContent = `${currentImageIndex + 1} / ${projects.length}`;
         }
 
-        // =============================================================
-        // VIDEO MODAL (for card clicks if any)
-        // =============================================================
         function openVideoModal(index) {
             const video = document.getElementById('videoPlayer');
             const source = video.querySelector('source');
@@ -2308,8 +1923,7 @@
         }
 
         function closeVideoModal() {
-            const video = document.getElementById('videoPlayer');
-            video.pause();
+            document.getElementById('videoPlayer').pause();
             document.getElementById('videoModal').classList.add('hidden');
             document.body.style.overflow = '';
         }
@@ -2318,25 +1932,19 @@
             if (e.target === e.currentTarget) closeVideoModal();
         }
 
-        // =============================================================
-        // UNIVERSAL MODAL
-        // =============================================================
         function closeModal() {
             document.getElementById('universalModal').classList.add('hidden');
         }
 
         function showEmployeeModal(name, role, bio) {
             document.getElementById('modalBody').innerHTML = `
-                <h2 class="text-xl sm:text-2xl font-bold mb-1">${name}</h2>
-                <p class="text-red-600 text-sm mb-3">${role}</p>
-                <p class="text-gray-600 text-sm sm:text-base">${bio}</p>
-            `;
+                        <h2 class="text-xl sm:text-2xl font-bold mb-1">${name}</h2>
+                        <p class="text-red-600 text-sm mb-3">${role}</p>
+                        <p class="text-gray-600 text-sm sm:text-base">${bio}</p>
+                    `;
             document.getElementById('universalModal').classList.remove('hidden');
         }
 
-        // =============================================================
-        // KEYBOARD SHORTCUTS
-        // =============================================================
         document.addEventListener('keydown', function(e) {
             if (!document.getElementById('lightbox').classList.contains('hidden')) {
                 if (e.key === 'ArrowLeft') prevImage(e);
@@ -2348,41 +1956,6 @@
             }
         });
 
-        // =============================================================
-        // SCROLL REVEAL
-        // =============================================================
-        document.addEventListener('DOMContentLoaded', function() {
-            const revealElements = document.querySelectorAll('.reveal');
-            const staggerElements = document.querySelectorAll('.stagger');
-
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        revealObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-
-            revealElements.forEach(el => revealObserver.observe(el));
-
-            const staggerObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        staggerObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-
-            staggerElements.forEach(el => staggerObserver.observe(el));
-
-            animateTimeline();
-        });
-
-        // =============================================================
-        // MOBILE MENU
-        // =============================================================
         const mobileBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
 
@@ -2390,7 +1963,6 @@
             mobileMenu.classList.add('hidden');
             if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
         }
-
         if (mobileBtn) {
             mobileBtn.addEventListener('click', () => {
                 const isOpen = !mobileMenu.classList.contains('hidden');
@@ -2398,14 +1970,10 @@
                 mobileBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
             });
         }
-
         document.querySelectorAll('#mobileMenu a').forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
 
-        // =============================================================
-        // ACTIVE NAV LINK
-        // =============================================================
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-link');
 
@@ -2426,40 +1994,29 @@
                 }
             });
         }
-
         window.addEventListener('scroll', updateActiveSection);
         window.addEventListener('load', updateActiveSection);
 
-        // =============================================================
-        // AJAX FORM SUBMISSION
-        // =============================================================
         document.addEventListener('DOMContentLoaded', function() {
             const forms = document.querySelectorAll('.ajax-form');
-
             forms.forEach(form => {
                 form.addEventListener('submit', async function(e) {
                     e.preventDefault();
-
                     const formData = new FormData(form);
                     const data = Object.fromEntries(formData.entries());
-
                     const subject = form.dataset.subject;
                     if (subject) data._subject = subject;
-
                     const btn = form.querySelector('button[type="submit"]');
                     const originalText = btn.textContent;
                     btn.textContent = 'Sending...';
                     btn.disabled = true;
-
                     try {
                         const response = await fetch('http://localhost:5000/api/contact', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(data)
                         });
-
                         const result = await response.json();
-
                         if (response.ok) {
                             alert('✅ ' + (result.message || 'Submission successful!'));
                             form.reset();
@@ -2477,6 +2034,5 @@
             });
         });
     </script>
-
 </body>
 </html>
